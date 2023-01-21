@@ -129,10 +129,6 @@ texture = ExtResource( 5 )
 position = Vector2( 756.788, 44.3864 )
 texture = ExtResource( 5 )
 
-[node name="CloudLonely6" type="Sprite" parent="CloudLonely2/CloudLonely/CloudLonely3/CloudLonely4/CloudLonely7"]
-position = Vector2( -1097.73, 9 )
-texture = ExtResource( 5 )
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
