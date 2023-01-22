@@ -52,13 +52,14 @@ func _physics_process(delta):
 	
 	motion = move_and_slide(motion, UP)
 	
-func _on_border_area_entered(area):
-	get_tree().reload_current_scene()
 
+	
 
-
-func _on_energy_area_entered(area):
+func _on_burger_area_entered(area):
 	JUMPFORCE = 800
 	yield(get_tree().create_timer(1), "timeout")
 	_reset_jump()
 
+
+func _on_bottom_border_area_entered(area):
+	get_tree().reload_current_scene()
