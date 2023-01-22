@@ -7,7 +7,7 @@ var MAXSPEED= 200
 var JUMPFORCE = 400
 var motion = Vector2()
 var jumps = 0
-onready var jump_noise = $jump
+
 
 
 
@@ -46,7 +46,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			motion.y = -JUMPFORCE
-			$jump.play()
+
 	
 	
 	
