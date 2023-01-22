@@ -1,11 +1,12 @@
 extends KinematicBody2D
 
 const UP= Vector2(0, -1) 
-const GRAVITY= 20
-const MAXFALLSPEED= 1000
-const MAXSPEED= 200
-const JUMPFORCE = 400
+var GRAVITY= 20
+var MAXFALLSPEED= 1000
+var MAXSPEED= 200
+var JUMPFORCE = 400
 var motion = Vector2()
+var jumps = 0
 onready var jump_noise = $jump
 
 
@@ -16,15 +17,16 @@ func _ready():
 
 
 
+func _reset_jump():
+	JUMPFORCE = 400
 	
 
 func _physics_process(delta):
 	
+	
 	motion.y += GRAVITY
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
-	
-	
 	
 	if Input.is_action_pressed("restart"):
 		get_tree().reload_current_scene()
@@ -50,10 +52,13 @@ func _physics_process(delta):
 	
 	motion = move_and_slide(motion, UP)
 	
-
-
-
-
-
 func _on_border_area_entered(area):
 	get_tree().reload_current_scene()
+
+
+
+func _on_energy_area_entered(area):
+	JUMPFORCE = 800
+	yield(get_tree().create_timer(1), "timeout")
+	_reset_jump()
+

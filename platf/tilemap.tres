@@ -10,10 +10,9 @@ extents = Vector2( 25.6897, 23.2847 )
 extents = Vector2( 25.3448, 23.9403 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 26.5518, 6.96232 )
+extents = Vector2( 15.5495, 2.03785 )
 
 [sub_resource type="StreamTexture" id=4]
-load_path = "res://.import/spikes.png-4a2427e7b6483a335646e762227cfd31.stex"
 
 [resource]
 0/name = "Sprite"
@@ -62,12 +61,12 @@ load_path = "res://.import/spikes.png-4a2427e7b6483a335646e762227cfd31.stex"
 2/texture = SubResource( 4 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 0, 62, 32 )
+2/region = Rect2( 0, 0, 32, 32 )
 2/tile_mode = 0
-2/occluder_offset = Vector2( 31, 16 )
-2/navigation_offset = Vector2( 31, 16 )
-2/shape_offset = Vector2( 30.9999, 19.0377 )
-2/shape_transform = Transform2D( 1, 0, 0, 1, 30.9999, 19.0377 )
+2/occluder_offset = Vector2( 16, 16 )
+2/navigation_offset = Vector2( 16, 16 )
+2/shape_offset = Vector2( 15.5848, 14.0917 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 15.5848, 14.0917 )
 2/shape = SubResource( 3 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
@@ -76,6 +75,6 @@ load_path = "res://.import/spikes.png-4a2427e7b6483a335646e762227cfd31.stex"
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 3 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 30.9999, 19.0377 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 15.5848, 14.0917 )
 } ]
 2/z_index = 0
