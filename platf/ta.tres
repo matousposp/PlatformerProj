@@ -1,13 +1,19 @@
-[gd_resource type="TileSet" load_steps=5 format=2]
+[gd_resource type="TileSet" load_steps=7 format=2]
 
 [ext_resource path="res://img/ground.PNG" type="Texture" id=1]
 [ext_resource path="res://img/ground.jpg" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 25.5, 23.75 )
+extents = Vector2( 25.6897, 23.2847 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 26.5, 6.5 )
+extents = Vector2( 25.3448, 23.9403 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 26.5518, 6.96232 )
+
+[sub_resource type="StreamTexture" id=4]
+load_path = "res://.import/spikes.png-4a2427e7b6483a335646e762227cfd31.stex"
 
 [resource]
 0/name = "Sprite"
@@ -52,3 +58,24 @@ extents = Vector2( 26.5, 6.5 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 25.6724, 23.8925 )
 } ]
 1/z_index = 0
+2/name = "Sprite3"
+2/texture = SubResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 62, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 31, 16 )
+2/navigation_offset = Vector2( 31, 16 )
+2/shape_offset = Vector2( 30.9999, 19.0377 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 30.9999, 19.0377 )
+2/shape = SubResource( 3 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 30.9999, 19.0377 )
+} ]
+2/z_index = 0
