@@ -4,7 +4,7 @@ const UP= Vector2(0, -1)
 var GRAVITY= 20
 var MAXFALLSPEED= 1000
 var MAXSPEED= 200
-var JUMPFORCE = 400
+var JUMPFORCE = 460
 var motion = Vector2()
 var jumps = 0
 
@@ -18,7 +18,7 @@ func _ready():
 
 
 func _reset_jump():
-	JUMPFORCE = 400
+	JUMPFORCE = 460
 	
 
 func _physics_process(delta):

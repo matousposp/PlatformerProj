@@ -2,6 +2,7 @@
 
 [ext_resource path="res://img/ground.PNG" type="Texture" id=1]
 [ext_resource path="res://img/ground.jpg" type="Texture" id=2]
+[ext_resource path="res://img/brick.PNG" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25.6897, 23.2847 )
@@ -9,11 +10,8 @@ extents = Vector2( 25.6897, 23.2847 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 25.3448, 23.9403 )
 
-[sub_resource type="StreamTexture" id=4]
-load_path = "res://.import/tp1.png-f818a6f0cd70d16c56b67e7914da9963.stex"
-
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 15.5495, 2.03785 )
+extents = Vector2( 15.7829, 15.6695 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -40,14 +38,14 @@ position = Vector2( 0.172389, 0.392465 )
 shape = SubResource( 2 )
 
 [node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( 344.075, 86.5 )
-scale = Vector2( 4.6203, 6.96875 )
-texture = SubResource( 4 )
+position = Vector2( 444, -13.372 )
+scale = Vector2( 6.25, 5.22675 )
+texture = ExtResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite3/StaticBody2D"]
-position = Vector2( -0.415207, -1.90834 )
+position = Vector2( -0.160003, -0.12015 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 3 )
 __meta__ = {
