@@ -46,7 +46,6 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite3/StaticBody2D"]
 position = Vector2( -0.160003, -0.12015 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true

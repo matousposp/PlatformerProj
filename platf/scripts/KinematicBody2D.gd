@@ -31,7 +31,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("restart"):
 		get_tree().reload_current_scene()
 	
-	if Input.is_action_pressed("right"):
+	elif Input.is_action_pressed("right"):
 		motion.x = MAXSPEED
 		$Sprite.flip_h = false
 		$AnimationPlayer.play("Roll")
@@ -40,6 +40,7 @@ func _physics_process(delta):
 		motion.x = -MAXSPEED
 		$Sprite.flip_h = true
 		$AnimationPlayer.play("Roll")
+		
 	else:
 		motion.x = 0
 		$AnimationPlayer.play("Idle")

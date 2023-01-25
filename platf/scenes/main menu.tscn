@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scripts/main menu.gd" type="Script" id=1]
 [ext_resource path="res://8-BIT WONDER.TTF" type="DynamicFontData" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://img/sky_lightened.png" type="Texture" id=4]
 [ext_resource path="res://img/mainmenuimg.png" type="Texture" id=5]
 [ext_resource path="res://tilemap.tres" type="TileSet" id=6]
+[ext_resource path="res://audio/mainmenu.wav" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -180,6 +181,11 @@ text = "HEART
 ATTACK
 HERO"
 align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = 13.983
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
