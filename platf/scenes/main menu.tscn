@@ -1,8 +1,7 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scripts/main menu.gd" type="Script" id=1]
 [ext_resource path="res://8-BIT WONDER.TTF" type="DynamicFontData" id=2]
-[ext_resource path="res://img/cloud_lonely.png" type="Texture" id=3]
 [ext_resource path="res://img/sky_lightened.png" type="Texture" id=4]
 [ext_resource path="res://img/mainmenuimg.png" type="Texture" id=5]
 [ext_resource path="res://tilemap.tres" type="TileSet" id=6]
@@ -52,38 +51,6 @@ bg_color = Color( 0, 0, 0, 0 )
 
 [sub_resource type="StyleBoxFlat" id=16]
 bg_color = Color( 0, 0, 0, 0 )
-
-[sub_resource type="Animation" id=17]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 927, 399 ) ]
-}
-
-[sub_resource type="Animation" id=18]
-resource_name = "move"
-length = 25.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 12.5, 25 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 918, 627 ), Vector2( -17.9999, 677 ), Vector2( 906, 670 ) ]
-}
 
 [sub_resource type="DynamicFont" id=4]
 outline_size = 1
@@ -152,17 +119,6 @@ custom_styles/focus = SubResource( 15 )
 custom_styles/normal = SubResource( 16 )
 text = "Quit"
 align = 0
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-
-[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
-position = Vector2( 927, 399 )
-scale = Vector2( 7.3776, 8.41319 )
-texture = ExtResource( 3 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
-anims/RESET = SubResource( 17 )
-anims/move = SubResource( 18 )
 
 [node name="Mainmenuimg" type="Sprite" parent="."]
 position = Vector2( 832, 399 )

@@ -22,8 +22,6 @@ func _reset_jump():
 	
 
 func _physics_process(delta):
-	
-	
 	motion.y += GRAVITY
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
@@ -33,17 +31,16 @@ func _physics_process(delta):
 	
 	elif Input.is_action_pressed("right"):
 		motion.x = MAXSPEED
-		$Sprite.flip_h = false
-		$AnimationPlayer.play("Roll")
+		$AnimatedSprite.flip_h = false
+
 		
 	elif Input.is_action_pressed("left"):
 		motion.x = -MAXSPEED
-		$Sprite.flip_h = true
-		$AnimationPlayer.play("Roll")
+		$AnimatedSprite.flip_h = true
+
 		
 	else:
 		motion.x = 0
-		$AnimationPlayer.play("Idle")
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			motion.y = -JUMPFORCE
@@ -52,19 +49,7 @@ func _physics_process(delta):
 	
 	
 	motion = move_and_slide(motion, UP)
-	
-
-	
-
-func _on_burger_area_entered(area):
-	JUMPFORCE = 800
-	yield(get_tree().create_timer(1), "timeout")
-	_reset_jump()
 
 
 func _on_bottom_border_area_entered(area):
-	get_tree().reload_current_scene()
-
-
-func _on_enemy1_area_entered(area):
-	get_tree().reload_current_scene()
+	get_tree().reload_current_scene() 
