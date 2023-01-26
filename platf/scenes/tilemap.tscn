@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://img/ground.PNG" type="Texture" id=1]
 [ext_resource path="res://img/ground.jpg" type="Texture" id=2]
 [ext_resource path="res://img/brick.PNG" type="Texture" id=3]
+[ext_resource path="res://img/image.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25.6897, 23.2847 )
@@ -12,6 +13,9 @@ extents = Vector2( 25.3448, 23.9403 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 15.7829, 15.6695 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 26.225, 23.3868 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -50,3 +54,15 @@ shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 674, -5 )
+scale = Vector2( 2.97426, 2.65107 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite4/StaticBody2D"]
+position = Vector2( 0.672424, -7.15256e-07 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 4 )
