@@ -69,3 +69,7 @@ func _physics_process(delta):
 
 func _on_bottom_border_area_entered(area):
 	get_tree().reload_current_scene() 
+
+
+func _on_enem_area_entered(area):
+	get_tree().reload_current_scene()
