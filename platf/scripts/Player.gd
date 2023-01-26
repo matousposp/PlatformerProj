@@ -7,13 +7,20 @@ var MAXSPEED= 200
 var JUMPFORCE = 460
 var motion = Vector2()
 var jumps = 0
-
+var bullet_speed = 10
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
+
+
+
+
+
+	
+	
 
 
 
@@ -30,17 +37,26 @@ func _physics_process(delta):
 		get_tree().reload_current_scene()
 	
 	elif Input.is_action_pressed("right"):
+		
 		motion.x = MAXSPEED
 		$AnimatedSprite.flip_h = false
-
+		$AnimatedSprite.play("roll")
+		
 		
 	elif Input.is_action_pressed("left"):
 		motion.x = -MAXSPEED
 		$AnimatedSprite.flip_h = true
-
+		$AnimatedSprite.play("roll")
+		
+		
+	elif Input.is_action_pressed("attack"):
+		$AnimatedSprite.play("attack")
+		
 		
 	else:
 		motion.x = 0
+		$AnimatedSprite.play("default")
+		
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			motion.y = -JUMPFORCE
