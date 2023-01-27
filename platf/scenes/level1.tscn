@@ -280,11 +280,11 @@ func _ready():
 #	pass
 "
 
-[sub_resource type="AtlasTexture" id=61]
+[sub_resource type="AtlasTexture" id=70]
 atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=62]
+[sub_resource type="AtlasTexture" id=72]
 atlas = ExtResource( 8 )
 region = Rect2( 64, 0, 64, 64 )
 
@@ -314,13 +314,13 @@ region = Rect2( 448, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=69]
 animations = [ {
-"frames": [ SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ) ],
+"frames": [ SubResource( 70 ), SubResource( 72 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=70]
+[sub_resource type="CapsuleShape2D" id=73]
 radius = 16.0
 height = 48.0
 
@@ -468,7 +468,7 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portal1"]
 position = Vector2( 3880, 560 )
-shape = SubResource( 70 )
+shape = SubResource( 73 )
 
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
 [connection signal="area_entered" from="portal1" to="Player" method="_on_portal1_area_entered"]
