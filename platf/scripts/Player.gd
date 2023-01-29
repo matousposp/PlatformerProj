@@ -33,6 +33,11 @@ func _physics_process(delta):
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
 	
+	if Input.is_action_pressed("dash"):
+		MAXSPEED = 300
+	else:
+		MAXSPEED = 200
+	
 	if Input.is_action_pressed("restart"):
 		get_tree().reload_current_scene()
 	
