@@ -337,10 +337,10 @@ height = 48.0
 [node name="level1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -1536.0
-margin_top = -896.0
-margin_right = 7989.0
-margin_bottom = 2650.0
+margin_left = -1568.0
+margin_top = -904.0
+margin_right = 7957.0
+margin_bottom = 2642.0
 texture = ExtResource( 2 )
 expand = true
 
