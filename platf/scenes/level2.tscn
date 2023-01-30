@@ -8,10 +8,33 @@
 [ext_resource path="res://img/Green Portal Sprite Sheet.png" type="Texture" id=6]
 [ext_resource path="res://audio/plains.wav" type="AudioStream" id=7]
 [ext_resource path="res://img/borger.png" type="Texture" id=8]
-[ext_resource path="res://scenes/burger.gd" type="Script" id=9]
+[ext_resource path="res://scripts/burger.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=60]
 extents = Vector2( 2500, 4.5 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 8 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=78]
+animations = [ {
+"frames": [ SubResource( 75 ), SubResource( 76 ), SubResource( 77 ) ],
+"loop": true,
+"name": "idle_burger",
+"speed": 10.05
+} ]
+
+[sub_resource type="CircleShape2D" id=79]
+radius = 16.0
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 4 )
@@ -322,29 +345,6 @@ animations = [ {
 radius = 16.0
 height = 48.0
 
-[sub_resource type="AtlasTexture" id=75]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=76]
-atlas = ExtResource( 8 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=77]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 32, 32, 32 )
-
-[sub_resource type="SpriteFrames" id=78]
-animations = [ {
-"frames": [ SubResource( 75 ), SubResource( 76 ), SubResource( 77 ) ],
-"loop": true,
-"name": "idle_burger",
-"speed": 10.05
-} ]
-
-[sub_resource type="CircleShape2D" id=79]
-radius = 16.0
-
 [node name="level2" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -395,6 +395,19 @@ tile_data = PoolIntArray( 851967, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bottom border"]
 position = Vector2( 2028, 787.5 )
 shape = SubResource( 60 )
+
+[node name="burger" type="Area2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="burger"]
+position = Vector2( 1952, 648 )
+scale = Vector2( 1.75, 1.75 )
+frames = SubResource( 78 )
+animation = "idle_burger"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="burger"]
+position = Vector2( 1952, 648 )
+shape = SubResource( 79 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 script = ExtResource( 1 )
@@ -488,19 +501,6 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portal1"]
 position = Vector2( 937, 136 )
 shape = SubResource( 73 )
-
-[node name="burger" type="Area2D" parent="."]
-script = ExtResource( 9 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="burger"]
-position = Vector2( 1952, 648 )
-scale = Vector2( 1.75, 1.75 )
-frames = SubResource( 78 )
-animation = "idle_burger"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="burger"]
-position = Vector2( 1952, 648 )
-shape = SubResource( 79 )
 
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
 [connection signal="area_entered" from="burger" to="Player" method="_on_burger_area_entered"]
