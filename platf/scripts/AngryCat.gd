@@ -9,7 +9,7 @@ var gameHeight: int
 var spriteWidth: int
 var spriteHeight: int
 
-export var velocity: float = 270.0
+export var velocity: float = 220.0
 
 func _enter_tree():
 	pass
