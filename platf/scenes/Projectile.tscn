@@ -1,12 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene format=2]
 
-[ext_resource path="res://img/projectile.png" type="Texture" id=1]
-
-[node name="Projectile" type="Node2D"]
+[node name="Area2D" type="Area2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 376, 365 )
-scale = Vector2( 3.5, 3.64286 )
-texture = ExtResource( 1 )
-hframes = 2
-vframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
