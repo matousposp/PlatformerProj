@@ -710,7 +710,7 @@ anims/move = SubResource( 113 )
 script = ExtResource( 11 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="wedoatinyamountoftomfoolery"]
-position = Vector2( 2510, -334 )
+position = Vector2( 992, 352 )
 scale = Vector2( 2.03125, 2 )
 frames = SubResource( 132 )
 offset = Vector2( 300, -240 )
