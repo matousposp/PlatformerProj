@@ -17,13 +17,6 @@ func _ready():
 
 
 
-
-
-	
-	
-
-
-
 func _reset_jump():
 	JUMPFORCE = 460
 	

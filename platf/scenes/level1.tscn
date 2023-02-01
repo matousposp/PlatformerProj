@@ -492,7 +492,7 @@ tracks/0/path = NodePath("AnimatedSprite:flip_h")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -544,10 +544,10 @@ tracks/1/keys = {
 [node name="level1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -1568.0
-margin_top = -904.0
-margin_right = 7957.0
-margin_bottom = 2642.0
+margin_left = -1640.0
+margin_top = -728.0
+margin_right = 7885.0
+margin_bottom = 2818.0
 texture = ExtResource( 2 )
 expand = true
 
@@ -726,4 +726,3 @@ anims/move = SubResource( 120 )
 
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
 [connection signal="area_entered" from="portal1" to="Player" method="_on_portal1_area_entered"]
-[connection signal="area_entered" from="enemy1" to="Player" method="_on_enemy1_area_entered"]
