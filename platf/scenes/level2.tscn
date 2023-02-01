@@ -11,7 +11,7 @@
 [ext_resource path="res://scripts/burger.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=60]
-extents = Vector2( 2500, 4.5 )
+extents = Vector2( 1424, 4.5 )
 
 [sub_resource type="AtlasTexture" id=75]
 atlas = ExtResource( 8 )
@@ -393,7 +393,7 @@ tile_data = PoolIntArray( 720959, 2, 0, 720963, 0, 0, 720964, 0, 0, 720965, 0, 0
 [node name="bottom border" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bottom border"]
-position = Vector2( 2028, 787.5 )
+position = Vector2( 952, 787.5 )
 shape = SubResource( 60 )
 
 [node name="burger" type="Area2D" parent="."]
