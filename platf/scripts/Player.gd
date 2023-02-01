@@ -82,5 +82,4 @@ func _on_enemy1_area_entered(area):
 
 
 
-func _on_border2_area_entered(area):
-	get_tree().reload_current_scene()
+
