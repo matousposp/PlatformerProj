@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=2]
+[gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=2]
@@ -345,13 +345,16 @@ animations = [ {
 radius = 16.0
 height = 48.0
 
+[sub_resource type="RectangleShape2D" id=80]
+extents = Vector2( 41.2703, 616.527 )
+
 [node name="level2" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -1554.0
-margin_top = -1415.0
-margin_right = 5574.0
-margin_bottom = 2131.0
+margin_left = -1304.0
+margin_top = -1456.0
+margin_right = 5824.0
+margin_bottom = 2090.0
 texture = ExtResource( 5 )
 expand = true
 
@@ -384,6 +387,20 @@ texture = ExtResource( 3 )
 position = Vector2( -42.6667, -28.1857 )
 texture = ExtResource( 3 )
 
+[node name="CloudLonely" type="Sprite" parent="CloudLonely2"]
+position = Vector2( 427.313, 8.13049 )
+scale = Vector2( 0.922634, 1.06642 )
+texture = ExtResource( 3 )
+
+[node name="CloudLonely3" type="Sprite" parent="CloudLonely2/CloudLonely"]
+position = Vector2( 70.0673, -50.8273 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 3 )
+
+[node name="CloudLonely4" type="Sprite" parent="CloudLonely2/CloudLonely/CloudLonely3"]
+position = Vector2( -105.101, -12.7068 )
+texture = ExtResource( 3 )
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
@@ -394,6 +411,12 @@ tile_data = PoolIntArray( 720959, 2, 0, 720963, 0, 0, 720964, 0, 0, 720965, 0, 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bottom border"]
 position = Vector2( 952, 787.5 )
+shape = SubResource( 60 )
+
+[node name="bottom border2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottom border2"]
+position = Vector2( 4376, 1456 )
 shape = SubResource( 60 )
 
 [node name="burger" type="Area2D" parent="."]
@@ -434,56 +457,6 @@ position = Vector2( 8, -40 )
 position = Vector2( 16, 56 )
 shape = SubResource( 62 )
 
-[node name="CloudLonely" type="Sprite" parent="."]
-visible = false
-position = Vector2( -1264, 658 )
-scale = Vector2( 10, 10 )
-texture = ExtResource( 3 )
-
-[node name="CloudLonely2" type="Sprite" parent="CloudLonely"]
-position = Vector2( 91.3, -3.19999 )
-texture = ExtResource( 3 )
-
-[node name="CloudLonely3" type="Sprite" parent="CloudLonely/CloudLonely2"]
-position = Vector2( 65.7, 9.1 )
-texture = ExtResource( 3 )
-
-[node name="CloudLonely4" type="Sprite" parent="CloudLonely/CloudLonely2/CloudLonely3"]
-position = Vector2( 86.5, -32.6 )
-texture = ExtResource( 3 )
-
-[node name="CloudLonely5" type="Sprite" parent="CloudLonely/CloudLonely2/CloudLonely3/CloudLonely4"]
-position = Vector2( -217.3, 75.8 )
-texture = ExtResource( 3 )
-
-[node name="CloudLonely6" type="Sprite" parent="CloudLonely/CloudLonely2/CloudLonely3/CloudLonely4/CloudLonely5"]
-position = Vector2( 175.7, 16 )
-texture = ExtResource( 3 )
-
-[node name="CloudLonely7" type="Sprite" parent="CloudLonely/CloudLonely2/CloudLonely3/CloudLonely4/CloudLonely5/CloudLonely6"]
-position = Vector2( 113.7, -29.9 )
-texture = ExtResource( 3 )
-
-[node name="CloudLonely8" type="Sprite" parent="CloudLonely/CloudLonely2/CloudLonely3/CloudLonely4/CloudLonely5/CloudLonely6/CloudLonely7"]
-position = Vector2( 28.3, -49.1 )
-texture = ExtResource( 3 )
-
-[node name="CloudLonely9" type="Sprite" parent="CloudLonely/CloudLonely2/CloudLonely3/CloudLonely4/CloudLonely5/CloudLonely6/CloudLonely7/CloudLonely8"]
-position = Vector2( 65.1, 34.7 )
-texture = ExtResource( 3 )
-
-[node name="CloudLonely10" type="Sprite" parent="CloudLonely/CloudLonely2/CloudLonely3/CloudLonely4/CloudLonely5/CloudLonely6/CloudLonely7/CloudLonely8/CloudLonely9"]
-position = Vector2( 83.8, 14.1 )
-texture = ExtResource( 3 )
-
-[node name="CloudLonely11" type="Sprite" parent="CloudLonely/CloudLonely2/CloudLonely3/CloudLonely4/CloudLonely5/CloudLonely6/CloudLonely7/CloudLonely8/CloudLonely9/CloudLonely10"]
-position = Vector2( -39.7, 40.7 )
-texture = ExtResource( 3 )
-
-[node name="CloudLonely12" type="Sprite" parent="CloudLonely/CloudLonely2/CloudLonely3/CloudLonely4/CloudLonely5/CloudLonely6/CloudLonely7/CloudLonely8/CloudLonely9/CloudLonely10/CloudLonely11"]
-position = Vector2( -84.4, -11.8 )
-texture = ExtResource( 3 )
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 autoplay = true
@@ -502,5 +475,15 @@ flip_h = true
 position = Vector2( 952, 328 )
 shape = SubResource( 73 )
 
+[node name="border2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border2"]
+position = Vector2( 2618.77, 822 )
+rotation = -3.14159
+scale = Vector2( 2.64679, -0.755847 )
+shape = SubResource( 80 )
+
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
+[connection signal="area_entered" from="bottom border2" to="Player" method="_on_bottom_border_area_entered"]
 [connection signal="area_entered" from="burger" to="Player" method="_on_burger_area_entered"]
+[connection signal="area_entered" from="border2" to="Player" method="_on_border2_area_entered"]
