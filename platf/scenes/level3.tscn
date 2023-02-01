@@ -351,6 +351,7 @@ extents = Vector2( 230, 32.5 )
 
 [sub_resource type="Animation" id=81]
 length = 0.001
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:position")
 tracks/0/interp = 1
@@ -561,18 +562,18 @@ flip_h = true
 position = Vector2( 952, 328 )
 shape = SubResource( 73 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="movingplat" type="KinematicBody2D" parent="."]
 
-[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+[node name="Sprite" type="Sprite" parent="movingplat"]
 position = Vector2( -161.5, 582.25 )
 scale = Vector2( 4.86458, 2.17742 )
 texture = ExtResource( 11 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="movingplat"]
 position = Vector2( -157, 582 )
 shape = SubResource( 80 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="movingplat"]
 anims/RESET = SubResource( 81 )
 anims/move = SubResource( 82 )
 
