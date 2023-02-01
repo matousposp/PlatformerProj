@@ -9,13 +9,13 @@ var motion = Vector2()
 var jumps = 0
 var bullet_speed = 10
 
-onready var thing = $Position2D
-var fry = preload('res://scenes/Projectile.tscn')
- 
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
+
+
 
 func _reset_jump():
 	JUMPFORCE = 460
@@ -49,9 +49,7 @@ func _physics_process(delta):
 		
 	elif Input.is_action_pressed("attack"):
 		$AnimatedSprite.play("attack")
-		var newfry = fry.instance()
-		fry.position = thing.position
-		get_tree().current_scene.add_child(newfry)
+		
 		
 	else:
 		motion.x = 0
@@ -71,12 +69,14 @@ func _on_bottom_border_area_entered(area):
 	get_tree().reload_current_scene() 
 
 
-func _on_enem_area_entered(area):
-	get_tree().reload_current_scene()
-
 
 func _on_portal1_area_entered(area):
 	get_tree().change_scene("res://scenes/level2.tscn")
 	
 func _on_burger_area_entered(area):
 	pass
+
+
+func _on_enemy1_area_entered(area):
+	get_tree().reload_current_scene()
+

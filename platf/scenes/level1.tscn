@@ -8,8 +8,8 @@
 [ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://audio/plains.wav" type="AudioStream" id=7]
 [ext_resource path="res://img/Green Portal Sprite Sheet.png" type="Texture" id=8]
-[ext_resource path="res://img/pear.png" type="Texture" id=9]
-[ext_resource path="res://scenes/enemy1.gd" type="Script" id=10]
+[ext_resource path="res://scripts/enemy1.gd" type="Script" id=10]
+[ext_resource path="res://img/pear.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=60]
 font_data = ExtResource( 6 )
@@ -336,33 +336,33 @@ animations = [ {
 radius = 16.0
 height = 48.0
 
-[sub_resource type="AtlasTexture" id=104]
-atlas = ExtResource( 9 )
+[sub_resource type="AtlasTexture" id=121]
+atlas = ExtResource( 12 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=105]
-atlas = ExtResource( 9 )
+[sub_resource type="AtlasTexture" id=122]
+atlas = ExtResource( 12 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=106]
-atlas = ExtResource( 9 )
+[sub_resource type="AtlasTexture" id=123]
+atlas = ExtResource( 12 )
 region = Rect2( 0, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=107]
-atlas = ExtResource( 9 )
+[sub_resource type="AtlasTexture" id=124]
+atlas = ExtResource( 12 )
 region = Rect2( 32, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=108]
-atlas = ExtResource( 9 )
+[sub_resource type="AtlasTexture" id=125]
+atlas = ExtResource( 12 )
 region = Rect2( 0, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=109]
-atlas = ExtResource( 9 )
+[sub_resource type="AtlasTexture" id=126]
+atlas = ExtResource( 12 )
 region = Rect2( 32, 64, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=110]
 animations = [ {
-"frames": [ SubResource( 104 ), SubResource( 105 ), SubResource( 106 ), SubResource( 107 ), SubResource( 108 ), SubResource( 109 ) ],
+"frames": [ SubResource( 121 ), SubResource( 122 ), SubResource( 123 ), SubResource( 124 ), SubResource( 125 ), SubResource( 126 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
@@ -455,10 +455,10 @@ tracks/2/keys = {
 [node name="level1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -1568.0
-margin_top = -904.0
-margin_right = 7957.0
-margin_bottom = 2642.0
+margin_left = -1640.0
+margin_top = -728.0
+margin_right = 7885.0
+margin_bottom = 2818.0
 texture = ExtResource( 2 )
 expand = true
 
@@ -583,8 +583,6 @@ position = Vector2( 8, -40 )
 position = Vector2( 17, 42 )
 shape = SubResource( 10 )
 
-[node name="Position2D" type="Position2D" parent="Player"]
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 autoplay = true
@@ -602,7 +600,7 @@ flip_h = true
 position = Vector2( 7334, 523 )
 shape = SubResource( 73 )
 
-[node name="enemy1" type="Area2D" parent="." groups=["enemy"]]
+[node name="enemy1" type="Area2D" parent="."]
 script = ExtResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemy1"]
@@ -621,3 +619,4 @@ anims/move = SubResource( 113 )
 
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
 [connection signal="area_entered" from="portal1" to="Player" method="_on_portal1_area_entered"]
+[connection signal="area_entered" from="enemy1" to="Player" method="_on_enemy1_area_entered"]
