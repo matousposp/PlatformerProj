@@ -713,6 +713,7 @@ script = ExtResource( 11 )
 position = Vector2( 2510, -334 )
 scale = Vector2( 2.03125, 2 )
 frames = SubResource( 132 )
+offset = Vector2( 300, -240 )
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wedoatinyamountoftomfoolery"]
