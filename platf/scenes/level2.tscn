@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=2]
+[gd_scene load_steps=89 format=2]
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=2]
@@ -8,9 +8,8 @@
 [ext_resource path="res://img/Green Portal Sprite Sheet.png" type="Texture" id=6]
 [ext_resource path="res://audio/plains.wav" type="AudioStream" id=7]
 [ext_resource path="res://img/borger.png" type="Texture" id=8]
-[ext_resource path="res://scripts/burger.gd" type="Script" id=9]
 [ext_resource path="res://img/brick.PNG" type="Texture" id=10]
-[ext_resource path="res://scenes/moving plat.gd" type="Script" id=11]
+[ext_resource path="res://scripts/moving plat.gd" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=60]
 extents = Vector2( 1424, 4.5 )
@@ -493,7 +492,6 @@ position = Vector2( 4376, 1456 )
 shape = SubResource( 60 )
 
 [node name="burger" type="Area2D" parent="."]
-script = ExtResource( 9 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="burger"]
 position = Vector2( 1952, 648 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=2]
@@ -8,11 +8,30 @@
 [ext_resource path="res://img/Green Portal Sprite Sheet.png" type="Texture" id=6]
 [ext_resource path="res://audio/plains.wav" type="AudioStream" id=7]
 [ext_resource path="res://img/borger.png" type="Texture" id=8]
-[ext_resource path="res://scripts/burger.gd" type="Script" id=9]
+[ext_resource path="res://scripts/movingplat.gd" type="Script" id=9]
 [ext_resource path="res://img/movingplatf.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=60]
 extents = Vector2( 2500, 4.5 )
+
+[sub_resource type="GDScript" id=83]
+script/source = "extends Area2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$AnimatedSprite.play(\"idle_burger\")
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
 
 [sub_resource type="AtlasTexture" id=75]
 atlas = ExtResource( 8 )
@@ -36,6 +55,82 @@ animations = [ {
 
 [sub_resource type="CircleShape2D" id=79]
 radius = 16.0
+
+[sub_resource type="RectangleShape2D" id=80]
+extents = Vector2( 230, 32.5 )
+
+[sub_resource type="Animation" id=81]
+length = 0.001
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -161.5, 582.25 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -149, 561 ) ]
+}
+
+[sub_resource type="Animation" id=84]
+resource_name = "elevator"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -151.991, 563 ), Vector2( -151.991, 2650 ), Vector2( -151.991, 563 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -149, 561 ), Vector2( -149, 2650 ), Vector2( -149, 561 ) ]
+}
+
+[sub_resource type="Animation" id=82]
+resource_name = "move"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -152, 563 ), Vector2( -161, 2669 ), Vector2( -150, 566 ) ]
+}
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 4 )
@@ -346,65 +441,6 @@ animations = [ {
 radius = 16.0
 height = 48.0
 
-[sub_resource type="RectangleShape2D" id=80]
-extents = Vector2( 230, 32.5 )
-
-[sub_resource type="Animation" id=81]
-length = 0.001
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -161.5, 582.25 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CollisionShape2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -157, 582 ) ]
-}
-
-[sub_resource type="Animation" id=82]
-resource_name = "move"
-length = 1.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1.1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -152, 563 ), Vector2( -161, 2669 ), Vector2( -150, 566 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CollisionShape2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 1.1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -149, 561 ), Vector2( -163, 2672 ), Vector2( -152, 563 ) ]
-}
-
 [node name="level3" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -457,7 +493,7 @@ position = Vector2( 2091, 3008 )
 shape = SubResource( 60 )
 
 [node name="burger" type="Area2D" parent="."]
-script = ExtResource( 9 )
+script = SubResource( 83 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="burger"]
 position = Vector2( 1952, 648 )
@@ -468,6 +504,26 @@ animation = "idle_burger"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="burger"]
 position = Vector2( 1952, 648 )
 shape = SubResource( 79 )
+
+[node name="movingplat" type="KinematicBody2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="movingplat"]
+position = Vector2( -161.5, 582.25 )
+scale = Vector2( 4.86458, 2.17742 )
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="movingplat"]
+position = Vector2( -149, 561 )
+shape = SubResource( 80 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="movingplat"]
+anims/RESET = SubResource( 81 )
+anims/elevator = SubResource( 84 )
+anims/move = SubResource( 82 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 script = ExtResource( 1 )
@@ -561,21 +617,6 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portal1"]
 position = Vector2( 952, 328 )
 shape = SubResource( 73 )
-
-[node name="movingplat" type="KinematicBody2D" parent="."]
-
-[node name="Sprite" type="Sprite" parent="movingplat"]
-position = Vector2( -161.5, 582.25 )
-scale = Vector2( 4.86458, 2.17742 )
-texture = ExtResource( 11 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="movingplat"]
-position = Vector2( -157, 582 )
-shape = SubResource( 80 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="movingplat"]
-anims/RESET = SubResource( 81 )
-anims/move = SubResource( 82 )
 
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
 [connection signal="area_entered" from="burger" to="Player" method="_on_burger_area_entered"]
