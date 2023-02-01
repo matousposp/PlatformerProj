@@ -9,7 +9,7 @@
 [ext_resource path="res://audio/plains.wav" type="AudioStream" id=7]
 [ext_resource path="res://img/Green Portal Sprite Sheet.png" type="Texture" id=8]
 [ext_resource path="res://img/pear.png" type="Texture" id=9]
-[ext_resource path="res://scenes/enemy1.gd" type="Script" id=10]
+[ext_resource path="res://scripts/enemy1.gd" type="Script" id=10]
 
 [sub_resource type="DynamicFont" id=60]
 font_data = ExtResource( 6 )
