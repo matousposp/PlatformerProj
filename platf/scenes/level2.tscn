@@ -407,7 +407,6 @@ texture = ExtResource( 3 )
 
 [node name="CloudLonely3" type="Sprite" parent="CloudLonely2/CloudLonely"]
 position = Vector2( 67.9653, -48.2859 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 3 )
 
 [node name="CloudLonely4" type="Sprite" parent="CloudLonely2/CloudLonely/CloudLonely3"]
