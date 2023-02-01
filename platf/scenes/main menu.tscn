@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://scripts/main menu.gd" type="Script" id=1]
+[ext_resource path="res://MAIN scripts/main menu.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://img/skyy.PNG" type="Texture" id=3]
 [ext_resource path="res://img/title.png" type="Texture" id=4]

@@ -82,5 +82,8 @@ func _on_enemy1_area_entered(area):
 
 
 
-func _on_border2_area_entered(area):
-	get_tree().reload_current_scene()
+
+
+
+func _on_portal2_area_entered(area):
+	get_tree().change_scene("res://scenes/level3.tscn")
