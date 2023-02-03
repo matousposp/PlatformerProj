@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=89 format=2]
+=======
+[gd_scene load_steps=90 format=2]
+>>>>>>> e27a65628fb4941fda06c64c819f6cc881798fc9
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=2]
@@ -8,8 +12,12 @@
 [ext_resource path="res://img/Green Portal Sprite Sheet.png" type="Texture" id=6]
 [ext_resource path="res://audio/plains.wav" type="AudioStream" id=7]
 [ext_resource path="res://img/borger.png" type="Texture" id=8]
+<<<<<<< HEAD
 [ext_resource path="res://img/brick.PNG" type="Texture" id=10]
 [ext_resource path="res://scripts/moving plat.gd" type="Script" id=11]
+=======
+[ext_resource path="res://img/movingplatf.png" type="Texture" id=11]
+>>>>>>> e27a65628fb4941fda06c64c819f6cc881798fc9
 
 [sub_resource type="RectangleShape2D" id=60]
 extents = Vector2( 1424, 4.5 )
@@ -503,9 +511,13 @@ animation = "idle_burger"
 position = Vector2( 1952, 648 )
 shape = SubResource( 79 )
 
+<<<<<<< HEAD
 [node name="moving plat" type="KinematicBody2D" parent="."]
 position = Vector2( 3352, 200 )
 script = ExtResource( 11 )
+=======
+[node name="movingplat" type="KinematicBody2D" parent="."]
+>>>>>>> e27a65628fb4941fda06c64c819f6cc881798fc9
 
 [node name="Brick" type="Sprite" parent="moving plat"]
 texture = ExtResource( 10 )
@@ -516,6 +528,19 @@ shape = SubResource( 80 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="moving plat"]
 anims/RESET = SubResource( 81 )
 anims/moveplay = SubResource( 82 )
+
+[node name="Sprite" type="Sprite" parent="movingplat"]
+position = Vector2( -161.5, 582.25 )
+scale = Vector2( 4.86458, 2.17742 )
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="movingplat"]
+position = Vector2( -157, 582 )
+shape = SubResource( 80 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="movingplat"]
+anims/RESET = SubResource( 81 )
+anims/move = SubResource( 82 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 script = ExtResource( 1 )
@@ -558,7 +583,11 @@ frames = SubResource( 74 )
 position = Vector2( 2936, -696 )
 shape = SubResource( 73 )
 
+<<<<<<< HEAD
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
 [connection signal="area_entered" from="bottom border2" to="Player" method="_on_bottom_border_area_entered"]
 [connection signal="area_entered" from="burger" to="Player" method="_on_burger_area_entered"]
 [connection signal="area_entered" from="portal2" to="Player" method="_on_portal2_area_entered"]
+=======
+[node name="movingplat" type="KinematicBody2D" parent="."]
+>>>>>>> e27a65628fb4941fda06c64c819f6cc881798fc9
