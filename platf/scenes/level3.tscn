@@ -550,12 +550,12 @@ autoplay = true
 script = SubResource( 69 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="portal2"]
-position = Vector2( 2936, -704 )
-scale = Vector2( 2.25, 2 )
+position = Vector2( 1594, 1937.5 )
+scale = Vector2( 24.4375, 37.7969 )
 frames = SubResource( 74 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portal2"]
-position = Vector2( 2936, -696 )
+position = Vector2( 2141, 1097 )
 shape = SubResource( 73 )
 
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
