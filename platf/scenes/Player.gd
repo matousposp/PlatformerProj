@@ -56,6 +56,8 @@ func _physics_process(delta):
 		$AnimatedSprite.play("default")
 		
 	if is_on_floor():
+		if get_floor_velocity().y < 0:
+			motion.y += get_floor_velocity()
 		if Input.is_action_just_pressed("jump"):
 			motion.y = -JUMPFORCE
 
