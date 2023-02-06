@@ -445,3 +445,5 @@ anims/move = SubResource( 45 )
 position = Vector2( -2, -21 )
 
 [node name="Sprite" type="Sprite" parent="movingplat4"]
+
+[connection signal="input_event" from="Player" to="moving platform" method="_on_Player_input_event"]
