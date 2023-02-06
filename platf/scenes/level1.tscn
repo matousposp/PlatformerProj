@@ -89,7 +89,7 @@ region = Rect2( 128, 224, 32, 32 )
 atlas = ExtResource( 4 )
 region = Rect2( 160, 224, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=107]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 32, 32 )
 
@@ -248,7 +248,7 @@ animations = [ {
 "name": "attack",
 "speed": 30.0
 }, {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 107 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "default",
 "speed": 12.0
