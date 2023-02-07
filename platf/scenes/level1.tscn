@@ -493,10 +493,10 @@ tile_data = PoolIntArray( 262226, 0, 0, 262227, 0, 0, 262228, 0, 0, 262229, 0, 0
 
 [node name="Label" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0.290196 )
-margin_left = 192.0
-margin_top = 192.0
-margin_right = 472.0
-margin_bottom = 327.0
+margin_left = 668.0
+margin_top = 185.0
+margin_right = 948.0
+margin_bottom = 320.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 60 )
 text = "Move - Arrow Keys
