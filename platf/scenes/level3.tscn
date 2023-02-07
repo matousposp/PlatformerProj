@@ -10,7 +10,6 @@
 [ext_resource path="res://scripts/moving platform2.gd" type="Script" id=8]
 [ext_resource path="res://scripts/movingplat3.gd" type="Script" id=9]
 
-
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 4 )
 region = Rect2( 96, 160, 32, 32 )
@@ -446,5 +445,3 @@ anims/move = SubResource( 45 )
 position = Vector2( -2, -21 )
 
 [node name="Sprite" type="Sprite" parent="movingplat4"]
-
-[connection signal="input_event" from="Player" to="moving platform" method="_on_Player_input_event"]
