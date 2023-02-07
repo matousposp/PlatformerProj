@@ -570,6 +570,7 @@ animation = "endroll"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 25, 2 )
 shape = SubResource( 10 )
+one_way_collision_margin = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true

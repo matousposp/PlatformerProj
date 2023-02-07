@@ -354,7 +354,7 @@ tracks/1/keys = {
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -964.0
-margin_top = -315.0
+margin_top = -665.0
 margin_right = 2794.0
 margin_bottom = 2488.0
 texture = ExtResource( 1 )
