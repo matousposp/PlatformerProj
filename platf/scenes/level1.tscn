@@ -1,10 +1,9 @@
-[gd_scene load_steps=92 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=1]
-[ext_resource path="res://img/sky_lightened.png" type="Texture" id=2]
+[ext_resource path="res://img/dawnbackground.png" type="Texture" id=2]
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=3]
 [ext_resource path="res://img/player.png" type="Texture" id=4]
-[ext_resource path="res://img/cloud_lonely.png" type="Texture" id=5]
 [ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://audio/plains.wav" type="AudioStream" id=7]
 [ext_resource path="res://img/Green Portal Sprite Sheet.png" type="Texture" id=8]
@@ -455,61 +454,36 @@ tracks/2/keys = {
 [node name="level1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -1568.0
-margin_top = -752.0
-margin_right = 7957.0
-margin_bottom = 2794.0
+margin_left = -640.0
+margin_top = -472.0
+margin_right = 2600.0
+margin_bottom = 2176.0
 texture = ExtResource( 2 )
 expand = true
 
-[node name="CloudLonely" type="Sprite" parent="TextureRect"]
-position = Vector2( 306, 1473 )
-scale = Vector2( 10, 10 )
-texture = ExtResource( 5 )
+[node name="TextureRect4" type="TextureRect" parent="."]
+margin_left = -2992.0
+margin_top = -477.0
+margin_right = 248.0
+margin_bottom = 2184.0
+texture = ExtResource( 2 )
+expand = true
 
-[node name="CloudLonely2" type="Sprite" parent="TextureRect/CloudLonely"]
-position = Vector2( 91.3, -3.19999 )
-texture = ExtResource( 5 )
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 2597.0
+margin_top = -471.0
+margin_right = 5837.0
+margin_bottom = 2192.0
+texture = ExtResource( 2 )
+expand = true
 
-[node name="CloudLonely3" type="Sprite" parent="TextureRect/CloudLonely/CloudLonely2"]
-position = Vector2( 65.7, 9.1 )
-texture = ExtResource( 5 )
-
-[node name="CloudLonely4" type="Sprite" parent="TextureRect/CloudLonely/CloudLonely2/CloudLonely3"]
-position = Vector2( 86.5, -32.6 )
-texture = ExtResource( 5 )
-
-[node name="CloudLonely5" type="Sprite" parent="TextureRect/CloudLonely/CloudLonely2/CloudLonely3/CloudLonely4"]
-position = Vector2( -217.3, 75.8 )
-texture = ExtResource( 5 )
-
-[node name="CloudLonely6" type="Sprite" parent="TextureRect/CloudLonely/CloudLonely2/CloudLonely3/CloudLonely4/CloudLonely5"]
-position = Vector2( 175.7, 16 )
-texture = ExtResource( 5 )
-
-[node name="CloudLonely7" type="Sprite" parent="TextureRect/CloudLonely/CloudLonely2/CloudLonely3/CloudLonely4/CloudLonely5/CloudLonely6"]
-position = Vector2( 113.7, -29.9 )
-texture = ExtResource( 5 )
-
-[node name="CloudLonely8" type="Sprite" parent="TextureRect/CloudLonely/CloudLonely2/CloudLonely3/CloudLonely4/CloudLonely5/CloudLonely6/CloudLonely7"]
-position = Vector2( 28.3, -49.1 )
-texture = ExtResource( 5 )
-
-[node name="CloudLonely9" type="Sprite" parent="TextureRect/CloudLonely/CloudLonely2/CloudLonely3/CloudLonely4/CloudLonely5/CloudLonely6/CloudLonely7/CloudLonely8"]
-position = Vector2( 65.1, 34.7 )
-texture = ExtResource( 5 )
-
-[node name="CloudLonely10" type="Sprite" parent="TextureRect/CloudLonely/CloudLonely2/CloudLonely3/CloudLonely4/CloudLonely5/CloudLonely6/CloudLonely7/CloudLonely8/CloudLonely9"]
-position = Vector2( 87.5, 19.3 )
-texture = ExtResource( 5 )
-
-[node name="CloudLonely11" type="Sprite" parent="TextureRect/CloudLonely/CloudLonely2/CloudLonely3/CloudLonely4/CloudLonely5/CloudLonely6/CloudLonely7/CloudLonely8/CloudLonely9/CloudLonely10"]
-position = Vector2( -39.7, 40.7 )
-texture = ExtResource( 5 )
-
-[node name="CloudLonely12" type="Sprite" parent="TextureRect/CloudLonely/CloudLonely2/CloudLonely3/CloudLonely4/CloudLonely5/CloudLonely6/CloudLonely7/CloudLonely8/CloudLonely9/CloudLonely10/CloudLonely11"]
-position = Vector2( -84.4, -11.8 )
-texture = ExtResource( 5 )
+[node name="TextureRect3" type="TextureRect" parent="."]
+margin_left = 5744.0
+margin_top = -472.0
+margin_right = 8984.0
+margin_bottom = 2200.0
+texture = ExtResource( 2 )
+expand = true
 
 [node name="TileSolids" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )

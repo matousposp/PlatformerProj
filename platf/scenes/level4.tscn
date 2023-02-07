@@ -1,14 +1,15 @@
-[gd_scene load_steps=97 format=2]
+[gd_scene load_steps=109 format=2]
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://img/Grassy_Mountains_preview_fullcolor.png" type="Texture" id=3]
 [ext_resource path="res://img/player.png" type="Texture" id=4]
 [ext_resource path="res://img/Leprechaun_Spritesheet.png" type="Texture" id=5]
-[ext_resource path="res://scenes/enemy2.gd" type="Script" id=6]
-[ext_resource path="res://scenes/enemy3.gd" type="Script" id=7]
+[ext_resource path="res://scripts/enemy2.gd" type="Script" id=6]
+[ext_resource path="res://scripts/enemy3.gd" type="Script" id=7]
 [ext_resource path="res://img/biggestbird.png" type="Texture" id=8]
-[ext_resource path="res://scenes/enemy4.gd" type="Script" id=9]
+[ext_resource path="res://scripts/enemy4.gd" type="Script" id=9]
+[ext_resource path="res://img/Green Portal Sprite Sheet.png" type="Texture" id=10]
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 4 )
@@ -620,6 +621,69 @@ tracks/2/keys = {
 "values": [ Vector2( 4400, 440 ), Vector2( 4136, 248 ), Vector2( 4400, 440 ) ]
 }
 
+[sub_resource type="GDScript" id=156]
+script/source = "extends Area2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$AnimatedSprite.play(\"default\")
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 10 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 10 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 10 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 10 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 10 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 10 )
+region = Rect2( 384, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 10 )
+region = Rect2( 448, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=157]
+animations = [ {
+"frames": [ SubResource( 70 ), SubResource( 72 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=158]
+radius = 16.0
+height = 48.0
+
 [node name="level4" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -741,6 +805,19 @@ shape = SubResource( 153 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="enemy4"]
 anims/RESET = SubResource( 154 )
 anims/fly = SubResource( 155 )
+
+[node name="portal1" type="Area2D" parent="."]
+script = SubResource( 156 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="portal1"]
+position = Vector2( 4800, 440 )
+scale = Vector2( 2.25, 2 )
+frames = SubResource( 157 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portal1"]
+position = Vector2( 4800, 449 )
+shape = SubResource( 158 )
 
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
 [connection signal="area_entered" from="enemy2" to="Player" method="_on_enemy2_area_entered"]
