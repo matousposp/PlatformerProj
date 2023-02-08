@@ -1,11 +1,18 @@
+<<<<<<< HEAD
 [gd_scene load_steps=75 format=2]
+=======
+[gd_scene load_steps=64 format=2]
+>>>>>>> parent of 99d6347 (level 4)
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://img/Grassy_Mountains_preview_fullcolor.png" type="Texture" id=3]
 [ext_resource path="res://img/player.png" type="Texture" id=4]
+<<<<<<< HEAD
 [ext_resource path="res://scenes/lepre2.gd" type="Script" id=5]
 [ext_resource path="res://img/Leprechaun_Spritesheet.png" type="Texture" id=6]
+=======
+>>>>>>> parent of 99d6347 (level 4)
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 4 )
@@ -266,6 +273,7 @@ height = 16.0
 [sub_resource type="RectangleShape2D" id=108]
 extents = Vector2( 2359.26, 2.5 )
 
+<<<<<<< HEAD
 [sub_resource type="AtlasTexture" id=109]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 32, 32 )
@@ -379,6 +387,8 @@ tracks/2/keys = {
 "values": [ Vector2( 992, 360 ), Vector2( 700, 360 ), Vector2( 992, 360 ) ]
 }
 
+=======
+>>>>>>> parent of 99d6347 (level 4)
 [node name="level4" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -451,6 +461,7 @@ position = Vector2( 1792.38, 684.341 )
 scale = Vector2( 1.90245, -1.73646 )
 shape = SubResource( 108 )
 
+<<<<<<< HEAD
 [node name="lepre2" type="Area2D" parent="."]
 script = ExtResource( 5 )
 
@@ -469,3 +480,6 @@ anims/move = SubResource( 117 )
 
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
 [connection signal="area_entered" from="lepre2" to="Player" method="_on_lepre2_area_entered"]
+=======
+[connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
+>>>>>>> parent of 99d6347 (level 4)
