@@ -115,21 +115,6 @@ text = "Quit"
 position = Vector2( 512, 256 )
 texture = ExtResource( 4 )
 
-[node name="Mainmenuimg" type="Sprite" parent="."]
-visible = false
-position = Vector2( 850, 421 )
-rotation = 0.546288
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 5 )
-
-[node name="Mainmenuimg2" type="Sprite" parent="."]
-visible = false
-position = Vector2( 89, 347 )
-rotation = 0.546288
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 5 )
-flip_h = true
-
 [node name="Mainmenuimg3" type="Sprite" parent="."]
 visible = false
 position = Vector2( 289, 441 )
