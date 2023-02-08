@@ -1,9 +1,11 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://img/Grassy_Mountains_preview_fullcolor.png" type="Texture" id=3]
 [ext_resource path="res://img/player.png" type="Texture" id=4]
+[ext_resource path="res://scenes/lepre2.gd" type="Script" id=5]
+[ext_resource path="res://img/Leprechaun_Spritesheet.png" type="Texture" id=6]
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 4 )
@@ -264,6 +266,119 @@ height = 16.0
 [sub_resource type="RectangleShape2D" id=108]
 extents = Vector2( 2359.26, 2.5 )
 
+[sub_resource type="AtlasTexture" id=109]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=110]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=111]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=112]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=113]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=114]
+animations = [ {
+"frames": [ SubResource( 109 ), SubResource( 110 ), SubResource( 111 ), SubResource( 112 ), SubResource( 113 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=115]
+radius = 24.0
+height = 0.0
+
+[sub_resource type="Animation" id=116]
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1048, 416 ), Vector2( 700, 416 ), Vector2( 1048, 416 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1048, 416 ), Vector2( 704, 424 ), Vector2( 1048, 416 ) ]
+}
+
+[sub_resource type="Animation" id=117]
+resource_name = "move"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 992, 352 ), Vector2( 700, 352 ), Vector2( 992, 352 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 992, 360 ), Vector2( 700, 360 ), Vector2( 992, 360 ) ]
+}
+
 [node name="level4" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -336,4 +451,21 @@ position = Vector2( 1792.38, 684.341 )
 scale = Vector2( 1.90245, -1.73646 )
 shape = SubResource( 108 )
 
+[node name="lepre2" type="Area2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="lepre2"]
+position = Vector2( 700, 416 )
+scale = Vector2( 2.03125, 2 )
+frames = SubResource( 114 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="lepre2"]
+position = Vector2( 704, 424 )
+shape = SubResource( 115 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lepre2"]
+anims/RESET = SubResource( 116 )
+anims/move = SubResource( 117 )
+
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
+[connection signal="area_entered" from="lepre2" to="Player" method="_on_lepre2_area_entered"]
