@@ -555,7 +555,7 @@ text = "APPLE???"
 [node name="bottom border" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bottom border"]
-position = Vector2( 2951, 1693.75 )
+position = Vector2( 3157, 1513 )
 shape = SubResource( 11 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
