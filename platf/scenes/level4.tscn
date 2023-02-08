@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [gd_scene load_steps=75 format=2]
 =======
 [gd_scene load_steps=64 format=2]
@@ -7,11 +8,15 @@
 =======
 [gd_scene load_steps=64 format=2]
 >>>>>>> parent of 99d6347 (level 4)
+=======
+[gd_scene load_steps=86 format=2]
+>>>>>>> parent of f1c46a1 (birb)
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://img/Grassy_Mountains_preview_fullcolor.png" type="Texture" id=3]
 [ext_resource path="res://img/player.png" type="Texture" id=4]
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 [ext_resource path="res://scenes/lepre2.gd" type="Script" id=5]
@@ -20,6 +25,11 @@
 >>>>>>> parent of 99d6347 (level 4)
 =======
 >>>>>>> parent of 99d6347 (level 4)
+=======
+[ext_resource path="res://img/Leprechaun_Spritesheet.png" type="Texture" id=5]
+[ext_resource path="res://scenes/enemy2.gd" type="Script" id=6]
+[ext_resource path="res://scenes/enemy3.gd" type="Script" id=7]
+>>>>>>> parent of f1c46a1 (birb)
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 4 )
@@ -395,10 +405,165 @@ tracks/2/keys = {
 "values": [ Vector2( 992, 360 ), Vector2( 700, 360 ), Vector2( 992, 360 ) ]
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 99d6347 (level 4)
 =======
 >>>>>>> parent of 99d6347 (level 4)
+=======
+[sub_resource type="Animation" id=137]
+resource_name = "runnn"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1056, 424 ), Vector2( 800, 424 ), Vector2( 1056, 424 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1056, 424 ), Vector2( 800, 424 ), Vector2( 1056, 424 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=138]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=139]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=140]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=141]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=142]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=143]
+animations = [ {
+"frames": [ SubResource( 138 ), SubResource( 139 ), SubResource( 140 ), SubResource( 141 ), SubResource( 142 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=144]
+radius = 16.0
+
+[sub_resource type="Animation" id=145]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2728, 552 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2728, 552 ) ]
+}
+
+[sub_resource type="Animation" id=146]
+resource_name = "Run"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2728, 552 ), Vector2( 3120, 552 ), Vector2( 2728, 552 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2728, 552 ), Vector2( 3120, 552 ), Vector2( 2728, 552 ) ]
+}
+
+>>>>>>> parent of f1c46a1 (birb)
 [node name="level4" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -485,9 +650,32 @@ frames = SubResource( 114 )
 position = Vector2( 704, 424 )
 shape = SubResource( 115 )
 
+<<<<<<< HEAD
 [node name="AnimationPlayer" type="AnimationPlayer" parent="lepre2"]
 anims/RESET = SubResource( 116 )
 anims/move = SubResource( 117 )
+=======
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy2"]
+anims/RESET = SubResource( 129 )
+anims/move = SubResource( 130 )
+anims/runnn = SubResource( 137 )
+
+[node name="enemy3" type="Area2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="enemy3"]
+position = Vector2( 2728, 552 )
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 143 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy3"]
+position = Vector2( 2728, 552 )
+shape = SubResource( 144 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy3"]
+anims/RESET = SubResource( 145 )
+anims/Run = SubResource( 146 )
+>>>>>>> parent of f1c46a1 (birb)
 
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
 [connection signal="area_entered" from="lepre2" to="Player" method="_on_lepre2_area_entered"]
