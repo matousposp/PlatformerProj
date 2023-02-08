@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [gd_scene load_steps=75 format=2]
 =======
 [gd_scene load_steps=64 format=2]
@@ -8,6 +9,9 @@
 =======
 [gd_scene load_steps=64 format=2]
 >>>>>>> parent of 99d6347 (level 4)
+=======
+[gd_scene load_steps=86 format=2]
+>>>>>>> parent of f1c46a1 (birb)
 =======
 [gd_scene load_steps=86 format=2]
 >>>>>>> parent of f1c46a1 (birb)
@@ -29,6 +33,9 @@
 [ext_resource path="res://img/Leprechaun_Spritesheet.png" type="Texture" id=5]
 [ext_resource path="res://scenes/enemy2.gd" type="Script" id=6]
 [ext_resource path="res://scenes/enemy3.gd" type="Script" id=7]
+<<<<<<< HEAD
+>>>>>>> parent of f1c46a1 (birb)
+=======
 >>>>>>> parent of f1c46a1 (birb)
 
 [sub_resource type="AtlasTexture" id=42]
@@ -563,6 +570,9 @@ tracks/2/keys = {
 "values": [ Vector2( 2728, 552 ), Vector2( 3120, 552 ), Vector2( 2728, 552 ) ]
 }
 
+<<<<<<< HEAD
+>>>>>>> parent of f1c46a1 (birb)
+=======
 >>>>>>> parent of f1c46a1 (birb)
 [node name="level4" type="Node2D"]
 
@@ -675,6 +685,9 @@ shape = SubResource( 144 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="enemy3"]
 anims/RESET = SubResource( 145 )
 anims/Run = SubResource( 146 )
+<<<<<<< HEAD
+>>>>>>> parent of f1c46a1 (birb)
+=======
 >>>>>>> parent of f1c46a1 (birb)
 
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
