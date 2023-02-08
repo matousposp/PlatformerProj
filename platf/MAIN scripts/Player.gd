@@ -84,8 +84,12 @@ func _on_portal2_area_entered(area):
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 func _on_lepre2_area_entered(area):
 	get_tree().reload_current_scene()
+=======
+
+>>>>>>> parent of 99d6347 (level 4)
 =======
 
 >>>>>>> parent of 99d6347 (level 4)
