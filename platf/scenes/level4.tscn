@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [gd_scene load_steps=75 format=2]
 =======
 [gd_scene load_steps=64 format=2]
@@ -9,6 +10,9 @@
 =======
 [gd_scene load_steps=64 format=2]
 >>>>>>> parent of 99d6347 (level 4)
+=======
+[gd_scene load_steps=86 format=2]
+>>>>>>> parent of f1c46a1 (birb)
 =======
 [gd_scene load_steps=86 format=2]
 >>>>>>> parent of f1c46a1 (birb)
@@ -34,6 +38,9 @@
 [ext_resource path="res://scenes/enemy2.gd" type="Script" id=6]
 [ext_resource path="res://scenes/enemy3.gd" type="Script" id=7]
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of f1c46a1 (birb)
+=======
 >>>>>>> parent of f1c46a1 (birb)
 =======
 >>>>>>> parent of f1c46a1 (birb)
@@ -571,6 +578,9 @@ tracks/2/keys = {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of f1c46a1 (birb)
+=======
 >>>>>>> parent of f1c46a1 (birb)
 =======
 >>>>>>> parent of f1c46a1 (birb)
@@ -686,6 +696,9 @@ shape = SubResource( 144 )
 anims/RESET = SubResource( 145 )
 anims/Run = SubResource( 146 )
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of f1c46a1 (birb)
+=======
 >>>>>>> parent of f1c46a1 (birb)
 =======
 >>>>>>> parent of f1c46a1 (birb)
