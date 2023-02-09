@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://tilemaps/cloudtiles.tres" type="TileSet" id=1]
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=2]
@@ -375,6 +375,9 @@ tracks/2/keys = {
 "values": [ Vector2( 680, 256 ), Vector2( 250, 256 ), Vector2( 680, 256 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=121]
+extents = Vector2( 2174.5, 9.5 )
+
 [node name="level5" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -452,3 +455,11 @@ shape = SubResource( 118 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="leprechaun1"]
 anims/RESET = SubResource( 119 )
 anims/run = SubResource( 120 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1123.5, 695 )
+shape = SubResource( 121 )
+
+[connection signal="area_entered" from="Area2D" to="Player" method="_on_Area2D_area_entered"]
