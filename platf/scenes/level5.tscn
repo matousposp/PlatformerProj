@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://tilemaps/cloudtiles.tres" type="TileSet" id=1]
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://img/Leprechaun_Spritesheet.png" type="Texture" id=6]
 [ext_resource path="res://scenes/leprechaun1.gd" type="Script" id=7]
 [ext_resource path="res://img/thron.png" type="Texture" id=8]
+[ext_resource path="res://audio/rainbowtheme.wav" type="AudioStream" id=9]
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 3 )
@@ -394,9 +395,9 @@ texture = ExtResource( 4 )
 expand = true
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-margin_left = 937.0
+margin_left = 935.0
 margin_top = -728.0
-margin_right = 4065.0
+margin_right = 4063.0
 margin_bottom = 888.0
 texture = ExtResource( 4 )
 expand = true
@@ -507,6 +508,10 @@ shape = SubResource( 123 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 1398, 700 )
 shape = SubResource( 122 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
 
 [connection signal="area_entered" from="leprechaun1" to="Player" method="_on_leprechaun1_area_entered"]
 [connection signal="area_entered" from="obstacle1" to="Player" method="_on_obstacle1_area_entered"]
