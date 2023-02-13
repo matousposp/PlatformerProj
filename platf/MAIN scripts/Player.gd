@@ -78,6 +78,7 @@ func _on_portal1_area_entered(area):
 func _on_burger_area_entered(area):
 	pass
 
+<<<<<<< Updated upstream
 
 
 
@@ -87,6 +88,8 @@ func _on_burger_area_entered(area):
 
 
 
+=======
+>>>>>>> Stashed changes
 func _on_portal2_area_entered(area):
 	get_tree().change_scene("res://scenes/level3.tscn")
 

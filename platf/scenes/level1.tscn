@@ -573,7 +573,6 @@ shape = SubResource( 10 )
 one_way_collision_margin = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-current = true
 smoothing_enabled = true
 smoothing_speed = 8.0
 
