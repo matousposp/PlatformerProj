@@ -729,17 +729,17 @@ anims/move = SubResource( 53 )
 position = Vector2( 1702, 495 )
 shape = SubResource( 49 )
 
-[node name="portal1" type="Area2D" parent="."]
+[node name="portal3" type="Area2D" parent="."]
 position = Vector2( 1420, -40 )
 script = SubResource( 73 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="portal1"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="portal3"]
 position = Vector2( -1, -10 )
 scale = Vector2( 2.25, 2 )
 frames = SubResource( 74 )
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="portal1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portal3"]
 shape = SubResource( 75 )
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -748,4 +748,5 @@ shape = SubResource( 75 )
 position = Vector2( 1884, 2413.5 )
 shape = SubResource( 54 )
 
+[connection signal="area_entered" from="portal3" to="Player" method="_on_portal3_area_entered"]
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_Area2D_body_entered"]
