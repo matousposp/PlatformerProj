@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=2]
+[gd_scene load_steps=92 format=2]
 
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://img/sky_lightened.png" type="Texture" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://audio/plains.wav" type="AudioStream" id=7]
 [ext_resource path="res://img/Green Portal Sprite Sheet.png" type="Texture" id=8]
-[ext_resource path="res://scenes/pear.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scripts/enemy1.gd" type="Script" id=10]
+[ext_resource path="res://img/pear.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=60]
 font_data = ExtResource( 6 )
@@ -272,10 +273,6 @@ animations = [ {
 radius = 24.0
 height = 16.0
 
-[sub_resource type="CapsuleShape2D" id=127]
-radius = 24.0
-height = 16.0
-
 [sub_resource type="GDScript" id=71]
 script/source = "extends Area2D
 
@@ -338,6 +335,122 @@ animations = [ {
 [sub_resource type="CapsuleShape2D" id=73]
 radius = 16.0
 height = 48.0
+
+[sub_resource type="AtlasTexture" id=121]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=122]
+atlas = ExtResource( 12 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=123]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=124]
+atlas = ExtResource( 12 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=125]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=126]
+atlas = ExtResource( 12 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=110]
+animations = [ {
+"frames": [ SubResource( 121 ), SubResource( 122 ), SubResource( 123 ), SubResource( 124 ), SubResource( 125 ), SubResource( 126 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=111]
+radius = 24.0
+height = 0.0
+
+[sub_resource type="Animation" id=112]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 992, 352 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 992, 360 ) ]
+}
+
+[sub_resource type="Animation" id=113]
+resource_name = "move"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 992, 352 ), Vector2( 700, 352 ), Vector2( 992, 352 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 992, 360 ), Vector2( 700, 360 ), Vector2( 992, 360 ) ]
+}
 
 [node name="level1" type="Node2D"]
 
@@ -465,10 +578,11 @@ smoothing_enabled = true
 smoothing_speed = 8.0
 
 [node name="Area2D" type="Area2D" parent="Player"]
+position = Vector2( 8, -40 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
-position = Vector2( 25, 2 )
-shape = SubResource( 127 )
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2( 17, 42 )
+shape = SubResource( 10 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
@@ -487,7 +601,23 @@ flip_h = true
 position = Vector2( 7334, 523 )
 shape = SubResource( 73 )
 
-[node name="enemy1" parent="." instance=ExtResource( 9 )]
+[node name="enemy1" type="Area2D" parent="."]
+script = ExtResource( 10 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="enemy1"]
+position = Vector2( 992, 352 )
+scale = Vector2( 2.03125, 2 )
+frames = SubResource( 110 )
+flip_h = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="enemy1"]
+position = Vector2( 992, 360 )
+shape = SubResource( 111 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy1"]
+anims/RESET = SubResource( 112 )
+anims/move = SubResource( 113 )
 
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
 [connection signal="area_entered" from="portal1" to="Player" method="_on_portal1_area_entered"]
+[connection signal="area_entered" from="enemy1" to="Player" method="_on_enemy1_area_entered"]
