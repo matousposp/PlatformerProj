@@ -1,14 +1,13 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://tilemaps/cloudtiles.tres" type="TileSet" id=1]
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://img/player.png" type="Texture" id=3]
 [ext_resource path="res://img/pixil-frame-0 (1).png" type="Texture" id=4]
-[ext_resource path="res://img/potofgold.png" type="Texture" id=5]
 [ext_resource path="res://img/Leprechaun_Spritesheet.png" type="Texture" id=6]
 [ext_resource path="res://scenes/leprechaun1.gd" type="Script" id=7]
 [ext_resource path="res://img/thron.png" type="Texture" id=8]
-[ext_resource path="res://audio/rainbowtheme.wav" type="AudioStream" id=9]
+[ext_resource path="res://audio/the-saddest-lonely-old-beat-dramatic-85-bpm-10590.mp3" type="AudioStream" id=9]
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 3 )
@@ -381,7 +380,7 @@ tracks/2/keys = {
 radius = 7.0
 
 [sub_resource type="RectangleShape2D" id=122]
-extents = Vector2( 2545, 13.5 )
+extents = Vector2( 2969.5, 13.5 )
 
 [node name="level5" type="Node2D"]
 
@@ -402,24 +401,12 @@ texture = ExtResource( 4 )
 expand = true
 
 [node name="TextureRect3" type="TextureRect" parent="."]
-margin_left = 4052.0
-margin_top = -727.0
-margin_right = 7180.0
-margin_bottom = 889.0
+margin_left = 4064.0
+margin_top = -832.0
+margin_right = 7192.0
+margin_bottom = 887.0
 texture = ExtResource( 4 )
 expand = true
-
-[node name="Potofgold" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.745098 )
-position = Vector2( 165.25, 261.5 )
-scale = Vector2( 0.275806, 0.268182 )
-texture = ExtResource( 5 )
-
-[node name="Potofgold2" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.745098 )
-position = Vector2( 784, 264 )
-scale = Vector2( 0.275806, 0.268182 )
-texture = ExtResource( 5 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -504,10 +491,10 @@ shape = SubResource( 121 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="obstacle3"]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="lepreborder" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 1398, 700 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lepreborder"]
+position = Vector2( 1822.5, 700 )
 shape = SubResource( 122 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -516,6 +503,6 @@ autoplay = true
 
 [connection signal="area_entered" from="leprechaun1" to="Player" method="_on_leprechaun1_area_entered"]
 [connection signal="area_entered" from="obstacle1" to="Player" method="_on_obstacle1_area_entered"]
-[connection signal="area_entered" from="obstacle2" to="Player" method="_on_obstacle1_area_entered"]
-[connection signal="area_entered" from="obstacle3" to="Player" method="_on_obstacle1_area_entered"]
-[connection signal="area_entered" from="Area2D" to="Player" method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="obstacle2" to="Player" method="_on_obstacle2_area_entered"]
+[connection signal="area_entered" from="obstacle3" to="Player" method="_on_obstacle3_area_entered"]
+[connection signal="area_entered" from="lepreborder" to="Player" method="_on_lepreborder_area_entered"]

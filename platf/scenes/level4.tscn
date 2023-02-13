@@ -2,13 +2,14 @@
 
 [ext_resource path="res://img/coral.png" type="Texture" id=1]
 [ext_resource path="res://img/rock.png" type="Texture" id=2]
-[ext_resource path="res://Playerwater.gd" type="Script" id=3]
+[ext_resource path="res://audio/Playerwater.gd" type="Script" id=3]
 [ext_resource path="res://img/player.png" type="Texture" id=4]
 [ext_resource path="res://img/sandtop.png" type="Texture" id=5]
 [ext_resource path="res://img/sand.png" type="Texture" id=6]
 [ext_resource path="res://img/rocktop.png" type="Texture" id=7]
 [ext_resource path="res://img/wota.jpeg" type="Texture" id=8]
 [ext_resource path="res://audio/wioter.wav" type="AudioStream" id=9]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
