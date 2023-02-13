@@ -498,11 +498,13 @@ position = Vector2( 3121, -296 )
 scale = Vector2( 1, 0.5 )
 texture = ExtResource( 8 )
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="obstacle3/obstable1"]
+position = Vector2( -3121, 592 )
+scale = Vector2( 1, 2 )
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="obstacle3"]
 position = Vector2( 3121, -295 )
 shape = SubResource( 121 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="obstacle3"]
 
 [node name="Area2D" type="Area2D" parent="."]
 
