@@ -89,7 +89,11 @@ func _on_portal2_area_entered(area):
 	get_tree().change_scene("res://scenes/level3.tscn")
 
 
-func _on_lepre2_area_entered(area):
+
+	
+
+
+func _on_leprechaun1_area_entered(area):
 	get_tree().reload_current_scene()
 
 

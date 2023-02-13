@@ -596,7 +596,7 @@ extents = Vector2( 867, 2.5 )
 margin_left = -964.0
 margin_top = -665.0
 margin_right = 2794.0
-margin_bottom = 2488.0
+margin_bottom = 2744.0
 texture = ExtResource( 1 )
 expand = true
 

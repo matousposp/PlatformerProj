@@ -360,10 +360,10 @@ height = 48.0
 [node name="\\" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -425.0
-margin_top = -590.0
-margin_right = 2956.0
-margin_bottom = 929.0
+margin_left = -680.0
+margin_top = -1198.0
+margin_right = 3719.0
+margin_bottom = 1149.0
 texture = ExtResource( 8 )
 expand = true
 
