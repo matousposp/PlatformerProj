@@ -79,17 +79,14 @@ func _on_burger_area_entered(area):
 	pass
 
 
-<<<<<<< HEAD
-=======
-func _on_enemy1_area_entered(area):
-	get_tree().reload_current_scene()
 
 
 
 
 
 
->>>>>>> parent of 94de22d (added controller support)
+
+
 func _on_portal2_area_entered(area):
 	get_tree().change_scene("res://scenes/level3.tscn")
 
