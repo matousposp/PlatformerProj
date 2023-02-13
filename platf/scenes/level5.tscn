@@ -506,9 +506,9 @@ scale = Vector2( 1, 2 )
 position = Vector2( 3121, -295 )
 shape = SubResource( 121 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="bot" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bot"]
 position = Vector2( 2542.5, 700 )
 shape = SubResource( 122 )
 
@@ -520,4 +520,4 @@ autoplay = true
 [connection signal="area_entered" from="obstacle1" to="Player" method="_on_obstacle1_area_entered"]
 [connection signal="area_entered" from="obstacle2" to="Player" method="_on_obstacle1_area_entered"]
 [connection signal="area_entered" from="obstacle3" to="Player" method="_on_obstacle1_area_entered"]
-[connection signal="area_entered" from="Area2D" to="Player" method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="bot" to="Player" method="_on_bot_area_entered"]

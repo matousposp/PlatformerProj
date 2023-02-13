@@ -68,7 +68,8 @@ func _physics_process(delta):
 func _on_bottom_border_area_entered(area):
 	get_tree().reload_current_scene() 
 
-
+func _on_enemy1_area_entered(area):
+	get_tree().reload_current_scene()
 
 func _on_portal1_area_entered(area):
 	get_tree().change_scene("res://scenes/level3.tscn")
@@ -77,21 +78,8 @@ func _on_burger_area_entered(area):
 	pass
 
 
-func _on_enemy1_area_entered(area):
-	get_tree().reload_current_scene()
-
-
-
-
-
-
 func _on_portal2_area_entered(area):
 	get_tree().change_scene("res://scenes/level3.tscn")
-
-
-
-	
-
 
 func _on_leprechaun1_area_entered(area):
 	get_tree().reload_current_scene()
@@ -99,3 +87,7 @@ func _on_leprechaun1_area_entered(area):
 
 func _on_portal3_area_entered(area):
 	get_tree().change_scene("res://scenes/level4.tscn")
+
+
+func _on_bot_area_entered(area):
+	get_tree().reload_current_scene()

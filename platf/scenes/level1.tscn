@@ -491,3 +491,4 @@ shape = SubResource( 73 )
 
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
 [connection signal="area_entered" from="portal1" to="Player" method="_on_portal1_area_entered"]
+[connection signal="area_entered" from="enemy1" to="Player" method="_on_enemy1_area_entered"]
