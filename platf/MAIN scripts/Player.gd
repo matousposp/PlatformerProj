@@ -51,7 +51,6 @@ func _physics_process(delta):
 		var fry_direction = self.global_position.direction_to(get_global_mouse_position())
 		fry(fry_direction)  
 		
-		
 	else:
 		motion.x = 0
 		$AnimatedSprite.play("default")
@@ -86,9 +85,6 @@ func _on_burger_area_entered(area):
 
 func _on_enemy1_area_entered(area):
 	get_tree().reload_current_scene()
-
-
-
 
 
 
