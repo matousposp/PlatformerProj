@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=89 format=2]
 
 [ext_resource path="res://tilemaps/cloudtiles.tres" type="TileSet" id=1]
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://img/Leprechaun_Spritesheet.png" type="Texture" id=6]
 [ext_resource path="res://scenes/leprechaun1.gd" type="Script" id=7]
 [ext_resource path="res://img/thron.png" type="Texture" id=8]
+[ext_resource path="res://img/Biggestbirbspritesheet.png" type="Texture" id=9]
+[ext_resource path="res://scenes/BiggestBird.gd" type="Script" id=10]
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 3 )
@@ -382,6 +384,121 @@ radius = 7.0
 [sub_resource type="RectangleShape2D" id=122]
 extents = Vector2( 2969.5, 13.5 )
 
+[sub_resource type="Animation" id=129]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3166, 113 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3163.5, 111 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=130]
+resource_name = "poo"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.5, 1.8, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3166, 113 ), Vector2( 3144, 113 ), Vector2( 3114, 117 ), Vector2( 2986, 174 ), Vector2( 3166, 113 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7, 1.5, 1.8, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3163.5, 111 ), Vector2( 3145, 116 ), Vector2( 3113, 119 ), Vector2( 2984, 172 ), Vector2( 3163.5, 111 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.8, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
+[sub_resource type="AtlasTexture" id=124]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 1000, 544 )
+
+[sub_resource type="AtlasTexture" id=125]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 1000, 0, 1000, 544 )
+
+[sub_resource type="AtlasTexture" id=126]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 544, 1000, 544 )
+
+[sub_resource type="AtlasTexture" id=127]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 1000, 544, 1000, 544 )
+
+[sub_resource type="AtlasTexture" id=128]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 1088, 1000, 544 )
+
+[sub_resource type="SpriteFrames" id=123]
+animations = [ {
+"frames": [ SubResource( 124 ), SubResource( 125 ), SubResource( 126 ), SubResource( 127 ), SubResource( 128 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=131]
+extents = Vector2( 80.5, 72 )
+
 [node name="level5" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -500,6 +617,24 @@ shape = SubResource( 122 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
+
+[node name="BiggestBird" type="Area2D" parent="."]
+script = ExtResource( 10 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BiggestBird"]
+root_node = NodePath("../AnimatedSprite")
+anims/RESET = SubResource( 129 )
+anims/poo = SubResource( 130 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="BiggestBird"]
+position = Vector2( 3166, 113 )
+scale = Vector2( 0.240006, 0.299632 )
+frames = SubResource( 123 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BiggestBird"]
+position = Vector2( 3163.5, 111 )
+shape = SubResource( 131 )
 
 [connection signal="area_entered" from="leprechaun1" to="Player" method="_on_leprechaun1_area_entered"]
 [connection signal="area_entered" from="obstacle1" to="Player" method="_on_obstacle1_area_entered"]
