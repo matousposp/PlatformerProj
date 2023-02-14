@@ -116,3 +116,5 @@ func _on_obstacle2_area_entered(area):
 
 func _on_obstacle3_area_entered(area):
 	get_tree().reload_current_scene()
+	
+
