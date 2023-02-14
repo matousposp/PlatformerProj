@@ -4,10 +4,10 @@
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://img/player.png" type="Texture" id=3]
 [ext_resource path="res://img/pixil-frame-0 (1).png" type="Texture" id=4]
+[ext_resource path="res://audio/idk.mp3" type="AudioStream" id=5]
 [ext_resource path="res://img/Leprechaun_Spritesheet.png" type="Texture" id=6]
 [ext_resource path="res://scenes/leprechaun1.gd" type="Script" id=7]
 [ext_resource path="res://img/thron.png" type="Texture" id=8]
-[ext_resource path="res://audio/the-saddest-lonely-old-beat-dramatic-85-bpm-10590.mp3" type="AudioStream" id=9]
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 3 )
@@ -498,7 +498,7 @@ position = Vector2( 1822.5, 700 )
 shape = SubResource( 122 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
+stream = ExtResource( 5 )
 autoplay = true
 
 [connection signal="area_entered" from="leprechaun1" to="Player" method="_on_leprechaun1_area_entered"]

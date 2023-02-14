@@ -5,7 +5,7 @@
 [ext_resource path="res://img/skyy.PNG" type="Texture" id=3]
 [ext_resource path="res://img/title.png" type="Texture" id=4]
 [ext_resource path="res://img/mainmenuimg.png" type="Texture" id=5]
-[ext_resource path="res://audio/2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3" type="AudioStream" id=6]
+[ext_resource path="res://audio/goog go.mp3" type="AudioStream" id=6]
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=7]
 
 [sub_resource type="DynamicFont" id=1]
