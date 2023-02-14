@@ -10,7 +10,7 @@ extends Area2D
 func _ready():
 
 	$AnimatedSprite.play("default")
-	$AnimationPlayer.play("fly")
+	$AnimationPlayer.play("fly2")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
