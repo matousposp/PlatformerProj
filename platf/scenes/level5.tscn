@@ -4,7 +4,7 @@
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://img/player.png" type="Texture" id=3]
 [ext_resource path="res://img/pixil-frame-0 (1).png" type="Texture" id=4]
-[ext_resource path="res://audio/idk.mp3" type="AudioStream" id=5]
+[ext_resource path="res://audio/fn.mp3" type="AudioStream" id=5]
 [ext_resource path="res://img/Leprechaun_Spritesheet.png" type="Texture" id=6]
 [ext_resource path="res://scenes/leprechaun1.gd" type="Script" id=7]
 [ext_resource path="res://img/thron.png" type="Texture" id=8]
@@ -386,9 +386,9 @@ extents = Vector2( 2969.5, 13.5 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -2192.0
-margin_top = -728.0
+margin_top = -840.0
 margin_right = 936.0
-margin_bottom = 888.0
+margin_bottom = 1056.0
 texture = ExtResource( 4 )
 expand = true
 
@@ -396,7 +396,7 @@ expand = true
 margin_left = 936.0
 margin_top = -840.0
 margin_right = 4064.0
-margin_bottom = 888.0
+margin_bottom = 1064.0
 texture = ExtResource( 4 )
 expand = true
 
@@ -404,7 +404,7 @@ expand = true
 margin_left = 4064.0
 margin_top = -832.0
 margin_right = 7192.0
-margin_bottom = 887.0
+margin_bottom = 1080.0
 texture = ExtResource( 4 )
 expand = true
 
