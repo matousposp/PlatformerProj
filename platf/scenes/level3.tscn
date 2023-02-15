@@ -776,7 +776,7 @@ position = Vector2( -2, -21 )
 script = ExtResource( 13 )
 
 [node name="Sprite" type="Sprite" parent="movingplat6"]
-position = Vector2( 1453.88, 211.36 )
+position = Vector2( 1703, 495 )
 texture = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="movingplat6"]
@@ -784,7 +784,7 @@ anims/RESET = SubResource( 52 )
 anims/move = SubResource( 53 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="movingplat6"]
-position = Vector2( 1453.82, 212.3 )
+position = Vector2( 1702, 495 )
 shape = SubResource( 49 )
 
 [node name="Area2D" type="Area2D" parent="."]
