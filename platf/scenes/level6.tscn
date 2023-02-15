@@ -385,97 +385,8 @@ tracks/1/keys = {
 "values": [ Vector2( 1600, 500 ), Vector2( 1600, 64 ), Vector2( 1600, 500 ) ]
 }
 
-<<<<<<< HEAD
-[sub_resource type="AtlasTexture" id=120]
-atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 59, 32 )
-
-[sub_resource type="AtlasTexture" id=121]
-atlas = ExtResource( 9 )
-region = Rect2( 59, 0, 59, 32 )
-
-[sub_resource type="AtlasTexture" id=122]
-atlas = ExtResource( 9 )
-region = Rect2( 0, 32, 59, 32 )
-
-[sub_resource type="AtlasTexture" id=123]
-atlas = ExtResource( 9 )
-region = Rect2( 59, 32, 59, 32 )
-
-[sub_resource type="AtlasTexture" id=124]
-atlas = ExtResource( 9 )
-region = Rect2( 0, 64, 59, 32 )
-
-[sub_resource type="SpriteFrames" id=125]
-animations = [ {
-"frames": [ SubResource( 120 ), SubResource( 121 ), SubResource( 122 ), SubResource( 123 ), SubResource( 124 ) ],
-"loop": true,
-"name": "default",
-"speed": 10.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=126]
-extents = Vector2( 28.5, 23.25 )
-
-[sub_resource type="Animation" id=128]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 3816, 8.00002 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CollisionShape2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 3816, 16 ) ]
-}
-
-[sub_resource type="Animation" id=127]
-resource_name = "ha"
-length = 10.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 5, 10 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3816, 8.00002 ), Vector2( 3816, 500 ), Vector2( 3816, 8.00002 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CollisionShape2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 5, 10 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3816, 16 ), Vector2( 3816, 505 ), Vector2( 3816, 16 ) ]
-}
-=======
 [sub_resource type="RectangleShape2D" id=120]
 extents = Vector2( 2969.5, 13.5 )
->>>>>>> c980ea449d0ba970533ac094444cf399fae014ff
 
 [node name="level6" type="Node2D"]
 
@@ -566,7 +477,6 @@ shape = SubResource( 117 )
 anims/RESET = SubResource( 118 )
 anims/new = SubResource( 119 )
 
-<<<<<<< HEAD
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 autoplay = true
@@ -588,10 +498,8 @@ anims/RESET = SubResource( 128 )
 anims/ha = SubResource( 127 )
 
 [connection signal="area_entered" from="bigbird1" to="Player" method="_on_bigbird1_area_entered"]
-=======
 [node name="lepreborder" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lepreborder"]
 position = Vector2( 1822.5, 700 )
 shape = SubResource( 120 )
->>>>>>> c980ea449d0ba970533ac094444cf399fae014ff
