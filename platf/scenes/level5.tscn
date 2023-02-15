@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=2]
+[gd_scene load_steps=90 format=2]
 
 [ext_resource path="res://tilemaps/cloudtiles.tres" type="TileSet" id=1]
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=2]
@@ -396,7 +396,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 2918, 265 ) ]
+"values": [ Vector2( 3166, 113 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("../CollisionShape2D:position")
@@ -408,7 +408,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 2931, 262 ) ]
+"values": [ Vector2( 3163.5, 111 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:flip_h")
@@ -437,7 +437,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 3315, 130 ), Vector2( 2912, 222 ) ]
+"values": [ Vector2( 3187, -19 ), Vector2( 2860, 70 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("../CollisionShape2D:position")
@@ -449,7 +449,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 3314, 130 ), Vector2( 2866, 72 ), Vector2( 3186, -22 ) ]
+"values": [ Vector2( 3187, -23 ), Vector2( 2869, 98 ), Vector2( 3186, -22 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:flip_h")
@@ -463,9 +463,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [ false, true, false ]
 }
-
-[sub_resource type="Animation" id=137]
-resource_name = "fly2"
 
 [sub_resource type="Animation" id=130]
 resource_name = "poo"
@@ -580,27 +577,26 @@ tile_data = PoolIntArray( -786340, 1073741824, 0, -655271, 1073741824, 0, -58972
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( 125, 1 )
+position = Vector2( 150, 13 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 108 )
 animation = "endroll"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 126, 2 )
+position = Vector2( 150, 13 )
 shape = SubResource( 109 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 125, 0 )
+position = Vector2( 150, 14 )
 offset = Vector2( 0, -20 )
 current = true
 smoothing_enabled = true
 smoothing_speed = 8.0
 
 [node name="Area2D" type="Area2D" parent="Player"]
-position = Vector2( 109, -44 )
+position = Vector2( 150, 13 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/Area2D"]
-position = Vector2( 17, 42 )
 shape = SubResource( 109 )
 
 [node name="leprechaun1" type="Area2D" parent="."]
@@ -671,17 +667,16 @@ script = ExtResource( 10 )
 root_node = NodePath("../AnimatedSprite")
 anims/RESET = SubResource( 129 )
 anims/fly = SubResource( 132 )
-anims/fly2 = SubResource( 137 )
 anims/poo = SubResource( 130 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="BiggestBird"]
-position = Vector2( 2918, 265 )
+position = Vector2( 3166, 113 )
 scale = Vector2( 0.240006, 0.299632 )
 frames = SubResource( 123 )
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BiggestBird"]
-position = Vector2( 2931, 262 )
+position = Vector2( 3163.5, 111 )
 shape = SubResource( 131 )
 
 [connection signal="area_entered" from="leprechaun1" to="Player" method="_on_leprechaun1_area_entered"]
