@@ -122,3 +122,7 @@ func _on_BiggestBird_area_entered(area):
 	get_tree().reload_current_scene()
 func _on_BiggestBird2_area_entered(area):
 	get_tree().reload_current_scene()
+
+
+func _on_bigbird1_area_entered(area):
+	get_tree().reload_current_scene()
