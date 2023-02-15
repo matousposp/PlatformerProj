@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=2]
+[gd_scene load_steps=90 format=2]
 
 [ext_resource path="res://tilemaps/cloudtiles.tres" type="TileSet" id=1]
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=2]
@@ -541,167 +541,6 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=131]
 extents = Vector2( 80.5, 72 )
 
-[sub_resource type="Animation" id=133]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 3166, 113 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../CollisionShape2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 3163.5, 111 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=134]
-resource_name = "fly"
-loop = true
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3270, 71 ), Vector2( 2994, 194 ), Vector2( 3270, 71 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../CollisionShape2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3261, 75 ), Vector2( 2993, 195 ), Vector2( 3261, 75 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
-}
-
-[sub_resource type="Animation" id=135]
-resource_name = "fly2"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3225, 254 ), Vector2( 3612, 149 ), Vector2( 3225, 254 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../CollisionShape2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3223, 255 ), Vector2( 3629, 210 ), Vector2( 3223, 255 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
-}
-
-[sub_resource type="Animation" id=136]
-resource_name = "poo"
-length = 3.0
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.7, 1.5, 1.8, 3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3166, 113 ), Vector2( 3144, 113 ), Vector2( 3114, 117 ), Vector2( 2986, 174 ), Vector2( 3166, 113 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../CollisionShape2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.7, 1.5, 1.8, 3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3163.5, 111 ), Vector2( 3145, 116 ), Vector2( 3113, 119 ), Vector2( 2984, 172 ), Vector2( 3163.5, 111 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 1.8, 3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
-}
-
 [node name="level5" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -738,27 +577,26 @@ tile_data = PoolIntArray( -786340, 1073741824, 0, -655271, 1073741824, 0, -58972
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( 2989, -138 )
+position = Vector2( 150, 13 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 108 )
 animation = "endroll"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 2991, -129 )
+position = Vector2( 150, 13 )
 shape = SubResource( 109 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 3014, -119 )
+position = Vector2( 150, 14 )
 offset = Vector2( 0, -20 )
 current = true
 smoothing_enabled = true
 smoothing_speed = 8.0
 
 [node name="Area2D" type="Area2D" parent="Player"]
-position = Vector2( 8, -40 )
+position = Vector2( 150, 13 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/Area2D"]
-position = Vector2( 17, 42 )
 shape = SubResource( 109 )
 
 [node name="leprechaun1" type="Area2D" parent="."]
@@ -841,31 +679,9 @@ flip_h = true
 position = Vector2( 3163.5, 111 )
 shape = SubResource( 131 )
 
-[node name="BiggestBird2" type="Area2D" parent="."]
-position = Vector2( -285, -15 )
-script = ExtResource( 10 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BiggestBird2"]
-root_node = NodePath("../AnimatedSprite")
-anims/RESET = SubResource( 133 )
-anims/fly = SubResource( 134 )
-anims/fly2 = SubResource( 135 )
-anims/poo = SubResource( 136 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="BiggestBird2"]
-position = Vector2( 3166, 113 )
-scale = Vector2( 0.240006, 0.299632 )
-frames = SubResource( 123 )
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BiggestBird2"]
-position = Vector2( 3163.5, 111 )
-shape = SubResource( 131 )
-
 [connection signal="area_entered" from="leprechaun1" to="Player" method="_on_leprechaun1_area_entered"]
 [connection signal="area_entered" from="obstacle1" to="Player" method="_on_obstacle1_area_entered"]
 [connection signal="area_entered" from="obstacle2" to="Player" method="_on_obstacle2_area_entered"]
 [connection signal="area_entered" from="obstacle3" to="Player" method="_on_obstacle3_area_entered"]
 [connection signal="area_entered" from="lepreborder" to="Player" method="_on_lepreborder_area_entered"]
 [connection signal="area_entered" from="BiggestBird" to="Player" method="_on_BiggestBird_area_entered"]
-[connection signal="area_entered" from="BiggestBird2" to="Player" method="_on_BiggestBird2_area_entered"]
