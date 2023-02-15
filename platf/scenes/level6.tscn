@@ -432,7 +432,6 @@ shape = SubResource( 113 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2( 0, -20 )
-current = true
 smoothing_enabled = true
 smoothing_speed = 8.0
 
