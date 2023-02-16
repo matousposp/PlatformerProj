@@ -268,10 +268,11 @@ radius = 24.0
 height = 16.0
 
 [sub_resource type="RectangleShape2D" id=114]
-extents = Vector2( 40, 12.25 )
+extents = Vector2( 40, 9.625 )
 
 [sub_resource type="Animation" id=115]
-length = 0.001
+length = 10.0
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("CollisionShape2D:position")
 tracks/0/interp = 1
@@ -279,10 +280,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1456, 64 ) ]
+"values": [ Vector2( 1451, -93 ), Vector2( 1439, 295 ), Vector2( 1451, -93 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
@@ -291,10 +292,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1456, 64 ) ]
+"values": [ Vector2( 1447, -93 ), Vector2( 1438, 294 ), Vector2( 1447, -93 ) ]
 }
 
 [sub_resource type="Animation" id=116]
@@ -311,7 +312,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 4, 8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1456, 64 ), Vector2( 1456, 600 ), Vector2( 1456, 64 ) ]
+"values": [ Vector2( 1454, -109 ), Vector2( 1450, 344 ), Vector2( 1455, -112 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
@@ -323,7 +324,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 4, 8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1456, 64 ), Vector2( 1456, 600 ), Vector2( 1456, 64 ) ]
+"values": [ Vector2( 1456, -109 ), Vector2( 1450, 344 ), Vector2( 1453, -114 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=117]
@@ -539,12 +540,12 @@ shape = SubResource( 113 )
 script = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="level6_plat1"]
-position = Vector2( 1456, 64 )
+position = Vector2( 1447, -93 )
 scale = Vector2( 0.833333, 0.758065 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level6_plat1"]
-position = Vector2( 1456, 64 )
+position = Vector2( 1451, -93 )
 shape = SubResource( 114 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="level6_plat1"]
