@@ -460,8 +460,15 @@ shape = SubResource( 10 )
 one_way_collision_margin = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
 smoothing_enabled = true
 smoothing_speed = 8.0
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
 
 [node name="Area2D" type="Area2D" parent="Player"]
 
