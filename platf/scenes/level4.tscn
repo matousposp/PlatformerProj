@@ -293,7 +293,7 @@ animations = [ {
 [sub_resource type="CapsuleShape2D" id=15]
 radius = 24.0
 
-[node name="\\" type="Node2D"]
+[node name="level4" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -425.0
@@ -323,6 +323,7 @@ shape = SubResource( 15 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 160, 160 )
+current = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )

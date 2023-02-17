@@ -3,11 +3,10 @@
 [ext_resource path="res://MAIN scripts/Fry.gd" type="Script" id=1]
 [ext_resource path="res://img/fry.png" type="Texture" id=2]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 2 )
 
-[node name="Fry" type="Area2D"]
+[node name="Fry" type="Area2D" groups=["hitbox"]]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/enemy1.gd" type="Script" id=1]
 [ext_resource path="res://img/pear.png" type="Texture" id=2]
@@ -119,6 +119,10 @@ tracks/2/keys = {
 "values": [ Vector2( 992, 360 ), Vector2( 700, 360 ), Vector2( 992, 360 ) ]
 }
 
+[sub_resource type="CapsuleShape2D" id=127]
+radius = 27.0
+height = 0.0
+
 [node name="enemy1" type="Area2D"]
 script = ExtResource( 1 )
 
@@ -135,3 +139,11 @@ shape = SubResource( 111 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 112 )
 anims/move = SubResource( 113 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 994, 358 )
+shape = SubResource( 127 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
