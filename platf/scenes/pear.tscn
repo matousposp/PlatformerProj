@@ -140,7 +140,7 @@ shape = SubResource( 111 )
 anims/RESET = SubResource( 112 )
 anims/move = SubResource( 113 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 994, 358 )
