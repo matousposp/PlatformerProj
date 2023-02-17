@@ -444,7 +444,7 @@ text = "APPLE???"
 position = Vector2( 3173, 1617 )
 shape = SubResource( 11 )
 
-[node name="Player" type="KinematicBody2D" parent="."]
+[node name="Player" type="KinematicBody2D" parent="." groups=["hitbox"]]
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]

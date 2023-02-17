@@ -773,7 +773,6 @@ script = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -2, -1 )
-current = true
 smoothing_enabled = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]

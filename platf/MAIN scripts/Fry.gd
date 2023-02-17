@@ -14,7 +14,3 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Fry_body_entered(body):
 	destroy()
-
-func _on_Fry_area_entered(area):
-	destroy()
-
