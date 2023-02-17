@@ -416,7 +416,6 @@ text = "Move - Arrow Keys
 Jump - Z
 Dash - X
 Shoot - Space
-Special Ability - C
 Reset - R"
 
 [node name="Label2" type="Label" parent="."]
