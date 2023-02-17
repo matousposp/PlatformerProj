@@ -1,8 +1,9 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://img/player.png" type="Texture" id=3]
+[ext_resource path="res://img/sky_lightened.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
@@ -155,13 +156,21 @@ animations = [ {
 "frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
 "loop": true,
 "name": "roll",
-"speed": 5.0
+"speed": 12.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=36]
 radius = 24.0
 
 [node name="bossbattle1" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -678.0
+margin_top = -544.0
+margin_right = 1940.0
+margin_bottom = 797.0
+texture = ExtResource( 4 )
+expand = true
 
 [node name="Player" type="KinematicBody2D" parent="."]
 script = ExtResource( 1 )
