@@ -905,7 +905,7 @@ shape = SubResource( 49 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 1884, 2413.5 )
+position = Vector2( 1580, 2399 )
 shape = SubResource( 54 )
 
 [node name="movingplat8" type="KinematicBody2D" parent="."]
@@ -955,5 +955,5 @@ shape = SubResource( 70 )
 
 [connection signal="area_entered" from="Player/Area2D" to="moving platform" method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_Area2D_body_entered"]
-[connection signal="area_entered" from="portal1000" to="Player" method="_on_portallll_area_entered"]
 [connection signal="area_entered" from="portal1000" to="Player" method="_on_portal1000_area_entered"]
+[connection signal="area_entered" from="portal1000" to="Player" method="_on_portallll_area_entered"]

@@ -131,3 +131,11 @@ func _on_bigbird1_area_entered(area):
 
 func _on_portal1000_area_entered(area):
 	get_tree().change_scene("res://scenes/level4.tscn")
+
+func _on_portal10_area_entered(area):
+	get_tree().change_scene("res://scenes/level5.tscn")
+
+
+
+func _on_border5_area_entered(area):
+	get_tree().reload_current_scene() 
