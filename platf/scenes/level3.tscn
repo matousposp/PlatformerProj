@@ -771,10 +771,6 @@ position = Vector2( 89, 28 )
 moving_platform_apply_velocity_on_leave = 2
 script = ExtResource( 3 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( -2, -1 )
-smoothing_enabled = true
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 position = Vector2( 0, -3 )
 scale = Vector2( 2.625, 2.5 )
@@ -784,6 +780,17 @@ animation = "attack"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 1, -3 )
 shape = SubResource( 20 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 8.0
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
 
 [node name="Area2D" type="Area2D" parent="Player"]
 

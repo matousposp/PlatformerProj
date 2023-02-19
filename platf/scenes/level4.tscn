@@ -342,7 +342,7 @@ height = 56.0
 [node name="level4" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -317.0
+margin_left = -609.0
 margin_top = -1149.0
 margin_right = 5041.0
 margin_bottom = 1299.0
