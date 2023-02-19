@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scripts/enemy1.gd" type="Script" id=1]
 [ext_resource path="res://img/pear.png" type="Texture" id=2]
+[ext_resource path="res://img/fryexplode.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=121]
 atlas = ExtResource( 2 )
@@ -27,12 +28,57 @@ region = Rect2( 0, 64, 32, 32 )
 atlas = ExtResource( 2 )
 region = Rect2( 32, 64, 32, 32 )
 
+[sub_resource type="AtlasTexture" id=128]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=129]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=130]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=131]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=132]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=133]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=134]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=135]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=136]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=137]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 96, 32, 32 )
+
 [sub_resource type="SpriteFrames" id=110]
 animations = [ {
 "frames": [ SubResource( 121 ), SubResource( 122 ), SubResource( 123 ), SubResource( 124 ), SubResource( 125 ), SubResource( 126 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
+}, {
+"frames": [ SubResource( 128 ), SubResource( 129 ), SubResource( 130 ), SubResource( 131 ), SubResource( 132 ), SubResource( 133 ), SubResource( 134 ), SubResource( 135 ), SubResource( 136 ), SubResource( 137 ) ],
+"loop": true,
+"name": "explode",
+"speed": 20.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=111]
@@ -120,7 +166,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=127]
-radius = 27.0
+radius = 29.0
 height = 0.0
 
 [node name="enemy1" type="Area2D"]
