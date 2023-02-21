@@ -88,8 +88,6 @@ func _on_burger_area_entered(area):
 	burger = true
 
 
-func _on_enemy1_area_entered(area):
-	get_tree().reload_current_scene()
 
 func _on_portal2_area_entered(area):
 	get_tree().change_scene("res://scenes/level3.tscn")
@@ -133,9 +131,17 @@ func _on_portal1000_area_entered(area):
 	get_tree().change_scene("res://scenes/level4.tscn")
 
 func _on_portal10_area_entered(area):
-	get_tree().change_scene("res://scenes/level5.tscn")
+	get_tree().change_scene("res://mountainlvl1.tscn")
 
 
 
 func _on_border5_area_entered(area):
 	get_tree().reload_current_scene() 
+
+
+func _on_pear_area_entered(area):
+	get_tree().reload_current_scene() 
+
+
+func _on_lvl6p_area_entered(area):
+	get_tree().change_scene("res://mountainlvl1.tscn")

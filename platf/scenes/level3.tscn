@@ -962,5 +962,5 @@ shape = SubResource( 70 )
 
 [connection signal="area_entered" from="Player/Area2D" to="moving platform" method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_Area2D_body_entered"]
-[connection signal="area_entered" from="portal1000" to="Player" method="_on_portal1000_area_entered"]
 [connection signal="area_entered" from="portal1000" to="Player" method="_on_portallll_area_entered"]
+[connection signal="area_entered" from="portal1000" to="Player" method="_on_portal1000_area_entered"]
