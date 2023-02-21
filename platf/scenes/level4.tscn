@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://img/coral.png" type="Texture" id=1]
 [ext_resource path="res://audio/Playerwater.gd" type="Script" id=3]
@@ -14,11 +14,20 @@
 [sub_resource type="ConvexPolygonShape2D" id=54]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 
+[sub_resource type="StreamTexture" id=63]
+load_path = "res://.import/snad.png-349cddd9a34ab2e68d7e68fa4595d95f.stex"
+
 [sub_resource type="ConvexPolygonShape2D" id=55]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 
+[sub_resource type="StreamTexture" id=64]
+load_path = "res://.import/snadtop.png-81ba838964272f2b7a4d369c0344d1a8.stex"
+
 [sub_resource type="ConvexPolygonShape2D" id=56]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="StreamTexture" id=65]
+load_path = "res://.import/stone.png-c1ebeec4c56a9ff7cbe2a916899f1c8e.stex"
 
 [sub_resource type="ConvexPolygonShape2D" id=58]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -37,6 +46,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="TileSet" id=57]
 0/name = "snad.png 0"
+0/texture = SubResource( 63 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 32, 32 )
@@ -57,6 +67,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 } ]
 0/z_index = 0
 1/name = "snadtop.png 1"
+1/texture = SubResource( 64 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 32, 32 )
@@ -77,6 +88,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 } ]
 1/z_index = 0
 2/name = "stone.png 2"
+2/texture = SubResource( 65 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 0, 0, 32, 32 )
