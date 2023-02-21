@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rocktop.png-bf6a22e2e5529416f4d367a01c83e60c.stex"
+path="res://.import/dwayne.png-a847b67fc7d815ef8c71113de5f6df1a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/rocktop.png"
-dest_files=[ "res://.import/rocktop.png-bf6a22e2e5529416f4d367a01c83e60c.stex" ]
+source_file="res://img/dwayne.png"
+dest_files=[ "res://.import/dwayne.png-a847b67fc7d815ef8c71113de5f6df1a.stex" ]
 
 [params]
 

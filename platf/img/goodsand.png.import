@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rock.png-fccef7e16ab501baea2af882f4b57e57.stex"
+path="res://.import/goodsand.png-04f30570c7f0eacc0af4b41b68a951a2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/rock.png"
-dest_files=[ "res://.import/rock.png-fccef7e16ab501baea2af882f4b57e57.stex" ]
+source_file="res://img/goodsand.png"
+dest_files=[ "res://.import/goodsand.png-04f30570c7f0eacc0af4b41b68a951a2.stex" ]
 
 [params]
 
