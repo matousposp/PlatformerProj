@@ -400,62 +400,62 @@ margin_bottom = 1008.0
 texture = ExtResource( 7 )
 expand = true
 
-[node name="TextureRect7" type="TextureRect" parent="."]
-margin_left = -912.0
-margin_top = 1004.0
-margin_right = 2160.0
-margin_bottom = 2780.0
+[node name="TextureRect7" type="TextureRect" parent="TextureRect"]
+margin_left = -144.0
+margin_top = 1772.0
+margin_right = 2928.0
+margin_bottom = 3548.0
 texture = ExtResource( 7 )
 expand = true
 flip_v = true
 
-[node name="TextureRect3" type="TextureRect" parent="."]
-margin_left = -3838.0
-margin_top = -766.0
-margin_right = -766.0
-margin_bottom = 1010.0
-texture = ExtResource( 7 )
-expand = true
-
-[node name="TextureRect6" type="TextureRect" parent="."]
-margin_left = -3846.0
-margin_top = 1012.0
-margin_right = -774.0
-margin_bottom = 2788.0
+[node name="TextureRect6" type="TextureRect" parent="TextureRect"]
+margin_left = -3078.0
+margin_top = 1780.0
+margin_right = -6.0
+margin_bottom = 3556.0
 texture = ExtResource( 7 )
 expand = true
 flip_v = true
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-margin_left = 2294.0
-margin_top = -766.0
-margin_right = 5366.0
-margin_bottom = 1010.0
+[node name="TextureRect3" type="TextureRect" parent="TextureRect"]
+margin_left = -3070.0
+margin_top = 2.0
+margin_right = 2.0
+margin_bottom = 1778.0
 texture = ExtResource( 7 )
 expand = true
 
-[node name="TextureRect8" type="TextureRect" parent="."]
-margin_left = 2158.0
-margin_top = 1030.0
-margin_right = 5230.0
-margin_bottom = 2806.0
+[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+margin_left = 3062.0
+margin_top = 2.0
+margin_right = 6134.0
+margin_bottom = 1778.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="TextureRect8" type="TextureRect" parent="TextureRect"]
+margin_left = 2926.0
+margin_top = 1798.0
+margin_right = 5998.0
+margin_bottom = 3574.0
 texture = ExtResource( 7 )
 expand = true
 flip_v = true
 
-[node name="TextureRect4" type="TextureRect" parent="."]
-margin_left = 5355.0
-margin_top = -764.0
-margin_right = 8427.0
-margin_bottom = 1018.0
+[node name="TextureRect4" type="TextureRect" parent="TextureRect"]
+margin_left = 6123.0
+margin_top = 4.0
+margin_right = 9195.0
+margin_bottom = 1786.0
 texture = ExtResource( 7 )
 expand = true
 
-[node name="TextureRect5" type="TextureRect" parent="."]
-margin_left = 5187.0
-margin_top = 1015.0
-margin_right = 8437.0
-margin_bottom = 2797.0
+[node name="TextureRect5" type="TextureRect" parent="TextureRect"]
+margin_left = 5955.0
+margin_top = 1783.0
+margin_right = 9205.0
+margin_bottom = 3565.0
 texture = ExtResource( 7 )
 expand = true
 flip_v = true
