@@ -29,7 +29,6 @@ func brock(brock_direction:Vector2):
 func _on_Player_hit():
 	queue_free()
 
-
 func _on_VisibilityNotifier2D_screen_entered():
 	seen = true
 

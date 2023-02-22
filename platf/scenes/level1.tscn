@@ -281,6 +281,8 @@ height = 16.0
 
 [sub_resource type="GDScript" id=71]
 script/source = "extends Area2D
+
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = \"text\"
@@ -294,12 +296,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Area2D_area_entered(area):
-	print(area)
-	if area.is_in_group('portal'):
-		get_tree().change_scene(\"res://scenes/level2.tscn\")
 "
 
 [sub_resource type="AtlasTexture" id=128]
@@ -563,7 +559,7 @@ flip_h = true
 position = Vector2( 7334, 523 )
 shape = SubResource( 73 )
 
-[node name="pear" type="Area2D" parent="."]
+[node name="pear" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2( 852, 353 )
 script = ExtResource( 10 )
 
@@ -577,7 +573,7 @@ flip_h = true
 position = Vector2( 0, 8 )
 shape = SubResource( 143 )
 
-[node name="broccoli" type="Area2D" parent="."]
+[node name="broccoli" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2( 2697, 92 )
 script = ExtResource( 11 )
 
