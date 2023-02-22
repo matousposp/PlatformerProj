@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://img/coral.png" type="Texture" id=1]
 [ext_resource path="res://audio/Playerwater.gd" type="Script" id=3]
@@ -375,6 +375,9 @@ animations = [ {
 [sub_resource type="CapsuleShape2D" id=15]
 radius = 24.0
 
+[sub_resource type="CapsuleShape2D" id=66]
+radius = 24.0
+
 [sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 64, 64 )
@@ -451,6 +454,12 @@ shape = SubResource( 15 )
 position = Vector2( 160, 160 )
 current = true
 
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2( 160, 160 )
+shape = SubResource( 66 )
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 autoplay = true
@@ -467,4 +476,4 @@ frames = SubResource( 52 )
 position = Vector2( 4422, 676 )
 shape = SubResource( 53 )
 
-[connection signal="area_entered" from="portal10" to="Player" method="_on_portal10_area_entered"]
+[connection signal="area_entered" from="Player/Area2D" to="portal10" method="_on_Area2D_area_entered"]
