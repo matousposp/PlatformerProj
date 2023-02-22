@@ -58,7 +58,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			if burger == true:
-				JUMPFORCE = 1000
+				JUMPFORCE = 1100
 				burger = false
 			else:
 				JUMPFORCE = 460
@@ -78,22 +78,11 @@ func fry(fry_direction:Vector2):
 
 func _on_bottom_border_area_entered(area):
 	get_tree().reload_current_scene() 
-
-
-
-func _on_portal1_area_entered(area):
-	get_tree().change_scene("res://scenes/level2.tscn")
 	
 func _on_burger_area_entered(area):
-	burger = true
-
-
-
-func _on_portal2_area_entered(area):
-	get_tree().change_scene("res://scenes/level3.tscn")
-
-
-
+	print(area)
+	if area.is_in_group('player'):
+		burger = true
 
 func _on_lepreborder_area_entered(area):
 	get_tree().reload_current_scene()

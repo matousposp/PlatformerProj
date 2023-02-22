@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://img/sky_lightened.png" type="Texture" id=1]
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=2]
@@ -14,7 +14,7 @@
 [ext_resource path="res://scenes/movingplat8.gd" type="Script" id=12]
 [ext_resource path="res://scenes/movingplat6.gd" type="Script" id=13]
 [ext_resource path="res://scenes/portallll.gd" type="Script" id=14]
-[ext_resource path="res://img/Green Portal Sprite Sheet.png" type="Texture" id=15]
+[ext_resource path="res://img/nugget2.png" type="Texture" id=15]
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 4 )
@@ -706,44 +706,40 @@ tracks/1/keys = {
 [sub_resource type="RectangleShape2D" id=57]
 extents = Vector2( 32.5, 13 )
 
-[sub_resource type="AtlasTexture" id=61]
+[sub_resource type="AtlasTexture" id=74]
 atlas = ExtResource( 15 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=62]
+[sub_resource type="AtlasTexture" id=75]
 atlas = ExtResource( 15 )
-region = Rect2( 64, 0, 64, 64 )
+region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=63]
+[sub_resource type="AtlasTexture" id=76]
 atlas = ExtResource( 15 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=64]
+[sub_resource type="AtlasTexture" id=77]
 atlas = ExtResource( 15 )
-region = Rect2( 192, 0, 64, 64 )
+region = Rect2( 0, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=65]
+[sub_resource type="AtlasTexture" id=78]
 atlas = ExtResource( 15 )
-region = Rect2( 256, 0, 64, 64 )
+region = Rect2( 32, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=66]
+[sub_resource type="AtlasTexture" id=79]
 atlas = ExtResource( 15 )
-region = Rect2( 320, 0, 64, 64 )
+region = Rect2( 64, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=67]
+[sub_resource type="AtlasTexture" id=80]
 atlas = ExtResource( 15 )
-region = Rect2( 384, 0, 64, 64 )
+region = Rect2( 0, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=68]
-atlas = ExtResource( 15 )
-region = Rect2( 448, 0, 64, 64 )
-
-[sub_resource type="SpriteFrames" id=69]
+[sub_resource type="SpriteFrames" id=81]
 animations = [ {
-"frames": [ SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ) ],
+"frames": [ SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 12.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=70]
@@ -954,7 +950,7 @@ script = ExtResource( 14 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="portal1000"]
 position = Vector2( 1370, -68 )
 scale = Vector2( 2.625, 2.35938 )
-frames = SubResource( 69 )
+frames = SubResource( 81 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portal1000"]
 position = Vector2( 1370, -57 )
@@ -962,5 +958,5 @@ shape = SubResource( 70 )
 
 [connection signal="area_entered" from="Player/Area2D" to="moving platform" method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_Area2D_body_entered"]
-[connection signal="area_entered" from="portal1000" to="Player" method="_on_portal1000_area_entered"]
 [connection signal="area_entered" from="portal1000" to="Player" method="_on_portallll_area_entered"]
+[connection signal="area_entered" from="portal1000" to="Player" method="_on_portal1000_area_entered"]
