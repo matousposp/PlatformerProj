@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export(PackedScene) var FRY: PackedScene = preload('res://scenes/Fry.tscn')
 
-signal hit
+signal hit(id)
 const UP= Vector2(0, -1) 
 var GRAVITY= 20
 var MAXFALLSPEED= 1000
@@ -15,8 +15,6 @@ var burger = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-
-
 
 func _reset_jump():
 	JUMPFORCE = 460
@@ -140,10 +138,9 @@ func _on_pear_area_entered(area):
 func _on_lvl6p_area_entered(area):
 	get_tree().change_scene("res://mountainlvl1.tscn")
 
-
 func _on_broccoli_area_entered(area):
 	print(area)
 	if area.is_in_group('player'):
 		get_tree().reload_current_scene()
-	else:
+	if area.is_in_group('enemy'):
 		emit_signal('hit')

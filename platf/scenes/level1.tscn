@@ -594,6 +594,7 @@ shape = SubResource( 150 )
 
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
 [connection signal="hit" from="Player" to="pear" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="broccoli" method="_on_Player_hit"]
 [connection signal="area_entered" from="Player/Area2D" to="portal1" method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="pear" to="Player" method="_on_pear_area_entered"]
 [connection signal="area_entered" from="broccoli" to="Player" method="_on_broccoli_area_entered"]
