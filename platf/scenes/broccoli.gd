@@ -27,7 +27,6 @@ func brock(brock_direction:Vector2):
 		brock.rotation = brock_rotation
 
 func _on_Player_hit(id):
-	print(id)
 	if id == 2:
 		queue_free()
 

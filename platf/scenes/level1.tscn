@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=2]
+[gd_scene load_steps=102 format=2]
 
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://img/sky_lightened.png" type="Texture" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://scenes/pear.gd" type="Script" id=10]
 [ext_resource path="res://scenes/broccoli.gd" type="Script" id=11]
 [ext_resource path="res://img/broccoli.png" type="Texture" id=12]
+[ext_resource path="res://img/wotamelon.png" type="Texture" id=13]
+[ext_resource path="res://scenes/wotamelon.gd" type="Script" id=14]
 
 [sub_resource type="DynamicFont" id=60]
 font_data = ExtResource( 6 )
@@ -410,6 +412,10 @@ animations = [ {
 radius = 32.0
 height = 0.0
 
+[sub_resource type="CapsuleShape2D" id=151]
+radius = 30.0
+height = 8.0
+
 [node name="level1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -592,11 +598,26 @@ shape = SubResource( 150 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="broccoli"]
 
+[node name="wotamelon" type="Area2D" parent="."]
+position = Vector2( 4607, 864 )
+script = ExtResource( 14 )
+
+[node name="Sprite" type="Sprite" parent="wotamelon"]
+position = Vector2( -3, 1 )
+scale = Vector2( 2.5, 2.3125 )
+texture = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wotamelon"]
+position = Vector2( -3, 0 )
+shape = SubResource( 151 )
+
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
 [connection signal="hit" from="Player" to="pear" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="broccoli" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="wotamelon" method="_on_Player_hit"]
 [connection signal="area_entered" from="Player/Area2D" to="portal1" method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="pear" to="Player" method="_on_pear_area_entered"]
 [connection signal="area_entered" from="broccoli" to="Player" method="_on_broccoli_area_entered"]
 [connection signal="screen_entered" from="broccoli/VisibilityNotifier2D" to="broccoli" method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="screen_exited" from="broccoli/VisibilityNotifier2D" to="broccoli" method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="area_entered" from="wotamelon" to="Player" method="_on_wotamelon_area_entered"]
