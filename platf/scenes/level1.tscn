@@ -559,7 +559,7 @@ flip_h = true
 position = Vector2( 7334, 523 )
 shape = SubResource( 73 )
 
-[node name="pear" type="Area2D" parent="."]
+[node name="pear" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2( 852, 353 )
 script = ExtResource( 10 )
 
@@ -573,7 +573,7 @@ flip_h = true
 position = Vector2( 0, 8 )
 shape = SubResource( 143 )
 
-[node name="broccoli" type="Area2D" parent="."]
+[node name="broccoli" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2( 2697, 92 )
 script = ExtResource( 11 )
 
