@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export(PackedScene) var FRY: PackedScene = preload('res://scenes/Fry.tscn')
 
+signal hit
 const UP= Vector2(0, -1) 
 var GRAVITY= 20
 var MAXFALLSPEED= 1000
@@ -129,7 +130,11 @@ func _on_border5_area_entered(area):
 
 
 func _on_pear_area_entered(area):
-	get_tree().reload_current_scene() 
+	print(area)
+	if area.is_in_group('player'):
+		get_tree().reload_current_scene()
+	else:
+		emit_signal('hit')
 
 
 func _on_lvl6p_area_entered(area):

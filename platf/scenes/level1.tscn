@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=90 format=2]
 
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://img/sky_lightened.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://audio/plains.wav" type="AudioStream" id=7]
 [ext_resource path="res://img/nugget2.png" type="Texture" id=8]
+[ext_resource path="res://img/pear.png" type="Texture" id=9]
+[ext_resource path="res://scenes/pear.gd" type="Script" id=10]
 
 [sub_resource type="DynamicFont" id=60]
 font_data = ExtResource( 6 )
@@ -277,8 +279,6 @@ height = 16.0
 
 [sub_resource type="GDScript" id=71]
 script/source = "extends Area2D
-
-
 # Declare member variables here. Examples:
 # var a = 2
 # var b = \"text\"
@@ -295,7 +295,9 @@ func _ready():
 
 
 func _on_Area2D_area_entered(area):
-	get_tree().change_scene(\"res://scenes/level2.tscn\")
+	print(area)
+	if area.is_in_group('portal'):
+		get_tree().change_scene(\"res://scenes/level2.tscn\")
 "
 
 [sub_resource type="AtlasTexture" id=128]
@@ -337,6 +339,42 @@ animations = [ {
 [sub_resource type="CapsuleShape2D" id=73]
 radius = 16.0
 height = 48.0
+
+[sub_resource type="AtlasTexture" id=136]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=137]
+atlas = ExtResource( 9 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=138]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=139]
+atlas = ExtResource( 9 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=140]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=141]
+atlas = ExtResource( 9 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=142]
+animations = [ {
+"frames": [ SubResource( 136 ), SubResource( 137 ), SubResource( 138 ), SubResource( 139 ), SubResource( 140 ), SubResource( 141 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=143]
+radius = 24.0
+height = 0.0
 
 [node name="level1" type="Node2D"]
 
@@ -443,7 +481,7 @@ text = "PEAR????"
 position = Vector2( 3173, 1617 )
 shape = SubResource( 11 )
 
-[node name="Player" type="KinematicBody2D" parent="." groups=["hitbox"]]
+[node name="Player" type="KinematicBody2D" parent="."]
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
@@ -468,17 +506,17 @@ drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
 
-[node name="Area2D" type="Area2D" parent="Player"]
+[node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
 position = Vector2( 25, 2 )
 shape = SubResource( 127 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="musicplayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 autoplay = true
 
-[node name="portal1" type="Area2D" parent="."]
+[node name="portal1" type="Area2D" parent="." groups=["portal"]]
 script = SubResource( 71 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="portal1"]
@@ -491,5 +529,21 @@ flip_h = true
 position = Vector2( 7334, 523 )
 shape = SubResource( 73 )
 
+[node name="pear" type="Area2D" parent="."]
+position = Vector2( 852, 353 )
+script = ExtResource( 10 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="pear"]
+position = Vector2( 0, -1 )
+scale = Vector2( 2.1875, 2.03125 )
+frames = SubResource( 142 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pear"]
+position = Vector2( 0, 8 )
+shape = SubResource( 143 )
+
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
+[connection signal="hit" from="Player" to="pear" method="_on_Player_hit"]
 [connection signal="area_entered" from="Player/Area2D" to="portal1" method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="pear" to="Player" method="_on_pear_area_entered"]
