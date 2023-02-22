@@ -139,3 +139,11 @@ func _on_pear_area_entered(area):
 
 func _on_lvl6p_area_entered(area):
 	get_tree().change_scene("res://mountainlvl1.tscn")
+
+
+func _on_broccoli_area_entered(area):
+	print(area)
+	if area.is_in_group('player'):
+		get_tree().reload_current_scene()
+	else:
+		emit_signal('hit')

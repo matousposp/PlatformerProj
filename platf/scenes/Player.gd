@@ -15,8 +15,6 @@ var bullet_speed = 10
 func _ready():
 	pass
 
-
-
 func _reset_jump():
 	JUMPFORCE = 460
 	
