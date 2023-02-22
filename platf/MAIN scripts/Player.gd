@@ -3,6 +3,7 @@ extends KinematicBody2D
 export(PackedScene) var FRY: PackedScene = preload('res://scenes/Fry.tscn')
 
 signal hit(id)
+
 const UP= Vector2(0, -1) 
 var GRAVITY= 20
 var MAXFALLSPEED= 1000
@@ -132,7 +133,7 @@ func _on_pear_area_entered(area):
 	if area.is_in_group('player'):
 		get_tree().reload_current_scene()
 	else:
-		emit_signal('hit')
+		emit_signal('hit',1)
 
 
 func _on_lvl6p_area_entered(area):
@@ -140,7 +141,7 @@ func _on_lvl6p_area_entered(area):
 
 func _on_broccoli_area_entered(area):
 	print(area)
-	if area.is_in_group('player'):
+	if area.is_in_group('player') or area.is_in_group('enemy'):
 		get_tree().reload_current_scene()
-	if area.is_in_group('enemy'):
-		emit_signal('hit')
+	else:
+		emit_signal('hit',2)

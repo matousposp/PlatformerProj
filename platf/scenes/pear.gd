@@ -22,5 +22,6 @@ func _process(delta):
 		$AnimatedSprite.flip_h = true
 		x += 120
 
-func _on_Player_hit():
-	queue_free()
+func _on_Player_hit(id):
+	if id == 1:
+		queue_free()

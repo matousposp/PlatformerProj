@@ -26,8 +26,10 @@ func brock(brock_direction:Vector2):
 		var brock_rotation = brock_direction.angle()
 		brock.rotation = brock_rotation
 
-func _on_Player_hit():
-	queue_free()
+func _on_Player_hit(id):
+	print(id)
+	if id == 2:
+		queue_free()
 
 func _on_VisibilityNotifier2D_screen_entered():
 	seen = true
