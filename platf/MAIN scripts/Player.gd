@@ -89,8 +89,11 @@ func _on_lepreborder_area_entered(area):
 
 
 func _on_leprechaun1_area_entered(area):
-	get_tree().reload_current_scene()
-
+	print(area)
+	if area.is_in_group('player'):
+		get_tree().reload_current_scene()
+	else:
+		emit_signal('hit',1)
 
 func _on_obstacle1_area_entered(area):
 	get_tree().reload_current_scene()

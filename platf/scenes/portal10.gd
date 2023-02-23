@@ -17,4 +17,5 @@ func _ready():
 
 
 func _on_Area2D_area_entered(area):
-	get_tree().change_scene("res://scenes/mountainlvl1.tscn")
+	get_tree().change_scene("res://scenes/level5.tscn")
+
