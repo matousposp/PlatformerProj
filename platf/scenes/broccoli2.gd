@@ -13,7 +13,6 @@ func _process(delta):
 	if x == 0:
 		x = 120
 		if seen:
-			print(get_node("res://scenes/level1.tscn/Player"))
 			var brock_direction = self.global_position.direction_to(get_global_mouse_position())
 			brock(brock_direction)
 		
@@ -28,7 +27,7 @@ func brock(brock_direction:Vector2):
 		brock.rotation = brock_rotation
 
 func _on_Player_hit(id):
-	if id == 2:
+	if id == 5:
 		queue_free()
 
 func _on_VisibilityNotifier2D_screen_entered():

@@ -11,6 +11,7 @@ var motion = Vector2()
 var jumps = 0
 var bullet_speed = 10
 var burger = false
+var direct = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -39,16 +40,18 @@ func _physics_process(delta):
 		motion.x = MAXSPEED
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("roll")
+		direct = 1
 		
 		
 	elif Input.is_action_pressed("left"):
 		motion.x = -MAXSPEED
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("roll")
+		direct = -1
 		
 		
 	elif Input.is_action_just_pressed("attack"):
-		var fry_direction = self.global_position.direction_to(get_global_mouse_position())
+		var fry_direction = self.global_position.direction_to(Vector2(position.x+(50)*direct,position.y))
 		fry(fry_direction)  
 		
 	else:

@@ -13,6 +13,7 @@ var motion = Vector2()
 var jumps = 0
 var bullet_speed = 10
 var burger = false
+var direct = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -39,16 +40,17 @@ func _physics_process(delta):
 		motion.x = MAXSPEED
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("roll")
+		direct = 1
 		
 		
 	elif Input.is_action_pressed("left"):
 		motion.x = -MAXSPEED
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("roll")
-		
+		direct = -1
 		
 	elif Input.is_action_just_pressed("attack"):
-		var fry_direction = self.global_position.direction_to(get_global_mouse_position())
+		var fry_direction = self.global_position.direction_to(Vector2(position.x+(50)*direct,position.y))
 		fry(fry_direction)  
 		
 	else:
@@ -79,6 +81,38 @@ func fry(fry_direction:Vector2):
 func _on_bottom_border_area_entered(area):
 	get_tree().reload_current_scene() 
 	
+#level 1
+func _on_pear_area_entered(area):
+	if area.is_in_group('player'):
+		get_tree().reload_current_scene()
+	else:
+		emit_signal('hit',1)
+		
+func _on_broccoli_area_entered(area):
+	if area.is_in_group('player') or area.is_in_group('enemy'):
+		get_tree().reload_current_scene()
+	else:
+		emit_signal('hit',2)
+
+func _on_wotamelon_area_entered(area):
+	print(area)
+	if area.is_in_group('player'):
+		get_tree().reload_current_scene()
+	else:
+		emit_signal('hit',3)
+
+func _on_wotamelon2_area_entered(area):
+	if area.is_in_group('player'):
+		get_tree().reload_current_scene()
+	else:
+		emit_signal('hit',4)
+		
+func _on_broccoli2_area_entered(area):
+	if area.is_in_group('player') or area.is_in_group('enemy'):
+		get_tree().reload_current_scene()
+	else:
+		emit_signal('hit',5)
+		
 func _on_burger_area_entered(area):
 	print(area)
 	if area.is_in_group('player'):
@@ -89,7 +123,11 @@ func _on_lepreborder_area_entered(area):
 
 
 func _on_leprechaun1_area_entered(area):
-	get_tree().reload_current_scene()
+	print(area)
+	if area.is_in_group('player'):
+		get_tree().reload_current_scene()
+	else:
+		emit_signal('hit',1)
 
 
 func _on_obstacle1_area_entered(area):
@@ -126,22 +164,12 @@ func _on_portal10_area_entered(area):
 
 func _on_border5_area_entered(area):
 	get_tree().reload_current_scene() 
-
-
-func _on_pear_area_entered(area):
-	print(area)
-	if area.is_in_group('player'):
-		get_tree().reload_current_scene()
-	else:
-		emit_signal('hit',1)
-
-
+	
 func _on_lvl6p_area_entered(area):
 	get_tree().change_scene("res://mountainlvl1.tscn")
+	
 
-func _on_broccoli_area_entered(area):
-	print(area)
-	if area.is_in_group('player') or area.is_in_group('enemy'):
-		get_tree().reload_current_scene()
-	else:
-		emit_signal('hit',2)
+
+
+
+

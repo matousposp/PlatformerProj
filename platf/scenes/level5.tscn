@@ -636,27 +636,28 @@ frames = SubResource( 142 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PihranhaPlant"]
 
 [node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 114, -3 )
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( 150, 13 )
+position = Vector2( 0, 1 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 108 )
 animation = "endroll"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 150, 13 )
+position = Vector2( 0, 1 )
 shape = SubResource( 109 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 150, 14 )
+position = Vector2( 0, 2 )
 offset = Vector2( 0, -20 )
 current = true
 smoothing_enabled = true
 smoothing_speed = 8.0
 
-[node name="Area2D" type="Area2D" parent="Player"]
-position = Vector2( 150, 13 )
+[node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
+position = Vector2( 0, 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/Area2D"]
 shape = SubResource( 109 )
@@ -748,6 +749,7 @@ position = Vector2( -9, 78 )
 position = Vector2( 2965, 158 )
 shape = SubResource( 133 )
 
+[connection signal="hit" from="Player" to="leprechaun1" method="_on_Player_hit"]
 [connection signal="area_entered" from="leprechaun1" to="Player" method="_on_leprechaun1_area_entered"]
 [connection signal="area_entered" from="obstacle1" to="Player" method="_on_obstacle1_area_entered"]
 [connection signal="area_entered" from="obstacle2" to="Player" method="_on_obstacle2_area_entered"]
