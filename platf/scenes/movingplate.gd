@@ -6,6 +6,5 @@ extends KinematicBody2D
 # var b = "text"
 
 
-
-func _on_Area2D_area_entered(area):
+func _ready():
 	$AnimationPlayer.play('move')
