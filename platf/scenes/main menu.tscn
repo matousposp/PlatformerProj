@@ -1,15 +1,16 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://MAIN scripts/main menu.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://img/skyy.PNG" type="Texture" id=3]
+[ext_resource path="res://HEART ATTACK.jpg" type="Texture" id=3]
 [ext_resource path="res://img/title.png" type="Texture" id=4]
 [ext_resource path="res://img/mainmenuimg.png" type="Texture" id=5]
 [ext_resource path="res://swing-sax-big-band-miller-style-2669.mp3" type="AudioStream" id=6]
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=7]
+[ext_resource path="res://Uni Sans Heavy.otf" type="DynamicFontData" id=8]
 
 [sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 2 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0, 0, 0, 0 )
@@ -51,7 +52,7 @@ bg_color = Color( 0, 0, 0, 0 )
 bg_color = Color( 0, 0, 0, 0 )
 
 [sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 2 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0, 0, 0, 0 )
@@ -79,6 +80,7 @@ texture = ExtResource( 3 )
 expand = true
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 tile_set = ExtResource( 7 )
 cell_size = Vector2( 32, 32 )
 format = 1
@@ -92,10 +94,11 @@ texture = ExtResource( 5 )
 flip_h = true
 
 [node name="start" type="Button" parent="."]
-margin_left = 491.0
-margin_top = 455.0
-margin_right = 665.0
-margin_bottom = 475.0
+margin_left = 299.0
+margin_top = 336.0
+margin_right = 465.0
+margin_bottom = 376.0
+rect_scale = Vector2( 5, 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
 custom_styles/hover = SubResource( 6 )
@@ -107,6 +110,7 @@ align = 0
 script = SubResource( 17 )
 
 [node name="option" type="Button" parent="."]
+visible = false
 margin_left = 500.0
 margin_top = 497.0
 margin_right = 674.0
@@ -121,10 +125,11 @@ text = "Options"
 align = 2
 
 [node name="quit" type="Button" parent="."]
-margin_left = 498.0
-margin_top = 546.0
-margin_right = 672.0
-margin_bottom = 566.0
+margin_left = 423.0
+margin_top = 479.0
+margin_right = 597.0
+margin_bottom = 499.0
+rect_scale = Vector2( 5, 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 3 )
 custom_styles/hover = SubResource( 13 )
@@ -146,15 +151,15 @@ margin_bottom = 52.0
 rect_scale = Vector2( 1.2, 1.2 )
 
 [node name="Title" type="Sprite" parent="."]
+visible = false
 position = Vector2( 516, 99 )
 scale = Vector2( 0.532005, 0.741379 )
 texture = ExtResource( 4 )
 
 [node name="Mainmenuimg4" type="Sprite" parent="."]
 visible = false
-position = Vector2( 603, 114 )
-rotation = 1.85703
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( 160, 411 )
+scale = Vector2( 0.64626, 0.637771 )
 texture = ExtResource( 5 )
 
 [node name="Mainmenuimg5" type="Sprite" parent="."]
