@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/swing-sax-big-band-miller-style-2669.mp3-d5e9d765f0e17b3f83983ff68e5f049f.mp3str"
+
+[deps]
+
+source_file="res://swing-sax-big-band-miller-style-2669.mp3"
+dest_files=[ "res://.import/swing-sax-big-band-miller-style-2669.mp3-d5e9d765f0e17b3f83983ff68e5f049f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
