@@ -5,9 +5,10 @@
 [ext_resource path="res://img/player.png" type="Texture" id=3]
 [ext_resource path="res://audio/mountain.wav" type="AudioStream" id=4]
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=5]
-[ext_resource path="res://blue.png" type="Texture" id=6]
+[ext_resource path="res://img/blue.png" type="Texture" id=6]
 [ext_resource path="res://img/cloud_lonely.png" type="Texture" id=7]
 [ext_resource path="res://img/Screenshot_20230222-132409.png" type="Texture" id=8]
+
 
 
 [sub_resource type="AtlasTexture" id=42]

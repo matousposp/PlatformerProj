@@ -1,9 +1,11 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://img/coral.png" type="Texture" id=1]
 [ext_resource path="res://img/nugget2.png" type="Texture" id=2]
 [ext_resource path="res://audio/Playerwater.gd" type="Script" id=3]
 [ext_resource path="res://img/player.png" type="Texture" id=4]
+[ext_resource path="res://img/2.png" type="Texture" id=5]
+[ext_resource path="res://scenes/2.gd" type="Script" id=6]
 [ext_resource path="res://img/wota.jpeg" type="Texture" id=8]
 [ext_resource path="res://audio/wioter.wav" type="AudioStream" id=9]
 [ext_resource path="res://scenes/portal10.gd" type="Script" id=10]
@@ -415,6 +417,37 @@ radius = 24.0
 [sub_resource type="CapsuleShape2D" id=66]
 radius = 24.0
 
+[sub_resource type="Animation" id=75]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=76]
+resource_name = "fade"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="level4" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -469,5 +502,16 @@ current = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
 position = Vector2( 0, 1 )
 shape = SubResource( 66 )
+
+[node name="2" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 346.25, 336 )
+scale = Vector2( 1.40444, 1.72727 )
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="2"]
+anims/RESET = SubResource( 75 )
+anims/fade = SubResource( 76 )
 
 [connection signal="area_entered" from="Player/Area2D" to="portal10" method="_on_Area2D_area_entered"]

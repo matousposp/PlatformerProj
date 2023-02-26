@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=2]
+[gd_scene load_steps=105 format=2]
 
 [ext_resource path="res://tilemaps/cloudtiles.tres" type="TileSet" id=1]
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://img/Biggestbirbspritesheet.png" type="Texture" id=9]
 [ext_resource path="res://scenes/BiggestBird.gd" type="Script" id=10]
 [ext_resource path="res://img/Piranha.png" type="Texture" id=11]
+[ext_resource path="res://img/3.png" type="Texture" id=12]
+[ext_resource path="res://scenes/3.gd" type="Script" id=13]
 
 [sub_resource type="AtlasTexture" id=134]
 flags = 4
@@ -593,6 +595,37 @@ extents = Vector2( 80.5, 72 )
 [sub_resource type="RectangleShape2D" id=133]
 extents = Vector2( 458.5, 10 )
 
+[sub_resource type="Animation" id=143]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=144]
+resource_name = "fade"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="level5" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -748,6 +781,17 @@ position = Vector2( -9, 78 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border2"]
 position = Vector2( 2965, 158 )
 shape = SubResource( 133 )
+
+[node name="3" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 166.75, 137 )
+scale = Vector2( 1.10068, 1.40909 )
+texture = ExtResource( 12 )
+script = ExtResource( 13 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="3"]
+anims/RESET = SubResource( 143 )
+anims/fade = SubResource( 144 )
 
 [connection signal="hit" from="Player" to="leprechaun1" method="_on_Player_hit"]
 [connection signal="area_entered" from="leprechaun1" to="Player" method="_on_leprechaun1_area_entered"]
