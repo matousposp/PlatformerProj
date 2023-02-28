@@ -13,8 +13,7 @@ func _process(delta):
 	if x == 0:
 		x = 120
 		if seen:
-			print(get_node("res://scenes/level1.tscn/Player"))
-			var brock_direction = self.global_position.direction_to(get_global_mouse_position())
+			var brock_direction = self.global_position.direction_to(get_parent().get_node('Player').position)
 			brock(brock_direction)
 		
 
