@@ -14,6 +14,7 @@ var jumps = 0
 var bullet_speed = 10
 var burger = false
 var direct = 1
+var charge = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass

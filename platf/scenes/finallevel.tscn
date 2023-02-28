@@ -8,8 +8,6 @@
 [ext_resource path="res://img/movingplatf.png" type="Texture" id=21]
 [ext_resource path="res://scenes/movingplate.gd" type="Script" id=22]
 [ext_resource path="res://img/borger.png" type="Texture" id=23]
-[ext_resource path="res://img/5.png" type="Texture" id=24]
-[ext_resource path="res://scenes/5.gd" type="Script" id=25]
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 6 )
@@ -248,37 +246,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=59]
 resource_name = "new"
-
-[sub_resource type="Animation" id=64]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
-}
-
-[sub_resource type="Animation" id=65]
-resource_name = "fade"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2.5, 4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
 
 [node name="finallevel" type="Node2D"]
 
