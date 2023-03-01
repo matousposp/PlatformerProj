@@ -303,7 +303,6 @@ position = Vector2( -1, 1 )
 shape = SubResource( 37 )
 
 [node name="3224324-middle-removebg-preview" type="Sprite" parent="."]
-visible = false
 position = Vector2( 352, 136 )
 rotation = 6.28319
 scale = Vector2( 10, 10 )
