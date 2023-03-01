@@ -1,11 +1,12 @@
 extends Control
 
-var x = 120
-var oldhealth = 60
-var hp
+var x = 90
+var oldhealth = 100
+var hp = 100
 
 func _process(delta):
-	hp = get_parent().health
+	if hp != get_parent().health:
+		hp -= 1
 	$HealthBar.value = hp
 	x -= 1
 	if x <= 0 and hp >= 33:

@@ -117,12 +117,14 @@ func _on_wotamelon2_area_entered(area):
 		emit_signal('hit',4)
 
 func _on_broccoli2_area_entered(area):
-	print(typeof(area))
 	if area.is_in_group('player') or area.is_in_group('enemy'):
 		health -= 34
 	else:
 		emit_signal('hit',5)
-		
+
+func _on_brock_barack():
+	health -= 34
+
 func _on_burger_area_entered(area):
 	print(area)
 	if area.is_in_group('player'):

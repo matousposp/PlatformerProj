@@ -2,6 +2,11 @@ extends Area2D
 
 export(int) var SPEED: int = 250
 
+signal barack
+
+func _ready():
+	connect('barack',get_parent().get_node('Player'),'_on_brock_barack')
+
 func _physics_process(delta):
 	var direction = Vector2.RIGHT.rotated(rotation)
 	global_position += SPEED * direction * delta
@@ -14,5 +19,9 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_brock_body_entered(body):
 	destroy()
-	
 
+func _on_brock_area_entered(area):
+	print(area)
+	if area == get_parent().get_node('Player/Area2D'):
+		emit_signal('barack')
+	destroy()
