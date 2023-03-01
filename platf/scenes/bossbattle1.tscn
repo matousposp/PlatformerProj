@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/finallevel.tres" type="TileSet" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://img/tateplaceholder.png" type="Texture" id=6]
 [ext_resource path="res://img/3224324-middle-removebg-preview.png" type="Texture" id=7]
 [ext_resource path="res://scenes/3224324-middle-removebg-preview.gd" type="Script" id=8]
+[ext_resource path="res://scenes/Dash.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Health.tscn" type="PackedScene" id=10]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
@@ -166,6 +168,13 @@ animations = [ {
 [sub_resource type="CapsuleShape2D" id=36]
 radius = 24.0
 
+[sub_resource type="Theme" id=40]
+resource_local_to_scene = true
+ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
+ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+ProgressBar/styles/bg = null
+ProgressBar/styles/fg = null
+
 [sub_resource type="CapsuleShape2D" id=37]
 radius = 22.0
 height = 52.0
@@ -265,6 +274,19 @@ drag_margin_left = 0.0
 drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
+
+[node name="Health" parent="Player" instance=ExtResource( 10 )]
+margin_left = -35.0
+margin_top = -64.0
+margin_right = -35.0
+margin_bottom = -64.0
+theme = SubResource( 40 )
+
+[node name="Dash" parent="Player" instance=ExtResource( 9 )]
+margin_left = -41.0
+margin_top = 63.0
+margin_right = -41.0
+margin_bottom = 63.0
 
 [node name="AndrewTate" type="KinematicBody2D" parent="."]
 position = Vector2( 687, 209 )

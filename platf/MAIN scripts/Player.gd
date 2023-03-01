@@ -180,7 +180,9 @@ func _on_border5_area_entered(area):
 func _on_lvl6p_area_entered(area):
 	get_tree().change_scene("res://mountainlvl1.tscn")
 	
-
+func _on_Weight_tatehit():
+	print('ah')
+	health -= 34
 
 
 
