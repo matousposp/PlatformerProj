@@ -31,6 +31,7 @@ Music="*res://music.tscn"
 [display]
 
 window/size/fullscreen=true
+window/stretch/mode="viewport"
 
 [gui]
 
