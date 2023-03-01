@@ -2,24 +2,27 @@ extends KinematicBody2D
 
 export(PackedScene) var FRY: PackedScene = preload('res://scenes/Fry.tscn')
 
+signal hit(id)
+
 const UP= Vector2(0, -1) 
-var GRAVITY= 10
-var MAXFALLSPEED= 400
-var MAXSPEED= 120
+var GRAVITY= 20
+var MAXFALLSPEED= 1000
+var MAXSPEED= 200
 var JUMPFORCE = 460
 var motion = Vector2()
 var jumps = 0
 var bullet_speed = 10
 var burger = false
 var direct = 1
+var charge = 0
+var health = 100
+var dash = 100
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
-
-
 func _reset_jump():
-	JUMPFORCE = 200
+	JUMPFORCE = 460
 	
 
 func _physics_process(delta):
@@ -27,10 +30,15 @@ func _physics_process(delta):
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
 	
-	if Input.is_action_pressed("dash"):
-		MAXSPEED = 200
+	if Input.is_action_pressed("dash") and dash > 10:
+		dash -= 1
+		MAXSPEED = 300
 	else:
-		MAXSPEED = 150
+		MAXSPEED = 200
+		if dash >= 100:
+			dash = 100
+		else:
+			dash += 0.5
 	
 	if Input.is_action_pressed("restart"):
 		get_tree().reload_current_scene()
@@ -49,7 +57,6 @@ func _physics_process(delta):
 		$AnimatedSprite.play("roll")
 		direct = -1
 		
-		
 	elif Input.is_action_just_pressed("attack"):
 		var fry_direction = self.global_position.direction_to(Vector2(position.x+(50)*direct,position.y))
 		fry(fry_direction)  
@@ -57,14 +64,16 @@ func _physics_process(delta):
 	else:
 		motion.x = 0
 		$AnimatedSprite.play("default")
+		
 	if Input.is_action_just_pressed("jump"):
 		if burger == true:
-			JUMPFORCE = 1000
+			JUMPFORCE = 1100
 			burger = false
 		else:
-			JUMPFORCE = 300
+			JUMPFORCE = 460
 		motion.y = -JUMPFORCE
-	
+	if health <= 0:
+		get_tree().reload_current_scene()
 	motion = move_and_slide(motion, UP)
 
 func fry(fry_direction:Vector2):
@@ -79,29 +88,57 @@ func fry(fry_direction:Vector2):
 
 func _on_bottom_border_area_entered(area):
 	get_tree().reload_current_scene() 
-
-
-
-func _on_portal1_area_entered(area):
-	get_tree().change_scene("res://scenes/level2.tscn")
 	
+#level 1
+func _on_pear_area_entered(area):
+	if area.is_in_group('player'):
+		health -= 34
+	else:
+		emit_signal('hit',1)
+		
+func _on_broccoli_area_entered(area):
+	if area.is_in_group('player'):
+		health -= 34
+	else:
+		emit_signal('hit',2)
+
+func _on_wotamelon_area_entered(area):
+	print(area)
+	if area.is_in_group('player'):
+		health -= 34
+	else:
+		emit_signal('hit',3)
+
+func _on_wotamelon2_area_entered(area):
+	if area.is_in_group('player'):
+		health -= 34
+	else:
+		emit_signal('hit',4)
+
+func _on_broccoli2_area_entered(area):
+	if area.is_in_group('player') or area.is_in_group('enemy'):
+		health -= 34
+	else:
+		emit_signal('hit',5)
+
+func _on_brock_barack():
+	health -= 34
+
 func _on_burger_area_entered(area):
-	burger = true
-
-
-
-func _on_portal2_area_entered(area):
-	get_tree().change_scene("res://scenes/level3.tscn")
-
-
-
+	print(area)
+	if area.is_in_group('player'):
+		burger = true
 
 func _on_lepreborder_area_entered(area):
 	get_tree().reload_current_scene()
 
 
 func _on_leprechaun1_area_entered(area):
-	get_tree().reload_current_scene()
+	print(area)
+	if area.is_in_group('player'):
+		get_tree().reload_current_scene()
+	else:
+		emit_signal('hit',1)
 
 
 func _on_obstacle1_area_entered(area):
@@ -138,11 +175,12 @@ func _on_portal10_area_entered(area):
 
 func _on_border5_area_entered(area):
 	get_tree().reload_current_scene() 
-
-
-func _on_pear_area_entered(area):
-	get_tree().reload_current_scene() 
-
-
+	
 func _on_lvl6p_area_entered(area):
 	get_tree().change_scene("res://mountainlvl1.tscn")
+	
+
+
+
+
+
