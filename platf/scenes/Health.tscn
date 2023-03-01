@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://fonts/health.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/Health.gd" type="Script" id=2]
+[ext_resource path="res://img/green.jpeg" type="Texture" id=3]
+[ext_resource path="res://img/heart.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 450, 450 )
+
+[sub_resource type="Gradient" id=2]
+
+[sub_resource type="GradientTexture2D" id=3]
+gradient = SubResource( 2 )
+fill_from = Vector2( 1, 0 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = SubResource( 3 )
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[node name="Health" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+margin_right = 78.0
+margin_bottom = 14.0
+theme = ExtResource( 1 )
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 4 )
+value = 50.0
+percent_visible = false
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -3, 7 )
+scale = Vector2( 1.625, 1.59375 )
+texture = ExtResource( 4 )

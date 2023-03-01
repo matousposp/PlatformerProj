@@ -14,3 +14,5 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_brock_body_entered(body):
 	destroy()
+	
+

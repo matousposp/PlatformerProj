@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=2]
+[gd_scene load_steps=111 format=2]
 
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://img/sky_lightened.png" type="Texture" id=2]
@@ -18,6 +18,8 @@
 [ext_resource path="res://scenes/wotamelon2.gd" type="Script" id=16]
 [ext_resource path="res://img/e50d45fec3feb5f890304163be0430b6.png" type="Texture" id=17]
 [ext_resource path="res://scenes/fade.gd" type="Script" id=18]
+[ext_resource path="res://scenes/Health.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/Dash.tscn" type="PackedScene" id=20]
 
 [sub_resource type="DynamicFont" id=60]
 font_data = ExtResource( 6 )
@@ -284,6 +286,9 @@ height = 16.0
 [sub_resource type="CapsuleShape2D" id=127]
 radius = 24.0
 height = 16.0
+
+[sub_resource type="Theme" id=154]
+resource_local_to_scene = true
 
 [sub_resource type="GDScript" id=71]
 script/source = "extends Area2D
@@ -586,6 +591,19 @@ drag_margin_bottom = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
 position = Vector2( 25, 2 )
 shape = SubResource( 127 )
+
+[node name="Health" parent="Player" instance=ExtResource( 19 )]
+margin_left = -14.0
+margin_top = -50.0
+margin_right = -14.0
+margin_bottom = -50.0
+theme = SubResource( 154 )
+
+[node name="Dash" parent="Player" instance=ExtResource( 20 )]
+margin_left = -17.0
+margin_top = 55.0
+margin_right = -17.0
+margin_bottom = 55.0
 
 [node name="musicplayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )

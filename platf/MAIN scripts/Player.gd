@@ -15,6 +15,8 @@ var bullet_speed = 10
 var burger = false
 var direct = 1
 var charge = 0
+var health = 100
+var dash = 100
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -28,10 +30,15 @@ func _physics_process(delta):
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
 	
-	if Input.is_action_pressed("dash"):
+	if Input.is_action_pressed("dash") and dash > 10:
+		dash -= 1
 		MAXSPEED = 300
 	else:
 		MAXSPEED = 200
+		if dash >= 100:
+			dash = 100
+		else:
+			dash += 0.5
 	
 	if Input.is_action_pressed("restart"):
 		get_tree().reload_current_scene()
@@ -66,7 +73,8 @@ func _physics_process(delta):
 			else:
 				JUMPFORCE = 460
 			motion.y = -JUMPFORCE
-	
+	if health <= 0:
+		get_tree().reload_current_scene()
 	motion = move_and_slide(motion, UP)
 
 func fry(fry_direction:Vector2):
@@ -85,32 +93,33 @@ func _on_bottom_border_area_entered(area):
 #level 1
 func _on_pear_area_entered(area):
 	if area.is_in_group('player'):
-		get_tree().reload_current_scene()
+		health -= 34
 	else:
 		emit_signal('hit',1)
 		
 func _on_broccoli_area_entered(area):
-	if area.is_in_group('player') or area.is_in_group('enemy'):
-		get_tree().reload_current_scene()
+	if area.is_in_group('player'):
+		health -= 34
 	else:
 		emit_signal('hit',2)
 
 func _on_wotamelon_area_entered(area):
 	print(area)
 	if area.is_in_group('player'):
-		get_tree().reload_current_scene()
+		health -= 34
 	else:
 		emit_signal('hit',3)
 
 func _on_wotamelon2_area_entered(area):
 	if area.is_in_group('player'):
-		get_tree().reload_current_scene()
+		health -= 34
 	else:
 		emit_signal('hit',4)
-		
+
 func _on_broccoli2_area_entered(area):
+	print(typeof(area))
 	if area.is_in_group('player') or area.is_in_group('enemy'):
-		get_tree().reload_current_scene()
+		health -= 34
 	else:
 		emit_signal('hit',5)
 		
