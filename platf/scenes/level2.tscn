@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://scenes/portal2.gd" type="Script" id=9]
 [ext_resource path="res://img/brick.PNG" type="Texture" id=10]
 [ext_resource path="res://scripts/moving plat.gd" type="Script" id=11]
+[ext_resource path="res://scenes/Dash.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/Health.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=60]
 extents = Vector2( 1424, 4.5 )
@@ -343,6 +345,13 @@ animations = [ {
 radius = 24.0
 height = 16.0
 
+[sub_resource type="Theme" id=91]
+resource_local_to_scene = true
+ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
+ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+ProgressBar/styles/bg = null
+ProgressBar/styles/fg = null
+
 [sub_resource type="AtlasTexture" id=83]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 32, 32 )
@@ -519,6 +528,19 @@ position = Vector2( 8, -40 )
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/Area2D"]
 position = Vector2( 16, 56 )
 shape = SubResource( 62 )
+
+[node name="Dash" parent="Player" instance=ExtResource( 12 )]
+margin_left = -19.0
+margin_top = 69.0
+margin_right = -19.0
+margin_bottom = 69.0
+
+[node name="Health" parent="Player" instance=ExtResource( 13 )]
+margin_left = -14.0
+margin_top = -46.0
+margin_right = -14.0
+margin_bottom = -46.0
+theme = SubResource( 91 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )

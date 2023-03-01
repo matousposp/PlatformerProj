@@ -28,6 +28,10 @@ config/icon="res://img/icon.png"
 
 Music="*res://music.tscn"
 
+[display]
+
+window/size/fullscreen=true
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
