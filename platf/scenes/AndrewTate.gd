@@ -18,12 +18,12 @@ var y = 0
 var rng = RandomNumberGenerator.new()
 var direction
 var health = 100
+var xvel = 0
 
 export(int) var SPEED: int = 800
 
 export(PackedScene) var WEIGHT: PackedScene = preload('res://scenes/Weight.tscn')
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
@@ -33,14 +33,19 @@ func _reset_jump():
 
 func _physics_process(delta):
 	cycle -= 1
-	motion.y += GRAVITY
-	if motion.y > MAXFALLSPEED:
-		motion.y = MAXFALLSPEED
-
+	if get_parent().get_node('Player').position.x < position.x:
+		direct = 1
+	else:
+		direct = -1
+	if cycle > 0:
+		if abs(abs(get_parent().get_node('Player').position.x) - abs(position.x)) < 400:
+			xvel += 1*direct
+			motion.x += xvel
 	if is_on_floor() and cycle == 0:
 		motion.y = -JUMPFORCE
-		cycle = rng.randi_range(3,3)
+		cycle = rng.randi_range(1,3)
 		if cycle == 1:
+			JUMPFORCE = 460
 			var weight_direction = self.global_position.direction_to(get_parent().get_node('Player').position)
 			weight(weight_direction)
 			y = 1
@@ -48,18 +53,11 @@ func _physics_process(delta):
 			if x == 0:
 				x = 240
 			else:
-				x -= 1
-				direction = Vector2.RIGHT.rotated(rotation)
-				global_position += SPEED * direction * delta
+				pass
 		else:
 			var beam_direction = self.global_position.direction_to(get_parent().get_node('Player').position)
 			beam(beam_direction)
-	
-	if cycle == 0:
-		y = 0
-		cycle = 120
-	motion = move_and_slide(motion, UP)
-	health -= 0.5
+	move_and_slide(motion, UP)
 	
 func weight(weight_direction:Vector2):
 	if WEIGHT:

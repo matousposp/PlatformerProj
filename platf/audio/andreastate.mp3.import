@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/andreastate.mp3-1d832304f40ced1e88517541d74dd565.mp3str"
+
+[deps]
+
+source_file="res://audio/andreastate.mp3"
+dest_files=[ "res://.import/andreastate.mp3-1d832304f40ced1e88517541d74dd565.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
