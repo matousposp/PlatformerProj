@@ -1,13 +1,17 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=99 format=2]
 
 [ext_resource path="res://MAIN scripts/main menu.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://img/pixil-frame-0 (2).png" type="Texture" id=3]
+[ext_resource path="res://img/coin1.png" type="Texture" id=3]
 [ext_resource path="res://img/title.png" type="Texture" id=4]
-[ext_resource path="res://img/mainmenuimg.png" type="Texture" id=5]
+[ext_resource path="res://scenes/img.gd" type="Script" id=5]
 [ext_resource path="res://audio/swing-sax-big-band-miller-style-2669.mp3" type="AudioStream" id=6]
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=7]
 [ext_resource path="res://fonts/Uni Sans Heavy.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://img/blue.png" type="Texture" id=9]
+[ext_resource path="res://img/cloud_lonely.png" type="Texture" id=10]
+[ext_resource path="res://scenes/coin.gd" type="Script" id=11]
+[ext_resource path="res://img/player.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 8 )
@@ -66,24 +70,352 @@ bg_color = Color( 0, 0, 0, 0 )
 [sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0, 0, 0, 0 )
 
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 14 )
+region = Rect2( 64, 160, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 14 )
+region = Rect2( 96, 160, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 14 )
+region = Rect2( 128, 160, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 14 )
+region = Rect2( 160, 160, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 14 )
+region = Rect2( 192, 160, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 192, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 14 )
+region = Rect2( 32, 192, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 14 )
+region = Rect2( 64, 192, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 14 )
+region = Rect2( 96, 192, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 14 )
+region = Rect2( 128, 192, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 14 )
+region = Rect2( 160, 192, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 14 )
+region = Rect2( 192, 192, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 224, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 14 )
+region = Rect2( 32, 224, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 14 )
+region = Rect2( 64, 224, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 14 )
+region = Rect2( 96, 224, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 14 )
+region = Rect2( 128, 224, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 14 )
+region = Rect2( 160, 224, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=104]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=105]
+atlas = ExtResource( 14 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=106]
+atlas = ExtResource( 14 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 14 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=107]
+atlas = ExtResource( 14 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=108]
+atlas = ExtResource( 14 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=109]
+atlas = ExtResource( 14 )
+region = Rect2( 192, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=110]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 14 )
+region = Rect2( 32, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 14 )
+region = Rect2( 64, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 14 )
+region = Rect2( 96, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 14 )
+region = Rect2( 128, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 14 )
+region = Rect2( 160, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 14 )
+region = Rect2( 192, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 160, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 14 )
+region = Rect2( 32, 160, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=83]
+atlas = ExtResource( 14 )
+region = Rect2( 96, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=84]
+atlas = ExtResource( 14 )
+region = Rect2( 128, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=85]
+atlas = ExtResource( 14 )
+region = Rect2( 160, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=86]
+atlas = ExtResource( 14 )
+region = Rect2( 192, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=87]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=88]
+atlas = ExtResource( 14 )
+region = Rect2( 32, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=89]
+atlas = ExtResource( 14 )
+region = Rect2( 64, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=90]
+atlas = ExtResource( 14 )
+region = Rect2( 96, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=91]
+atlas = ExtResource( 14 )
+region = Rect2( 128, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=92]
+atlas = ExtResource( 14 )
+region = Rect2( 160, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=93]
+atlas = ExtResource( 14 )
+region = Rect2( 192, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=94]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=95]
+atlas = ExtResource( 14 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=96]
+atlas = ExtResource( 14 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=97]
+atlas = ExtResource( 14 )
+region = Rect2( 96, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=98]
+atlas = ExtResource( 14 )
+region = Rect2( 128, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=99]
+atlas = ExtResource( 14 )
+region = Rect2( 160, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=100]
+atlas = ExtResource( 14 )
+region = Rect2( 192, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=101]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=102]
+atlas = ExtResource( 14 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=103]
+atlas = ExtResource( 14 )
+region = Rect2( 64, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=111]
+animations = [ {
+"frames": [ SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
+"loop": true,
+"name": "attack",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 104 ), SubResource( 105 ), SubResource( 106 ), SubResource( 4 ), SubResource( 107 ), SubResource( 108 ), SubResource( 109 ), SubResource( 110 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ) ],
+"loop": true,
+"name": "endroll",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ) ],
+"loop": true,
+"name": "roll",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ), SubResource( 99 ), SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ) ],
+"loop": true,
+"name": "startroll",
+"speed": 12.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=112]
+radius = 24.0
+height = 16.0
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 3 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 3 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 3 )
+region = Rect2( 128, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 3 )
+region = Rect2( 144, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=29]
+radius = 17.0
+
 [node name="main menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -115.0
-margin_top = -27.0
-margin_right = 1095.0
-margin_bottom = 605.0
-texture = ExtResource( 3 )
+margin_left = -53.0
+margin_top = -45.0
+margin_right = 1072.0
+margin_bottom = 657.0
+texture = ExtResource( 9 )
 expand = true
 
-[node name="start" type="Button" parent="TextureRect"]
-margin_left = 464.0
-margin_top = 332.0
-margin_right = 630.0
-margin_bottom = 372.0
+[node name="CloudLonely" type="Sprite" parent="."]
+position = Vector2( 373, 404 )
+scale = Vector2( 5.6276, 6.24074 )
+texture = ExtResource( 10 )
+
+[node name="CloudLonely2" type="Sprite" parent="."]
+position = Vector2( -125, 561 )
+scale = Vector2( 5.6276, 6.24074 )
+texture = ExtResource( 10 )
+
+[node name="CloudLonely3" type="Sprite" parent="."]
+position = Vector2( 435, 665 )
+scale = Vector2( 5.6276, 6.24074 )
+texture = ExtResource( 10 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 131089, 2, 0, 131090, 2, 0, 131091, 2, 0, 131092, 2, 0, 131093, 2, 0, 131094, 2, 0, 196622, 2, 0, 327688, 2, 0, 327691, 2, 0, 327707, 2, 0, 327708, 2, 0, 327709, 2, 0, 327710, 2, 0, 393222, 2, 0, 393241, 2, 0, 524287, 0, 0, 458754, 2, 0, 458775, 2, 0, 589823, 1, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524319, 0, 0, 655359, 1, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 0, 0, 589836, 0, 0, 589837, 0, 0, 589854, 0, 0, 589855, 0, 0, 720895, 1, 0, 655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 0, 0, 655365, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655390, 0, 0, 655391, 1, 0, 786431, 1, 0, 720896, 1, 0, 720897, 1, 0, 720898, 1, 0, 720899, 1, 0, 720900, 1, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 1, 0, 720909, 1, 0, 720910, 1, 0, 720911, 1, 0, 720912, 1, 0, 720913, 1, 0, 720914, 1, 0, 720915, 1, 0, 720916, 1, 0, 720917, 0, 0, 720925, 0, 0, 720926, 0, 0, 720927, 1, 0, 851967, 1, 0, 786432, 1, 0, 786433, 1, 0, 786434, 1, 0, 786435, 1, 0, 786436, 1, 0, 786437, 1, 0, 786438, 1, 0, 786439, 1, 0, 786440, 1, 0, 786441, 1, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 3, 0, 786446, 1, 0, 786447, 1, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0, 786451, 1, 0, 786452, 1, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786460, 0, 0, 786461, 0, 0, 786462, 1, 0, 786463, 1, 0, 917503, 1, 0, 851968, 1, 0, 851969, 3, 0, 851970, 3, 0, 851971, 3, 0, 851972, 3, 0, 851973, 3, 0, 851974, 3, 0, 851975, 3, 0, 851976, 3, 0, 851977, 3, 0, 851978, 3, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 851995, 0, 0, 851996, 0, 0, 851997, 1, 0, 851998, 1, 0, 851999, 1, 0, 983039, 1, 0, 917504, 1, 0, 917505, 3, 0, 917506, 3, 0, 917507, 3, 0, 917508, 3, 0, 917509, 3, 0, 917510, 3, 0, 917511, 3, 0, 917512, 3, 0, 917513, 3, 0, 917514, 3, 0, 917515, 1, 0, 917516, 1, 0, 917517, 1, 0, 917518, 1, 0, 917519, 1, 0, 917520, 1, 0, 917521, 1, 0, 917522, 3, 0, 917523, 1, 0, 917524, 1, 0, 917525, 1, 0, 917526, 1, 0, 917527, 1, 0, 917528, 1, 0, 917529, 1, 0, 917530, 1, 0, 917531, 0, 0, 917532, 0, 0, 917533, 1, 0, 917534, 1, 0, 917535, 3, 0, 1048575, 1, 0, 983040, 1, 0, 983041, 3, 0, 983042, 3, 0, 983043, 3, 0, 983044, 3, 0, 983045, 3, 0, 983046, 3, 0, 983047, 3, 0, 983048, 3, 0, 983049, 3, 0, 983050, 3, 0, 983051, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 983055, 3, 0, 983056, 1, 0, 983057, 1, 0, 983058, 3, 0, 983059, 1, 0, 983060, 3, 0, 983061, 1, 0, 983062, 1, 0, 983063, 1, 0, 983064, 1, 0, 983065, 1, 0, 983066, 1, 0, 983067, 1, 0, 983068, 1, 0, 983069, 1, 0, 983070, 1, 0, 983071, 1, 0, 1114111, 1, 0, 1048576, 1, 0, 1048577, 3, 0, 1048578, 3, 0, 1048579, 3, 0, 1048580, 3, 0, 1048581, 3, 0, 1048582, 3, 0, 1048583, 3, 0, 1048584, 3, 0, 1048585, 3, 0, 1048586, 3, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 1, 0, 1048590, 1, 0, 1048591, 1, 0, 1048592, 1, 0, 1048593, 1, 0, 1048594, 1, 0, 1048595, 1, 0, 1048596, 1, 0, 1048597, 1, 0, 1048598, 1, 0, 1048599, 3, 0, 1048600, 1, 0, 1048601, 1, 0, 1048602, 1, 0, 1048603, 1, 0, 1048604, 3, 0, 1048605, 1, 0, 1048606, 1, 0, 1048607, 1, 0, 1179647, 1, 0, 1114112, 1, 0, 1114113, 3, 0, 1114114, 3, 0, 1114115, 3, 0, 1114116, 3, 0, 1114117, 3, 0, 1114118, 3, 0, 1114119, 3, 0, 1114120, 3, 0, 1114121, 3, 0, 1114122, 3, 0, 1114123, 1, 0, 1114124, 1, 0, 1114125, 1, 0, 1114126, 1, 0, 1114127, 1, 0, 1114128, 1, 0, 1114129, 3, 0, 1114130, 1, 0, 1114131, 1, 0, 1114132, 1, 0, 1114133, 1, 0, 1114134, 1, 0, 1114135, 1, 0, 1114136, 1, 0, 1114137, 1, 0, 1114138, 3, 0, 1114139, 1, 0, 1114140, 1, 0, 1114141, 1, 0, 1114142, 3, 0, 1114143, 1, 0, 1245183, 1, 0, 1179648, 1, 0, 1179649, 1, 0, 1179650, 1, 0, 1179651, 1, 0, 1179652, 1, 0, 1179653, 1, 0, 1179654, 1, 0, 1179655, 1, 0, 1179656, 1, 0, 1179657, 1, 0, 1179658, 1, 0, 1179659, 1, 0, 1179660, 1, 0, 1179661, 1, 0, 1179662, 1, 0, 1179663, 1, 0, 1179664, 1, 0, 1179665, 1, 0, 1179666, 1, 0, 1179667, 1, 0, 1179668, 1, 0, 1179669, 1, 0, 1179670, 1, 0, 1179671, 3, 0, 1179672, 1, 0, 1179673, 1, 0, 1179674, 1, 0, 1179675, 1, 0, 1179676, 1, 0, 1179677, 1, 0, 1179678, 1, 0, 1179679, 1, 0, 1245206, 1, 0, 1245207, 1, 0, 1245208, 1, 0, 1245209, 1, 0, 1245210, 1, 0, 1245211, 1, 0 )
+
+[node name="start" type="Button" parent="."]
+margin_left = 49.0
+margin_top = 440.0
+margin_right = 163.0
+margin_bottom = 457.0
 rect_scale = Vector2( 3, 3 )
 rect_pivot_offset = Vector2( 2, 0 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -96,11 +428,11 @@ text = "Start Game"
 align = 0
 script = SubResource( 17 )
 
-[node name="quit" type="Button" parent="TextureRect"]
-margin_left = 543.0
-margin_top = 481.0
-margin_right = 717.0
-margin_bottom = 501.0
+[node name="quit" type="Button" parent="."]
+margin_left = 45.0
+margin_top = 504.0
+margin_right = 219.0
+margin_bottom = 524.0
 rect_scale = Vector2( 3, 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 3 )
@@ -110,20 +442,6 @@ custom_styles/focus = SubResource( 15 )
 custom_styles/normal = SubResource( 16 )
 text = "Quit"
 align = 0
-
-[node name="TileMap" type="TileMap" parent="."]
-visible = false
-tile_set = ExtResource( 7 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( 131081, 2, 0, 131082, 2, 0, 131083, 2, 0, 131084, 2, 0, 131085, 2, 0, 131086, 2, 0, 131087, 2, 0, 131088, 2, 0, 131089, 2, 0, 131090, 2, 0, 131091, 2, 0, 131092, 2, 0, 131093, 2, 0, 131094, 2, 0, 196617, 2, 0, 196618, 2, 0, 196619, 2, 0, 196620, 2, 0, 196621, 2, 0, 196622, 2, 0, 196623, 2, 0, 196624, 2, 0, 196625, 2, 0, 196626, 2, 0, 196627, 2, 0, 196628, 2, 0, 196629, 2, 0, 196630, 2, 0, 262148, 2, 0, 262149, 2, 0, 262172, 2, 0, 327684, 2, 0, 327685, 2, 0, 327708, 2, 0, 327709, 2, 0, 327710, 2, 0, 393231, 2, 0, 393232, 2, 0, 524300, 2, 0, 524307, 2, 0, 524308, 2, 0, 524315, 2, 0, 589836, 2, 0, 589851, 2, 0, 720892, 1, 0, 720893, 0, 0, 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655385, 2, 0, 786428, 1, 0, 786429, 1, 0, 786430, 1, 0, 786431, 1, 0, 720896, 1, 0, 720897, 1, 0, 720898, 1, 0, 720899, 1, 0, 720900, 1, 0, 720901, 0, 0, 720902, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 851964, 1, 0, 851965, 1, 0, 851966, 1, 0, 851967, 3, 0, 786432, 1, 0, 786433, 1, 0, 786434, 1, 0, 786435, 1, 0, 786436, 1, 0, 786437, 1, 0, 786438, 0, 0, 786439, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0, 786451, 1, 0, 786452, 1, 0, 786453, 1, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 917500, 1, 0, 917501, 1, 0, 917502, 1, 0, 917503, 3, 0, 851968, 1, 0, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 851972, 3, 0, 851973, 3, 0, 851974, 1, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0, 851992, 1, 0, 851993, 1, 0, 851994, 0, 0, 851995, 0, 0, 851996, 0, 0, 851997, 0, 0, 983036, 1, 0, 983037, 3, 0, 983038, 1, 0, 983039, 3, 0, 917504, 3, 0, 917505, 1, 0, 917506, 2, 0, 917507, 1, 0, 917508, 1, 0, 917509, 1, 0, 917510, 1, 0, 917511, 1, 0, 917512, 1, 0, 917513, 1, 0, 917514, 3, 0, 917515, 1, 0, 917516, 2, 0, 917517, 1, 0, 917518, 1, 0, 917519, 3, 0, 917520, 3, 0, 917521, 3, 0, 917522, 3, 0, 917523, 3, 0, 917524, 3, 0, 917525, 3, 0, 917526, 1, 0, 917527, 1, 0, 917528, 1, 0, 917529, 1, 0, 917530, 1, 0, 917531, 1, 0, 917532, 1, 0, 917533, 1, 0, 917534, 0, 0, 1048572, 1, 0, 1048573, 3, 0, 1048574, 1, 0, 1048575, 1, 0, 983040, 1, 0, 983041, 1, 0, 983042, 1, 0, 983043, 3, 0, 983044, 1, 0, 983045, 1, 0, 983046, 3, 0, 983047, 3, 0, 983048, 1, 0, 983049, 1, 0, 983050, 3, 0, 983051, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 983055, 1, 0, 983056, 3, 0, 983057, 3, 0, 983058, 3, 0, 983059, 3, 0, 983060, 3, 0, 983061, 3, 0, 983062, 3, 0, 983063, 1, 0, 983064, 1, 0, 983065, 1, 0, 983066, 3, 0, 983067, 1, 0, 983068, 1, 0, 983069, 1, 0, 983070, 0, 0, 983071, 0, 0, 983072, 0, 0, 983073, 0, 0, 983074, 0, 0, 1114108, 1, 0, 1114109, 3, 0, 1114110, 1, 0, 1114111, 1, 0, 1048576, 1, 0, 1048577, 1, 0, 1048578, 3, 0, 1048579, 1, 0, 1048580, 1, 0, 1048581, 1, 0, 1048582, 1, 0, 1048583, 3, 0, 1048584, 3, 0, 1048585, 1, 0, 1048586, 3, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 1, 0, 1048590, 1, 0, 1048591, 3, 0, 1048592, 3, 0, 1048593, 3, 0, 1048594, 3, 0, 1048595, 3, 0, 1048596, 3, 0, 1048597, 3, 0, 1048598, 3, 0, 1048599, 1, 0, 1048600, 1, 0, 1048601, 1, 0, 1048602, 3, 0, 1048603, 3, 0, 1048604, 1, 0, 1048605, 1, 0, 1048606, 1, 0, 1048607, 1, 0, 1048608, 1, 0, 1048609, 1, 0, 1048610, 1, 0, 1179644, 1, 0, 1179645, 1, 0, 1179646, 3, 0, 1179647, 1, 0, 1114112, 1, 0, 1114113, 1, 0, 1114114, 3, 0, 1114115, 1, 0, 1114116, 1, 0, 1114117, 3, 0, 1114118, 3, 0, 1114119, 1, 0, 1114120, 3, 0, 1114121, 1, 0, 1114122, 1, 0, 1114123, 1, 0, 1114124, 1, 0, 1114125, 1, 0, 1114126, 1, 0, 1114127, 3, 0, 1114128, 3, 0, 1114129, 3, 0, 1114130, 1, 0, 1114131, 1, 0, 1114132, 1, 0, 1114133, 1, 0, 1114134, 1, 0, 1114135, 1, 0, 1114136, 1, 0, 1114137, 1, 0, 1114138, 1, 0, 1114139, 3, 0, 1114140, 1, 0, 1114141, 2, 0, 1114142, 1, 0, 1114143, 1, 0, 1114144, 1, 0, 1114145, 3, 0, 1114146, 3, 0, 1245180, 1, 0, 1245181, 1, 0, 1245182, 1, 0, 1245183, 1, 0, 1179648, 3, 0, 1179649, 3, 0, 1179650, 1, 0, 1179651, 1, 0, 1179652, 3, 0, 1179653, 3, 0, 1179654, 1, 0, 1179655, 2, 0, 1179656, 1, 0, 1179657, 3, 0, 1179658, 1, 0, 1179659, 3, 0, 1179660, 3, 0, 1179661, 3, 0, 1179662, 1, 0, 1179663, 1, 0, 1179664, 1, 0, 1179665, 1, 0, 1179666, 1, 0, 1179667, 3, 0, 1179668, 1, 0, 1179669, 1, 0, 1179670, 1, 0, 1179671, 3, 0, 1179672, 2, 0, 1179673, 1, 0, 1179674, 1, 0, 1179675, 3, 0, 1179676, 3, 0, 1179677, 3, 0, 1179678, 3, 0, 1179679, 3, 0, 1179680, 3, 0, 1179681, 3, 0, 1179682, 1, 0, 1310716, 1, 0, 1310717, 1, 0, 1310718, 1, 0, 1310719, 1, 0, 1245184, 1, 0, 1245185, 1, 0, 1245186, 1, 0, 1245187, 1, 0, 1245188, 3, 0, 1245189, 1, 0, 1245190, 1, 0, 1245191, 1, 0, 1245192, 1, 0, 1245193, 1, 0, 1245194, 1, 0, 1245195, 1, 0, 1245196, 1, 0, 1245197, 1, 0, 1245198, 1, 0, 1245199, 1, 0, 1245200, 1, 0, 1245201, 3, 0, 1245202, 3, 0, 1245203, 1, 0, 1245204, 1, 0, 1245205, 1, 0, 1245206, 1, 0, 1245207, 1, 0, 1245208, 1, 0, 1245209, 1, 0, 1245210, 1, 0, 1245211, 1, 0, 1245212, 1, 0, 1245213, 1, 0, 1245214, 1, 0, 1245215, 1, 0, 1245216, 1, 0, 1245217, 1, 0, 1245218, 1, 0, 1310737, 1, 0, 1310738, 1, 0 )
-
-[node name="Mainmenuimg3" type="Sprite" parent="."]
-visible = false
-position = Vector2( 501.171, 163.5 )
-scale = Vector2( 0.160912, 0.164276 )
-texture = ExtResource( 5 )
-flip_h = true
 
 [node name="option" type="Button" parent="."]
 visible = false
@@ -140,41 +458,65 @@ custom_styles/normal = SubResource( 12 )
 text = "Options"
 align = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -104.0
-margin_top = -5.0
-margin_right = 69.9999
-margin_bottom = 72.0
-rect_scale = Vector2( 1.2, 1.2 )
-
 [node name="Title" type="Sprite" parent="."]
 visible = false
-position = Vector2( 516, 99 )
-scale = Vector2( 0.532005, 0.741379 )
+position = Vector2( 543, 131 )
+scale = Vector2( 1.08243, 2.12931 )
 texture = ExtResource( 4 )
 
-[node name="Mainmenuimg4" type="Sprite" parent="."]
-visible = false
-position = Vector2( 160, 411 )
-scale = Vector2( 0.64626, 0.637771 )
-texture = ExtResource( 5 )
+[node name="img" type="KinematicBody2D" parent="."]
+script = ExtResource( 5 )
 
-[node name="Mainmenuimg5" type="Sprite" parent="."]
-visible = false
-position = Vector2( 195, 74 )
-rotation = 0.546288
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 5 )
-flip_h = true
-flip_v = true
+[node name="AnimatedSprite" type="AnimatedSprite" parent="img"]
+position = Vector2( 520, 288 )
+scale = Vector2( 2.5, 2.5 )
+frames = SubResource( 111 )
+animation = "endroll"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="img"]
+position = Vector2( 524, 293 )
+shape = SubResource( 112 )
+one_way_collision_margin = 0.0
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D"]
+position = Vector2( 646, 273 )
+scale = Vector2( 3.5, 3.6875 )
+frames = SubResource( 28 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 646, 273 )
+shape = SubResource( 29 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D2"]
+position = Vector2( 272, 130 )
+scale = Vector2( 3.5, 3.6875 )
+frames = SubResource( 28 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( 270, 129 )
+shape = SubResource( 29 )
+
+[node name="Area2D3" type="Area2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D3"]
+position = Vector2( 573, 34 )
+scale = Vector2( 3.5, 3.6875 )
+frames = SubResource( 28 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2( 573, 33 )
+shape = SubResource( 29 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
 
-[connection signal="pressed" from="TextureRect/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="TextureRect/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
