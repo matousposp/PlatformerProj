@@ -31,7 +31,7 @@ func _physics_process(delta):
 		motion.y = MAXFALLSPEED
 	
 	if Input.is_action_pressed("dash") and dash > 10:
-		dash -= 1
+		dash -= 0.8
 		MAXSPEED = 300
 	else:
 		MAXSPEED = 200

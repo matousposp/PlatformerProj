@@ -6,9 +6,9 @@ signal hit(id)
 
 const UP= Vector2(0, -1) 
 var GRAVITY= 20
-var MAXFALLSPEED= 1000
+var MAXFALLSPEED= 250
 var MAXSPEED= 200
-var JUMPFORCE = 460
+var JUMPFORCE = 200
 var motion = Vector2()
 var jumps = 0
 var bullet_speed = 10
@@ -22,7 +22,7 @@ func _ready():
 	pass
 
 func _reset_jump():
-	JUMPFORCE = 230
+	JUMPFORCE = 200
 	
 
 func _physics_process(delta):
@@ -32,9 +32,9 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("dash") and dash > 10:
 		dash -= 1
-		MAXSPEED = 300
+		MAXSPEED = 230
 	else:
-		MAXSPEED = 200
+		MAXSPEED = 150
 		if dash >= 100:
 			dash = 100
 		else:
@@ -70,7 +70,7 @@ func _physics_process(delta):
 			JUMPFORCE = 1100
 			burger = false
 		else:
-			JUMPFORCE = 230
+			JUMPFORCE = 460
 		motion.y = -JUMPFORCE
 	if health <= 0:
 		get_tree().reload_current_scene()
@@ -179,6 +179,13 @@ func _on_border5_area_entered(area):
 func _on_lvl6p_area_entered(area):
 	get_tree().change_scene("res://mountainlvl1.tscn")
 	
-func _on_Weight_tatehit():
-	print('ah')
-	health -= 34
+
+
+
+
+
+func _on_piranha_area_entered(area):
+	if area.is_in_group('player'):
+		health -= 34
+	else:
+		emit_signal('hit',1)
