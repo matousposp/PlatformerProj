@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fragment-of-tomorrow-131881.mp3-08215492b97aa33812013902f083c192.mp3str"
+
+[deps]
+
+source_file="res://audio/fragment-of-tomorrow-131881.mp3"
+dest_files=[ "res://.import/fragment-of-tomorrow-131881.mp3-08215492b97aa33812013902f083c192.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
