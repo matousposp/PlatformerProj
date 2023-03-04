@@ -184,3 +184,8 @@ func _on_lvl6p_area_entered(area):
 
 
 
+func _on_piranha_area_entered(area):
+	if area.is_in_group('player'):
+		health -= 34
+	else:
+		emit_signal('hit',1)
