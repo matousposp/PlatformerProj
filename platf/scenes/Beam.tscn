@@ -181,23 +181,25 @@ region = Rect2( 388, 432, 97, 72 )
 [sub_resource type="SpriteFrames" id=36]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
-"loop": true,
+"loop": false,
 "name": "beam",
-"speed": 30.0
+"speed": 25.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=37]
-extents = Vector2( 136.25, 25.25 )
+extents = Vector2( 473, 76 )
 
 [node name="Beam" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 217, -1 )
-scale = Vector2( 2.69588, 1.77778 )
+position = Vector2( 565, 1.00001 )
+scale = Vector2( 9.69846, 4.79167 )
 frames = SubResource( 36 )
 animation = "beam"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 222.25, 0.25 )
+position = Vector2( 559, 4 )
 shape = SubResource( 37 )
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
