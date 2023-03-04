@@ -178,7 +178,7 @@ func _on_border5_area_entered(area):
 	get_tree().reload_current_scene() 
 	
 func _on_lvl6p_area_entered(area):
-	get_tree().change_scene("res://mountainlvl1.tscn")
+	get_tree().change_scene("res://level7mountainjew.tscn")
 	
 func _on_Weight_tatehit():
 	print('ah')
