@@ -9,7 +9,7 @@
 [ext_resource path="res://img/cloud_lonely.png" type="Texture" id=7]
 [ext_resource path="res://img/Screenshot_20230222-132409.png" type="Texture" id=8]
 [ext_resource path="res://img/wotamelon.png" type="Texture" id=9]
-[ext_resource path="res://Wotamelon.gd" type="Script" id=10]
+[ext_resource path="res://scripts/Wotamelon.gd" type="Script" id=10]
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 3 )

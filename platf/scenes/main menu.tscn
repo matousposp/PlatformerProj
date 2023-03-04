@@ -2,7 +2,7 @@
 
 [ext_resource path="res://MAIN scripts/main menu.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://pixil-frame-0 (2).png" type="Texture" id=3]
+[ext_resource path="res://img/pixil-frame-0 (2).png" type="Texture" id=3]
 [ext_resource path="res://img/title.png" type="Texture" id=4]
 [ext_resource path="res://img/mainmenuimg.png" type="Texture" id=5]
 [ext_resource path="res://audio/swing-sax-big-band-miller-style-2669.mp3" type="AudioStream" id=6]
