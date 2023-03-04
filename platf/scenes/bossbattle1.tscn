@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/finallevel.tres" type="TileSet" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://scenes/3224324-middle-removebg-preview.gd" type="Script" id=8]
 [ext_resource path="res://scenes/Dash.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/Health.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/pause menu.gd" type="Script" id=11]
+[ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=12]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
@@ -210,6 +212,23 @@ tracks/1/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
+[sub_resource type="DynamicFont" id=41]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxFlat" id=42]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=43]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=44]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=45]
+bg_color = Color( 0, 0, 0, 0 )
+
 [node name="bossbattle1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -296,7 +315,6 @@ position = Vector2( -1, 1 )
 shape = SubResource( 37 )
 
 [node name="3224324-middle-removebg-preview" type="Sprite" parent="."]
-visible = false
 position = Vector2( 352, 136 )
 rotation = 6.28319
 scale = Vector2( 10, 10 )
@@ -306,3 +324,46 @@ script = ExtResource( 8 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="3224324-middle-removebg-preview"]
 anims/RESET = SubResource( 38 )
 anims/fade = SubResource( 39 )
+
+[node name="pause1" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="pause menu" type="Control" parent="pause1"]
+pause_mode = 2
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 11 )
+
+[node name="ColorRect" type="ColorRect" parent="pause1/pause menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 986.0
+margin_bottom = 576.0
+color = Color( 0, 0, 0, 0.301961 )
+
+[node name="ColorRect2" type="ColorRect" parent="pause1/pause menu"]
+margin_left = 327.0
+margin_top = 248.0
+margin_right = 703.0
+margin_bottom = 344.0
+color = Color( 0.592157, 0.792157, 1, 1 )
+
+[node name="go back" type="Button" parent="pause1/pause menu"]
+margin_left = 369.0
+margin_top = 278.0
+margin_right = 553.0
+margin_bottom = 298.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 2, 0 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.866667, 0, 0, 1 )
+custom_fonts/font = SubResource( 41 )
+custom_styles/hover = SubResource( 42 )
+custom_styles/pressed = SubResource( 43 )
+custom_styles/focus = SubResource( 44 )
+custom_styles/normal = SubResource( 45 )
+text = "Main Menu"
+align = 0
+
+[connection signal="pressed" from="pause1/pause menu/go back" to="pause1/pause menu" method="_on_go_back_pressed"]
