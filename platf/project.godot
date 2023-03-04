@@ -24,8 +24,13 @@ config/name="platf"
 run/main_scene="res://scenes/main menu.tscn"
 config/icon="res://img/icon.png"
 
+[autoload]
+
+Music="*res://music.tscn"
+
 [display]
 
+window/size/fullscreen=true
 window/stretch/mode="viewport"
 
 [gui]

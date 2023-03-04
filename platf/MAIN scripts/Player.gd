@@ -187,3 +187,11 @@ func _on_Weight_tatehit():
 
 
 
+
+func _on_borderbeta_area_entered(area):
+	get_tree().reload_current_scene() 
+
+
+
+func _on_borderagain_area_entered(area):
+	get_tree().reload_current_scene() 

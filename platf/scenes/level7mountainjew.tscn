@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://img/angry cat.png" type="Texture" id=1]
 [ext_resource path="res://scripts/mountainbird1.gd" type="Script" id=2]
@@ -432,6 +432,9 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=128]
+extents = Vector2( 4719, 19 )
+
 [node name="mountainlvl1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -578,3 +581,11 @@ script = ExtResource( 9 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="4"]
 anims/RESET = SubResource( 125 )
 anims/fade = SubResource( 126 )
+
+[node name="borderagain" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borderagain"]
+position = Vector2( 3180, 1457 )
+shape = SubResource( 128 )
+
+[connection signal="area_entered" from="borderagain" to="Player" method="_on_borderagain_area_entered"]
