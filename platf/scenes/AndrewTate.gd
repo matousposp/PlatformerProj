@@ -17,6 +17,7 @@ var x = 0
 var y = 0
 var rng = RandomNumberGenerator.new()
 var direction
+var health = 100
 
 export(int) var SPEED: int = 800
 
@@ -58,6 +59,7 @@ func _physics_process(delta):
 		y = 0
 		cycle = 120
 	motion = move_and_slide(motion, UP)
+	health -= 0.5
 	
 func weight(weight_direction:Vector2):
 	if WEIGHT:
