@@ -8,7 +8,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	get_tree().paused = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -25,3 +25,5 @@ func _on_quit_pressed():
 
 func _on_level_select_pressed():
 	get_tree().change_scene("res://level select.tscn")
+
+

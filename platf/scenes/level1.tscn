@@ -721,31 +721,31 @@ script = ExtResource( 18 )
 anims/RESET = SubResource( 152 )
 anims/fade = SubResource( 153 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="pause1" type="CanvasLayer" parent="."]
 layer = 100
 
-[node name="pause menu" type="Control" parent="CanvasLayer"]
+[node name="pause menu" type="Control" parent="pause1"]
 pause_mode = 2
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 21 )
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/pause menu"]
+[node name="ColorRect" type="ColorRect" parent="pause1/pause menu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 986.0
 margin_bottom = 576.0
 color = Color( 0, 0, 0, 0.301961 )
 
-[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/pause menu"]
+[node name="ColorRect2" type="ColorRect" parent="pause1/pause menu"]
 margin_left = 327.0
 margin_top = 248.0
 margin_right = 703.0
 margin_bottom = 344.0
 color = Color( 0.592157, 0.792157, 1, 1 )
 
-[node name="go back" type="Button" parent="CanvasLayer/pause menu"]
+[node name="go back" type="Button" parent="pause1/pause menu"]
 margin_left = 369.0
 margin_top = 278.0
 margin_right = 553.0
@@ -778,4 +778,4 @@ align = 0
 [connection signal="area_entered" from="broccoli2" to="Player" method="_on_broccoli2_area_entered"]
 [connection signal="screen_entered" from="broccoli2/VisibilityNotifier2D" to="broccoli2" method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="screen_exited" from="broccoli2/VisibilityNotifier2D" to="broccoli2" method="_on_VisibilityNotifier2D_screen_exited"]
-[connection signal="pressed" from="CanvasLayer/pause menu/go back" to="CanvasLayer/pause menu" method="_on_go_back_pressed"]
+[connection signal="pressed" from="pause1/pause menu/go back" to="pause1/pause menu" method="_on_go_back_pressed"]
