@@ -378,7 +378,7 @@ animations = [ {
 "frames": [ SubResource( 125 ), SubResource( 126 ), SubResource( 127 ), SubResource( 128 ), SubResource( 129 ), SubResource( 130 ), SubResource( 131 ), SubResource( 132 ) ],
 "loop": true,
 "name": "default",
-"speed": 10.0
+"speed": 8.5
 } ]
 
 [node name="run n gun" type="Node2D"]
