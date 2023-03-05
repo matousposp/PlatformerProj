@@ -5,7 +5,7 @@
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=3]
 [ext_resource path="res://img/player.png" type="Texture" id=4]
 [ext_resource path="res://img/cloud_lonely.png" type="Texture" id=5]
-[ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://fonts/gameboy.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://audio/plains.wav" type="AudioStream" id=7]
 [ext_resource path="res://img/nugget2.png" type="Texture" id=8]
 [ext_resource path="res://img/pear.png" type="Texture" id=9]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://MAIN scripts/main menu.gd" type="Script" id=1]
-[ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/gameboy.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://audio/a-hero-of-the-80s-126684.mp3" type="AudioStream" id=6]
 [ext_resource path="res://fonts/Mario-Kart-DS.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://img/69e4cc7c-29a2-472c-b35f-a899ac5ef803_rw_1920.jpg" type="Texture" id=9]

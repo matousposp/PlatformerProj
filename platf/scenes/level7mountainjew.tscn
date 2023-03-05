@@ -11,9 +11,10 @@
 [ext_resource path="res://scenes/4.gd" type="Script" id=9]
 [ext_resource path="res://scenes/Health.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Dash.tscn" type="PackedScene" id=11]
-[ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://fonts/gameboy.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://scenes/pause menu.gd" type="Script" id=13]
 [ext_resource path="res://img/blue.png" type="Texture" id=14]
+
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 4 )
