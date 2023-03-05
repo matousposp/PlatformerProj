@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/finallevel.tres" type="TileSet" id=2]
@@ -177,6 +177,9 @@ ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
 ProgressBar/styles/bg = null
 ProgressBar/styles/fg = null
 
+[sub_resource type="CapsuleShape2D" id=46]
+radius = 23.0
+
 [sub_resource type="CapsuleShape2D" id=37]
 radius = 22.0
 height = 52.0
@@ -302,6 +305,11 @@ rotating = true
 current = true
 smoothing_enabled = true
 smoothing_speed = 8.0
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+shape = SubResource( 46 )
 
 [node name="AndrewTate" type="KinematicBody2D" parent="."]
 position = Vector2( 687, 209 )

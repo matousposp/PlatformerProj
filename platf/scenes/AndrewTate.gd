@@ -52,15 +52,16 @@ func _physics_process(delta):
 		direct = 1
 	else:
 		direct = -1
-	if is_on_wall():
-		xvel *= 0.5
 	if cycle > 0:
-		if abs(abs(get_parent().get_node('Player').position.x) - abs(position.x)) < 400:
-			xvel += 1*direct
+		if abs(abs(get_parent().get_node('Player').position.x) - abs(position.x)) < 300:
+			if is_on_wall():
+				xvel *= -1.5
+			else:
+				xvel += 1*direct
 			print(xvel)
 			motion.x += xvel
-		if abs(abs(get_parent().get_node('Player').position.x) - abs(position.x)) < 100:
-			JUMPFORCE = 460
+		if abs(abs(get_parent().get_node('Player').position.x) - abs(position.x)) < 200 and is_on_floor():
+			motion.y -= JUMPFORCE
 	if cycle == 0:
 		motion.y = -JUMPFORCE
 		cycle = rng.randi_range(1,3)
@@ -81,7 +82,9 @@ func _physics_process(delta):
 				xvel += 1
 		cycle = 600
 	move_and_slide(motion, UP)
-	
+
+
+
 func weight(weight_direction:Vector2):
 	if WEIGHT:
 		var weight = WEIGHT.instance()
@@ -99,3 +102,7 @@ func beam(beam_direction:Vector2):
 		
 		var beam_rotation = beam_direction.angle()
 		beam.rotation = beam_rotation
+
+
+func _on_Area2D_area_entered(area):
+	pass # Replace with function body.
