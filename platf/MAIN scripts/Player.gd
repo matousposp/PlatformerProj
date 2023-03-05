@@ -3,6 +3,7 @@ extends KinematicBody2D
 export(PackedScene) var FRY: PackedScene = preload('res://scenes/Fry.tscn')
 
 signal hit(id)
+signal update()
 
 const UP= Vector2(0, -1) 
 var GRAVITY= 20
@@ -27,6 +28,7 @@ func _reset_jump():
 	
 
 func _physics_process(delta):
+	print(coins)
 	motion.y += GRAVITY
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
@@ -220,28 +222,10 @@ func GetCoin():
 	coins += 1
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
 func _on_border_area_entered(area):
 	get_tree().reload_current_scene()
+
+
+func _on_Area2D_area_entered(area):
+	if area.is_in_group('coin'):
+		coins += 1
