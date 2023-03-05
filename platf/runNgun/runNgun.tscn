@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=2]
+[gd_scene load_steps=111 format=2]
 
 [ext_resource path="res://scenes/Dash.tscn" type="PackedScene" id=1]
 [ext_resource path="res://runNgun/coin1.tscn" type="PackedScene" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://runNgun/Label.gd" type="Script" id=18]
 [ext_resource path="res://runNgun/cannon.gd" type="Script" id=19]
 [ext_resource path="res://pirrana.tscn" type="PackedScene" id=20]
+[ext_resource path="res://img/biggestbirdsprite.png" type="Texture" id=21]
+[ext_resource path="res://runNgun/bird.gd" type="Script" id=22]
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 9 )
@@ -382,6 +384,117 @@ animations = [ {
 "speed": 8.5
 } ]
 
+[sub_resource type="AtlasTexture" id=134]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 0, 59, 32 )
+
+[sub_resource type="AtlasTexture" id=135]
+atlas = ExtResource( 21 )
+region = Rect2( 59, 0, 59, 32 )
+
+[sub_resource type="AtlasTexture" id=136]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 32, 59, 32 )
+
+[sub_resource type="AtlasTexture" id=137]
+atlas = ExtResource( 21 )
+region = Rect2( 59, 32, 59, 32 )
+
+[sub_resource type="AtlasTexture" id=138]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 64, 59, 32 )
+
+[sub_resource type="SpriteFrames" id=139]
+animations = [ {
+"frames": [ SubResource( 134 ), SubResource( 135 ), SubResource( 136 ), SubResource( 137 ), SubResource( 138 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=140]
+extents = Vector2( 36, 33.5 )
+
+[sub_resource type="Animation" id=141]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -120, 275 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -124, 286.5 ) ]
+}
+
+[sub_resource type="Animation" id=142]
+resource_name = "new"
+length = 7.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.5, 7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3.5, 7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -120, 275 ), Vector2( -328, 56 ), Vector2( -120, 275 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.5, 7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -124, 286.5 ), Vector2( -328, 64 ), Vector2( -124, 286.5 ) ]
+}
+
 [node name="run n gun" type="Node2D"]
 script = ExtResource( 14 )
 
@@ -510,17 +623,26 @@ position = Vector2( -64, 0 )
 [node name="coin5" parent="." groups=["coin"] instance=ExtResource( 2 )]
 position = Vector2( -104, 0 )
 
+[node name="coin16" parent="." groups=["coin"] instance=ExtResource( 2 )]
+position = Vector2( -940, -96 )
+
 [node name="coin6" parent="." groups=["coin"] instance=ExtResource( 2 )]
 position = Vector2( -1736, -256 )
 
 [node name="coin7" parent="." groups=["coin"] instance=ExtResource( 2 )]
 position = Vector2( -1512, 2 )
 
+[node name="coin15" parent="." groups=["coin"] instance=ExtResource( 2 )]
+position = Vector2( -1560, 220 )
+
 [node name="coin8" parent="." groups=["coin"] instance=ExtResource( 2 )]
 position = Vector2( -1424, 600 )
 
 [node name="coin9" parent="." groups=["coin"] instance=ExtResource( 2 )]
 position = Vector2( -232, 768 )
+
+[node name="coin14" parent="." groups=["coin"] instance=ExtResource( 2 )]
+position = Vector2( -456, 864 )
 
 [node name="coin10" parent="." groups=["coin"] instance=ExtResource( 2 )]
 position = Vector2( 544, 220 )
@@ -751,9 +873,28 @@ position = Vector2( 800, 0 )
 [node name="pirrana3" parent="." instance=ExtResource( 20 )]
 position = Vector2( 1448, 2 )
 
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 22 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( -120, 275 )
+scale = Vector2( 2.66949, 2.875 )
+frames = SubResource( 139 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( -124, 286.5 )
+shape = SubResource( 140 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+anims/RESET = SubResource( 141 )
+anims/new = SubResource( 142 )
+
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_entered"]
 [connection signal="pressed" from="pause1/pause menu/go back" to="pause1/pause menu" method="_on_go_back_pressed"]
 [connection signal="pressed" from="winlose/endscreen/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="winlose/endscreen/quit" to="." method="_on_quit_pressed"]
 [connection signal="area_entered" from="border" to="Player" method="_on_border_area_entered"]
 [connection signal="end" from="countdown" to="winlose/endscreen" method="_on_countdown_end"]
+[connection signal="area_entered" from="pirrana" to="Player" method="_on_pirrana_area_entered"]
+[connection signal="area_entered" from="pirrana2" to="Player" method="_on_pirrana2_area_entered"]
+[connection signal="area_entered" from="pirrana3" to="Player" method="_on_pirrana3_area_entered"]

@@ -20,3 +20,7 @@ func _on_play_pressed():
 
 func _on_quit_pressed():
 	get_tree().change_scene("res://scenes/main menu.tscn")
+
+
+func _on_pirrana2_area_entered(area):
+	pass # Replace with function body.
