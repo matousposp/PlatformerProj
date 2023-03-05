@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bratu.mp3-0773da36ba884be2225be672e3073e55.mp3str"
+
+[deps]
+
+source_file="res://audio/bratu.mp3"
+dest_files=[ "res://.import/bratu.mp3-0773da36ba884be2225be672e3073e55.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

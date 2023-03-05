@@ -202,4 +202,4 @@ func _on_peaEr_area_entered(area):
 
 func _on_AndrewTate_knockback():
 	motion.x *= 5
-	motion.y -= 1000
+	motion.y -= 600
