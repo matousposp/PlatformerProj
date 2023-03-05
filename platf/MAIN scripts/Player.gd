@@ -184,10 +184,6 @@ func _on_Weight_tatehit():
 	print('ah')
 	health -= 34
 
-
-
-
-
 func _on_borderbeta_area_entered(area):
 	get_tree().reload_current_scene() 
 
