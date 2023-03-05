@@ -1,16 +1,15 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://MAIN scripts/main menu.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://img/HEART ATTACK.jpg" type="Texture" id=3]
-[ext_resource path="res://img/title.png" type="Texture" id=4]
-[ext_resource path="res://img/mainmenuimg.png" type="Texture" id=5]
-[ext_resource path="res://audio/swing-sax-big-band-miller-style-2669.mp3" type="AudioStream" id=6]
-[ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=7]
-[ext_resource path="res://fonts/Uni Sans Heavy.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://audio/a-hero-of-the-80s-126684.mp3" type="AudioStream" id=6]
+[ext_resource path="res://fonts/Mario-Kart-DS.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://img/69e4cc7c-29a2-472c-b35f-a899ac5ef803_rw_1920.jpg" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 8 )
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0, 0, 0, 0 )
@@ -36,23 +35,10 @@ func _ready():
 	pass
 "
 
-[sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0, 0, 0, 0 )
-
-[sub_resource type="StyleBoxFlat" id=10]
-bg_color = Color( 0, 0, 0, 0 )
-
-[sub_resource type="StyleBoxFlat" id=11]
-bg_color = Color( 0, 0, 0, 0 )
-
-[sub_resource type="StyleBoxFlat" id=12]
-bg_color = Color( 0, 0, 0, 0 )
-
 [sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 8 )
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0, 0, 0, 0 )
@@ -66,40 +52,31 @@ bg_color = Color( 0, 0, 0, 0 )
 [sub_resource type="StyleBoxFlat" id=16]
 bg_color = Color( 0, 0, 0, 0 )
 
+[sub_resource type="DynamicFont" id=113]
+outline_size = 1
+font_data = ExtResource( 8 )
+
 [node name="main menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -93.0
-margin_top = -11.0
-margin_right = 1117.0
-margin_bottom = 621.0
-texture = ExtResource( 3 )
+margin_top = -4.0
+margin_right = 1024.0
+margin_bottom = 603.0
+texture = ExtResource( 9 )
 expand = true
 
-[node name="TileMap" type="TileMap" parent="."]
-visible = false
-tile_set = ExtResource( 7 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( 131081, 2, 0, 131082, 2, 0, 131083, 2, 0, 131084, 2, 0, 131085, 2, 0, 131086, 2, 0, 131087, 2, 0, 131088, 2, 0, 131089, 2, 0, 131090, 2, 0, 131091, 2, 0, 131092, 2, 0, 131093, 2, 0, 131094, 2, 0, 196617, 2, 0, 196618, 2, 0, 196619, 2, 0, 196620, 2, 0, 196621, 2, 0, 196622, 2, 0, 196623, 2, 0, 196624, 2, 0, 196625, 2, 0, 196626, 2, 0, 196627, 2, 0, 196628, 2, 0, 196629, 2, 0, 196630, 2, 0, 262148, 2, 0, 262149, 2, 0, 262172, 2, 0, 327684, 2, 0, 327685, 2, 0, 327708, 2, 0, 327709, 2, 0, 327710, 2, 0, 393231, 2, 0, 393232, 2, 0, 524300, 2, 0, 524307, 2, 0, 524308, 2, 0, 524315, 2, 0, 589836, 2, 0, 589851, 2, 0, 720892, 1, 0, 720893, 0, 0, 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655385, 2, 0, 786428, 1, 0, 786429, 1, 0, 786430, 1, 0, 786431, 1, 0, 720896, 1, 0, 720897, 1, 0, 720898, 1, 0, 720899, 1, 0, 720900, 1, 0, 720901, 0, 0, 720902, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 851964, 1, 0, 851965, 1, 0, 851966, 1, 0, 851967, 3, 0, 786432, 1, 0, 786433, 1, 0, 786434, 1, 0, 786435, 1, 0, 786436, 1, 0, 786437, 1, 0, 786438, 0, 0, 786439, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0, 786451, 1, 0, 786452, 1, 0, 786453, 1, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 917500, 1, 0, 917501, 1, 0, 917502, 1, 0, 917503, 3, 0, 851968, 1, 0, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 851972, 3, 0, 851973, 3, 0, 851974, 1, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0, 851992, 1, 0, 851993, 1, 0, 851994, 0, 0, 851995, 0, 0, 851996, 0, 0, 851997, 0, 0, 983036, 1, 0, 983037, 3, 0, 983038, 1, 0, 983039, 3, 0, 917504, 3, 0, 917505, 1, 0, 917506, 2, 0, 917507, 1, 0, 917508, 1, 0, 917509, 1, 0, 917510, 1, 0, 917511, 1, 0, 917512, 1, 0, 917513, 1, 0, 917514, 3, 0, 917515, 1, 0, 917516, 2, 0, 917517, 1, 0, 917518, 1, 0, 917519, 3, 0, 917520, 3, 0, 917521, 3, 0, 917522, 3, 0, 917523, 3, 0, 917524, 3, 0, 917525, 3, 0, 917526, 1, 0, 917527, 1, 0, 917528, 1, 0, 917529, 1, 0, 917530, 1, 0, 917531, 1, 0, 917532, 1, 0, 917533, 1, 0, 917534, 0, 0, 1048572, 1, 0, 1048573, 3, 0, 1048574, 1, 0, 1048575, 1, 0, 983040, 1, 0, 983041, 1, 0, 983042, 1, 0, 983043, 3, 0, 983044, 1, 0, 983045, 1, 0, 983046, 3, 0, 983047, 3, 0, 983048, 1, 0, 983049, 1, 0, 983050, 3, 0, 983051, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 983055, 1, 0, 983056, 3, 0, 983057, 3, 0, 983058, 3, 0, 983059, 3, 0, 983060, 3, 0, 983061, 3, 0, 983062, 3, 0, 983063, 1, 0, 983064, 1, 0, 983065, 1, 0, 983066, 3, 0, 983067, 1, 0, 983068, 1, 0, 983069, 1, 0, 983070, 0, 0, 983071, 0, 0, 983072, 0, 0, 983073, 0, 0, 983074, 0, 0, 1114108, 1, 0, 1114109, 3, 0, 1114110, 1, 0, 1114111, 1, 0, 1048576, 1, 0, 1048577, 1, 0, 1048578, 3, 0, 1048579, 1, 0, 1048580, 1, 0, 1048581, 1, 0, 1048582, 1, 0, 1048583, 3, 0, 1048584, 3, 0, 1048585, 1, 0, 1048586, 3, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 1, 0, 1048590, 1, 0, 1048591, 3, 0, 1048592, 3, 0, 1048593, 3, 0, 1048594, 3, 0, 1048595, 3, 0, 1048596, 3, 0, 1048597, 3, 0, 1048598, 3, 0, 1048599, 1, 0, 1048600, 1, 0, 1048601, 1, 0, 1048602, 3, 0, 1048603, 3, 0, 1048604, 1, 0, 1048605, 1, 0, 1048606, 1, 0, 1048607, 1, 0, 1048608, 1, 0, 1048609, 1, 0, 1048610, 1, 0, 1179644, 1, 0, 1179645, 1, 0, 1179646, 3, 0, 1179647, 1, 0, 1114112, 1, 0, 1114113, 1, 0, 1114114, 3, 0, 1114115, 1, 0, 1114116, 1, 0, 1114117, 3, 0, 1114118, 3, 0, 1114119, 1, 0, 1114120, 3, 0, 1114121, 1, 0, 1114122, 1, 0, 1114123, 1, 0, 1114124, 1, 0, 1114125, 1, 0, 1114126, 1, 0, 1114127, 3, 0, 1114128, 3, 0, 1114129, 3, 0, 1114130, 1, 0, 1114131, 1, 0, 1114132, 1, 0, 1114133, 1, 0, 1114134, 1, 0, 1114135, 1, 0, 1114136, 1, 0, 1114137, 1, 0, 1114138, 1, 0, 1114139, 3, 0, 1114140, 1, 0, 1114141, 2, 0, 1114142, 1, 0, 1114143, 1, 0, 1114144, 1, 0, 1114145, 3, 0, 1114146, 3, 0, 1245180, 1, 0, 1245181, 1, 0, 1245182, 1, 0, 1245183, 1, 0, 1179648, 3, 0, 1179649, 3, 0, 1179650, 1, 0, 1179651, 1, 0, 1179652, 3, 0, 1179653, 3, 0, 1179654, 1, 0, 1179655, 2, 0, 1179656, 1, 0, 1179657, 3, 0, 1179658, 1, 0, 1179659, 3, 0, 1179660, 3, 0, 1179661, 3, 0, 1179662, 1, 0, 1179663, 1, 0, 1179664, 1, 0, 1179665, 1, 0, 1179666, 1, 0, 1179667, 3, 0, 1179668, 1, 0, 1179669, 1, 0, 1179670, 1, 0, 1179671, 3, 0, 1179672, 2, 0, 1179673, 1, 0, 1179674, 1, 0, 1179675, 3, 0, 1179676, 3, 0, 1179677, 3, 0, 1179678, 3, 0, 1179679, 3, 0, 1179680, 3, 0, 1179681, 3, 0, 1179682, 1, 0, 1310716, 1, 0, 1310717, 1, 0, 1310718, 1, 0, 1310719, 1, 0, 1245184, 1, 0, 1245185, 1, 0, 1245186, 1, 0, 1245187, 1, 0, 1245188, 3, 0, 1245189, 1, 0, 1245190, 1, 0, 1245191, 1, 0, 1245192, 1, 0, 1245193, 1, 0, 1245194, 1, 0, 1245195, 1, 0, 1245196, 1, 0, 1245197, 1, 0, 1245198, 1, 0, 1245199, 1, 0, 1245200, 1, 0, 1245201, 3, 0, 1245202, 3, 0, 1245203, 1, 0, 1245204, 1, 0, 1245205, 1, 0, 1245206, 1, 0, 1245207, 1, 0, 1245208, 1, 0, 1245209, 1, 0, 1245210, 1, 0, 1245211, 1, 0, 1245212, 1, 0, 1245213, 1, 0, 1245214, 1, 0, 1245215, 1, 0, 1245216, 1, 0, 1245217, 1, 0, 1245218, 1, 0, 1310737, 1, 0, 1310738, 1, 0 )
-
-[node name="Mainmenuimg3" type="Sprite" parent="."]
-visible = false
-position = Vector2( 501.171, 163.5 )
-scale = Vector2( 0.160912, 0.164276 )
-texture = ExtResource( 5 )
-flip_h = true
-
 [node name="start" type="Button" parent="."]
-margin_left = 299.0
-margin_top = 336.0
-margin_right = 465.0
-margin_bottom = 376.0
-rect_scale = Vector2( 5, 5 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+margin_left = 367.0
+margin_top = 292.0
+margin_right = 519.0
+margin_bottom = 312.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 2, 0 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.866667, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 custom_styles/hover = SubResource( 6 )
 custom_styles/pressed = SubResource( 7 )
@@ -109,28 +86,30 @@ text = "Start Game"
 align = 0
 script = SubResource( 17 )
 
-[node name="option" type="Button" parent="."]
-visible = false
-margin_left = 500.0
-margin_top = 497.0
-margin_right = 674.0
-margin_bottom = 517.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 2 )
-custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 10 )
-custom_styles/focus = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
-text = "Options"
-align = 2
+[node name="level select" type="Button" parent="."]
+margin_left = 340.0
+margin_top = 345.0
+margin_right = 524.0
+margin_bottom = 365.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 2, 0 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.866667, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 5 )
+text = "Level Select"
+align = 0
 
 [node name="quit" type="Button" parent="."]
-margin_left = 423.0
-margin_top = 479.0
-margin_right = 597.0
-margin_bottom = 499.0
-rect_scale = Vector2( 5, 5 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+margin_left = 447.0
+margin_top = 396.0
+margin_right = 621.0
+margin_bottom = 416.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.866667, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
 custom_styles/hover = SubResource( 13 )
 custom_styles/pressed = SubResource( 14 )
@@ -139,41 +118,21 @@ custom_styles/normal = SubResource( 16 )
 text = "Quit"
 align = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -86.0
-margin_top = -25.0
-margin_right = 88.0
-margin_bottom = 52.0
-rect_scale = Vector2( 1.2, 1.2 )
-
-[node name="Title" type="Sprite" parent="."]
-visible = false
-position = Vector2( 516, 99 )
-scale = Vector2( 0.532005, 0.741379 )
-texture = ExtResource( 4 )
-
-[node name="Mainmenuimg4" type="Sprite" parent="."]
-visible = false
-position = Vector2( 160, 411 )
-scale = Vector2( 0.64626, 0.637771 )
-texture = ExtResource( 5 )
-
-[node name="Mainmenuimg5" type="Sprite" parent="."]
-visible = false
-position = Vector2( 195, 74 )
-rotation = 0.546288
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 5 )
-flip_h = true
-flip_v = true
+[node name="Label" type="Label" parent="."]
+margin_left = 184.0
+margin_top = 160.0
+margin_right = 326.0
+margin_bottom = 189.0
+rect_scale = Vector2( 5, 5 )
+custom_colors/font_color = Color( 0.866667, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 113 )
+text = "Heart Attack Hero"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="level select" to="." method="_on_level_select_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

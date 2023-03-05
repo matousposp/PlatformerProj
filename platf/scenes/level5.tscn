@@ -17,6 +17,10 @@
 
 [sub_resource type="RectangleShape2D" id=148]
 extents = Vector2( 135.75, 88.5 )
+[ext_resource path="res://scenes/Dash.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/Health.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/pause menu.gd" type="Script" id=16]
+[ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=17]
 
 [sub_resource type="AtlasTexture" id=134]
 flags = 4
@@ -429,6 +433,13 @@ animations = [ {
 radius = 24.0
 height = 16.0
 
+[sub_resource type="Theme" id=145]
+resource_local_to_scene = true
+ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
+ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+ProgressBar/styles/bg = null
+ProgressBar/styles/fg = null
+
 [sub_resource type="AtlasTexture" id=113]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 32, 32 )
@@ -737,6 +748,23 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="DynamicFont" id=146]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 17 )
+
+[sub_resource type="StyleBoxFlat" id=147]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=148]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=149]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=150]
+bg_color = Color( 0, 0, 0, 0 )
+
 [node name="level5" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -818,6 +846,19 @@ position = Vector2( 0, 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/Area2D"]
 shape = SubResource( 109 )
+
+[node name="Health" parent="Player" instance=ExtResource( 15 )]
+margin_left = -33.0
+margin_top = -59.0
+margin_right = -33.0
+margin_bottom = -59.0
+theme = SubResource( 145 )
+
+[node name="Dash" parent="Player" instance=ExtResource( 14 )]
+margin_left = -42.0
+margin_top = 45.0
+margin_right = -42.0
+margin_bottom = 45.0
 
 [node name="leprechaun1" type="Area2D" parent="."]
 script = ExtResource( 7 )
@@ -919,6 +960,47 @@ anims/fade = SubResource( 144 )
 
 [connection signal="area_entered" from="ChaseStartArea" to="PihranhaPlant" method="_on_ChaseStartArea_area_entered"]
 [connection signal="area_entered" from="PihranhaPlant" to="Player" method="_on_PihranhaPlant_area_entered"]
+[node name="pause1" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="pause menu" type="Control" parent="pause1"]
+pause_mode = 2
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 16 )
+
+[node name="ColorRect" type="ColorRect" parent="pause1/pause menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 986.0
+margin_bottom = 576.0
+color = Color( 0, 0, 0, 0.301961 )
+
+[node name="ColorRect2" type="ColorRect" parent="pause1/pause menu"]
+margin_left = 327.0
+margin_top = 248.0
+margin_right = 703.0
+margin_bottom = 344.0
+color = Color( 0.592157, 0.792157, 1, 1 )
+
+[node name="go back" type="Button" parent="pause1/pause menu"]
+margin_left = 369.0
+margin_top = 278.0
+margin_right = 553.0
+margin_bottom = 298.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 2, 0 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.866667, 0, 0, 1 )
+custom_fonts/font = SubResource( 146 )
+custom_styles/hover = SubResource( 147 )
+custom_styles/pressed = SubResource( 148 )
+custom_styles/focus = SubResource( 149 )
+custom_styles/normal = SubResource( 150 )
+text = "Main Menu"
+align = 0
+
 [connection signal="hit" from="Player" to="leprechaun1" method="_on_Player_hit"]
 [connection signal="area_entered" from="leprechaun1" to="Player" method="_on_leprechaun1_area_entered"]
 [connection signal="area_entered" from="obstacle1" to="Player" method="_on_obstacle1_area_entered"]
@@ -927,3 +1009,4 @@ anims/fade = SubResource( 144 )
 [connection signal="area_entered" from="lepreborder" to="Player" method="_on_lepreborder_area_entered"]
 [connection signal="area_entered" from="BiggestBird" to="Player" method="_on_BiggestBird_area_entered"]
 [connection signal="area_entered" from="border2" to="Player" method="_on_border2_area_entered"]
+[connection signal="pressed" from="pause1/pause menu/go back" to="pause1/pause menu" method="_on_go_back_pressed"]

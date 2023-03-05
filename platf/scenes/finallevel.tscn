@@ -1,9 +1,13 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://tilemaps/finallevel.tres" type="TileSet" id=1]
 [ext_resource path="res://img/galacticgym.png" type="Texture" id=2]
+[ext_resource path="res://scenes/pause menu.gd" type="Script" id=3]
 [ext_resource path="res://audio/gym.mp3" type="AudioStream" id=4]
+[ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://img/player.png" type="Texture" id=6]
+[ext_resource path="res://scenes/Dash.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Health.tscn" type="PackedScene" id=8]
 [ext_resource path="res://MAIN SCRIPTS/Player.gd" type="Script" id=9]
 [ext_resource path="res://img/movingplatf.png" type="Texture" id=21]
 [ext_resource path="res://scenes/movingplate.gd" type="Script" id=22]
@@ -169,6 +173,13 @@ extents = Vector2( 19.9045, 32 )
 [sub_resource type="RectangleShape2D" id=65]
 extents = Vector2( 18.8838, 32 )
 
+[sub_resource type="Theme" id=71]
+resource_local_to_scene = true
+ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
+ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+ProgressBar/styles/bg = null
+ProgressBar/styles/fg = null
+
 [sub_resource type="AtlasTexture" id=61]
 atlas = ExtResource( 23 )
 region = Rect2( 0, 0, 32, 32 )
@@ -247,6 +258,23 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=59]
 resource_name = "new"
 
+[sub_resource type="DynamicFont" id=66]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=67]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=68]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=69]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=70]
+bg_color = Color( 0, 0, 0, 0 )
+
 [node name="finallevel" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -297,6 +325,19 @@ shape = SubResource( 64 )
 position = Vector2( -0.510376, 0 )
 shape = SubResource( 65 )
 
+[node name="Health" parent="Player" instance=ExtResource( 8 )]
+margin_left = -36.7468
+margin_top = -64.0
+margin_right = -36.7468
+margin_bottom = -64.0
+theme = SubResource( 71 )
+
+[node name="Dash" parent="Player" instance=ExtResource( 7 )]
+margin_left = -40.8298
+margin_top = 53.0
+margin_right = -40.8298
+margin_bottom = 53.0
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 autoplay = true
@@ -331,4 +372,46 @@ anims/RESET = SubResource( 57 )
 anims/move = SubResource( 58 )
 anims/new = SubResource( 59 )
 
+[node name="pause1" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="pause menu" type="Control" parent="pause1"]
+pause_mode = 2
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="pause1/pause menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 986.0
+margin_bottom = 576.0
+color = Color( 0, 0, 0, 0.301961 )
+
+[node name="ColorRect2" type="ColorRect" parent="pause1/pause menu"]
+margin_left = 327.0
+margin_top = 248.0
+margin_right = 703.0
+margin_bottom = 344.0
+color = Color( 0.592157, 0.792157, 1, 1 )
+
+[node name="go back" type="Button" parent="pause1/pause menu"]
+margin_left = 369.0
+margin_top = 278.0
+margin_right = 553.0
+margin_bottom = 298.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 2, 0 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.866667, 0, 0, 1 )
+custom_fonts/font = SubResource( 66 )
+custom_styles/hover = SubResource( 67 )
+custom_styles/pressed = SubResource( 68 )
+custom_styles/focus = SubResource( 69 )
+custom_styles/normal = SubResource( 70 )
+text = "Main Menu"
+align = 0
+
 [connection signal="area_entered" from="burger" to="Player" method="_on_burger_area_entered"]
+[connection signal="pressed" from="pause1/pause menu/go back" to="pause1/pause menu" method="_on_go_back_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://img/white.png" type="Texture" id=1]
-[ext_resource path="res://Dash.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Dash.gd" type="Script" id=2]
 [ext_resource path="res://img/shoe.png" type="Texture" id=3]
 
 [sub_resource type="Gradient" id=1]

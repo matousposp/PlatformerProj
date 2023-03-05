@@ -22,6 +22,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
 func _on_Weight_area_entered(area):
+	print(area)
 	if area == get_parent().get_node('Player/Area2D'):
 		emit_signal('tatehit')
 	destroy()

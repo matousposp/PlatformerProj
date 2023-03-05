@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
-export(PackedScene) var FRY: PackedScene = preload('res://scenes/Fry.tscn')
+export(PackedScene) var BEAM: PackedScene = preload('res://scenes/Beam.tscn')
 
 signal hit(id)
+signal knockback()
 
 const UP= Vector2(0, -1) 
 var GRAVITY= 20
@@ -13,36 +14,80 @@ var motion = Vector2()
 var jumps = 0
 var direct = 1
 var cycle = 180
+var x = 0
+var y = 0
 var rng = RandomNumberGenerator.new()
+var direction
+var health = 100
+var xvel = 0
+
+export(int) var SPEED: int = 800
 
 export(PackedScene) var WEIGHT: PackedScene = preload('res://scenes/Weight.tscn')
+#var sound_effect = preload("res://andrew.mp3")
+var audio_player = AudioStreamPlayer.new()
 
-# Called when the node enters the scene tree for the first time.
+var timer = Timer.new()
 func _ready():
+	add_child(audio_player)
+	add_child(timer)
+	timer.set_wait_time(10.0)
+	timer.set_one_shot(false)
+	timer.connect("timeout", self, "_on_Timer_timeout")
+	timer.start()
+func _on_Timer_timeout():
+	#audio_player.stream = sound_effect
+	#audio_player.play()
 	pass
+
 
 func _reset_jump():
 	JUMPFORCE = 460
 	
 
 func _physics_process(delta):
-	cycle -= 1
 	motion.y += GRAVITY
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
-
-	if is_on_floor() and cycle == 0:
+	cycle -= 1
+	if get_parent().get_node('Player').position.x < position.x:
+		direct = 1
+	else:
+		direct = -1
+	if cycle > 0:
+		if abs(abs(get_parent().get_node('Player').position.x) - abs(position.x)) < 300:
+			if is_on_wall():
+				pass
+				#xvel *= -1.5
+			else:
+				xvel += 1*direct
+			print(xvel)
+			motion.x += xvel
+		if abs(abs(get_parent().get_node('Player').position.x) - abs(position.x)) < 200 and is_on_floor():
+			motion.y -= JUMPFORCE
+	if cycle == 0:
 		motion.y = -JUMPFORCE
-		cycle = rng.randi_range(1,1)
+		cycle = rng.randi_range(1,3)
 		if cycle == 1:
+			JUMPFORCE = 460
 			var weight_direction = self.global_position.direction_to(get_parent().get_node('Player').position)
 			weight(weight_direction)
-		
-	
-	if cycle == 0:
-		cycle = 120
-	motion = move_and_slide(motion, UP)
-	
+			y = 1
+		elif cycle == 2:
+			if x == 0:
+				x = 240
+			else:
+				pass
+		else:
+			if xvel > 0:
+				xvel -= 1
+			else:
+				xvel += 1
+		cycle = 600
+	move_and_slide(motion, UP)
+
+
+
 func weight(weight_direction:Vector2):
 	if WEIGHT:
 		var weight = WEIGHT.instance()
@@ -51,3 +96,16 @@ func weight(weight_direction:Vector2):
 		
 		var weight_rotation = weight_direction.angle()
 		weight.rotation = weight_rotation
+
+func beam(beam_direction:Vector2):
+	if BEAM:
+		var beam = BEAM.instance()
+		get_tree().current_scene.add_child(beam)
+		beam.global_position = self.global_position
+		
+		var beam_rotation = beam_direction.angle()
+		beam.rotation = beam_rotation
+
+
+func _on_Area2D_area_entered(area):
+	emit_signal("knockback")

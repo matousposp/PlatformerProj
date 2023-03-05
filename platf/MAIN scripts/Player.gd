@@ -31,7 +31,7 @@ func _physics_process(delta):
 		motion.y = MAXFALLSPEED
 	
 	if Input.is_action_pressed("dash") and dash > 10:
-		dash -= 1
+		dash -= 0.8
 		MAXSPEED = 300
 	else:
 		MAXSPEED = 200
@@ -178,14 +178,32 @@ func _on_border5_area_entered(area):
 	get_tree().reload_current_scene() 
 	
 func _on_lvl6p_area_entered(area):
-	get_tree().change_scene("res://mountainlvl1.tscn")
+	get_tree().change_scene("res://level7mountainjew.tscn")
 	
+func _on_Weight_tatehit():
+	print('ah')
+	health -= 34
+
+func _on_borderbeta_area_entered(area):
+	get_tree().reload_current_scene() 
 
 
 
+func _on_borderagain_area_entered(area):
+	get_tree().reload_current_scene() 
 
 
 
 
 func _on_PihranhaPlant_area_entered(area):
 	get_tree().reload_current_scene()
+func _on_peaEr_area_entered(area):
+	if area.is_in_group('player'):
+		health -= 34
+	else:
+		emit_signal('hit',2)
+
+
+func _on_AndrewTate_knockback():
+	motion.x *= 5
+	motion.y -= 1000
