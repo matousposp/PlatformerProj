@@ -303,6 +303,8 @@ margin_bottom = 63.0
 position = Vector2( -2, 0 )
 rotating = true
 current = true
+smoothing_enabled = true
+smoothing_speed = 8.0
 
 [node name="Area2D" type="Area2D" parent="Player"]
 

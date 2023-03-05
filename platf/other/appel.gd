@@ -11,8 +11,8 @@ func _ready():
 	$AnimatedSprite.play("default")
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
-	pos1 = position
 	pos2 = get_parent().get_node('Player').position
+	pos1 = position
 	if pos2.x < pos1.x:
 		position.x += 2
 	if pos2.x > pos1.x:
