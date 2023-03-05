@@ -1,8 +1,7 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://MAIN scripts/main menu.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://me-removebg-preview.png" type="Texture" id=3]
 [ext_resource path="res://audio/a-hero-of-the-80s-126684.mp3" type="AudioStream" id=6]
 [ext_resource path="res://fonts/Mario-Kart-DS.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://img/69e4cc7c-29a2-472c-b35f-a899ac5ef803_rw_1920.jpg" type="Texture" id=9]
@@ -120,10 +119,10 @@ text = "Quit"
 align = 0
 
 [node name="Label" type="Label" parent="."]
-margin_left = 183.0
-margin_top = 161.0
-margin_right = 325.0
-margin_bottom = 190.0
+margin_left = 184.0
+margin_top = 160.0
+margin_right = 326.0
+margin_bottom = 189.0
 rect_scale = Vector2( 5, 5 )
 custom_colors/font_color = Color( 0.866667, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
@@ -133,11 +132,6 @@ text = "Heart Attack Hero"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
-
-[node name="Me-removebg-preview" type="Sprite" parent="."]
-position = Vector2( 544, 136 )
-scale = Vector2( 0.164516, 0.171717 )
-texture = ExtResource( 3 )
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="level select" to="." method="_on_level_select_pressed"]
