@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/finallevel.tres" type="TileSet" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://scenes/pause menu.gd" type="Script" id=11]
 [ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://other/BossBar.tscn" type="PackedScene" id=13]
+[ext_resource path="res://audio/bratu.mp3" type="AudioStream" id=14]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
@@ -383,6 +384,11 @@ align = 0
 layer = 5
 
 [node name="BossBar" parent="Bar" instance=ExtResource( 13 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -4.931
+autoplay = true
 
 [connection signal="area_entered" from="Player/Area2D" to="AndrewTate" method="_on_Area2D_area_entered"]
 [connection signal="knockback" from="AndrewTate" to="Player" method="_on_AndrewTate_knockback"]
