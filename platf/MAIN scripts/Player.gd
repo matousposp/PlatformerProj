@@ -198,3 +198,8 @@ func _on_peaEr_area_entered(area):
 		health -= 34
 	else:
 		emit_signal('hit',2)
+
+
+func _on_AndrewTate_knockback():
+	motion.x *= 5
+	motion.y -= 1000

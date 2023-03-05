@@ -3,6 +3,7 @@ extends KinematicBody2D
 export(PackedScene) var BEAM: PackedScene = preload('res://scenes/Beam.tscn')
 
 signal hit(id)
+signal knockback()
 
 const UP= Vector2(0, -1) 
 var GRAVITY= 20
@@ -55,7 +56,8 @@ func _physics_process(delta):
 	if cycle > 0:
 		if abs(abs(get_parent().get_node('Player').position.x) - abs(position.x)) < 300:
 			if is_on_wall():
-				xvel *= -1.5
+				pass
+				#xvel *= -1.5
 			else:
 				xvel += 1*direct
 			print(xvel)
@@ -105,4 +107,4 @@ func beam(beam_direction:Vector2):
 
 
 func _on_Area2D_area_entered(area):
-	pass # Replace with function body.
+	emit_signal("knockback")
