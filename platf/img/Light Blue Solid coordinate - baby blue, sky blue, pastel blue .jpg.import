@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/image.png-f0c258acb8ff1ff7a4bcb950498c0fee.stex"
+path="res://.import/Light Blue Solid coordinate - baby blue, sky blue, pastel blue .jpg-76a31c76d7ee3a3bfba83f7763a8d7d1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/image.png"
-dest_files=[ "res://.import/image.png-f0c258acb8ff1ff7a4bcb950498c0fee.stex" ]
+source_file="res://img/Light Blue Solid coordinate - baby blue, sky blue, pastel blue .jpg"
+dest_files=[ "res://.import/Light Blue Solid coordinate - baby blue, sky blue, pastel blue .jpg-76a31c76d7ee3a3bfba83f7763a8d7d1.stex" ]
 
 [params]
 
