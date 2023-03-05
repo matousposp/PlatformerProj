@@ -704,16 +704,18 @@ script = ExtResource( 18 )
 anims/RESET = SubResource( 123 )
 "anims/fade in" = SubResource( 124 )
 
-[node name="cannon" type="Area2D" parent="."]
+[node name="cannon" type="Area2D" parent="." groups=["enemy"]]
+position = Vector2( 497, 950 )
 script = ExtResource( 19 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="cannon"]
-position = Vector2( 488, 968 )
+position = Vector2( -15, 15.0001 )
 scale = Vector2( 1.83333, 1.92857 )
 frames = SubResource( 133 )
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cannon"]
+position = Vector2( -503, -953 )
 
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_entered"]
 [connection signal="pressed" from="pause1/pause menu/go back" to="pause1/pause menu" method="_on_go_back_pressed"]

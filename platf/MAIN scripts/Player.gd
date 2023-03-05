@@ -86,8 +86,7 @@ func fry(fry_direction:Vector2):
 		fry.global_position = self.global_position
 		
 		var fry_rotation = fry_direction.angle()
-		fry.rotation = fry_rotation
-		
+		fry.rotation = fry_rotation		
 
 func _on_bottom_border_area_entered(area):
 	get_tree().reload_current_scene() 

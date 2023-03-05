@@ -111,4 +111,4 @@ func _on_Area2D_area_entered(area):
 
 
 func _on_Player_hit(id):
-	health -= 4
+	health -= 2
