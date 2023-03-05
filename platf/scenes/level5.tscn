@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=2]
+[gd_scene load_steps=115 format=2]
 
 [ext_resource path="res://tilemaps/cloudtiles.tres" type="TileSet" id=1]
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=2]
@@ -13,14 +13,13 @@
 [ext_resource path="res://img/Piranha.png" type="Texture" id=11]
 [ext_resource path="res://img/3.png" type="Texture" id=12]
 [ext_resource path="res://scenes/3.gd" type="Script" id=13]
-[ext_resource path="res://scenes/PihranhaPlant.gd" type="Script" id=14]
-
-[sub_resource type="RectangleShape2D" id=148]
-extents = Vector2( 135.75, 88.5 )
 [ext_resource path="res://scenes/Dash.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/Health.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/pause menu.gd" type="Script" id=16]
-[ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://scenes/PihranhaPlant.gd" type="Script" id=17]
+
+[sub_resource type="RectangleShape2D" id=148]
+extents = Vector2( 135.75, 88.5 )
 
 [sub_resource type="AtlasTexture" id=134]
 flags = 4
@@ -433,13 +432,6 @@ animations = [ {
 radius = 24.0
 height = 16.0
 
-[sub_resource type="Theme" id=145]
-resource_local_to_scene = true
-ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
-ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
-ProgressBar/styles/bg = null
-ProgressBar/styles/fg = null
-
 [sub_resource type="AtlasTexture" id=113]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 32, 32 )
@@ -748,17 +740,6 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=146]
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 17 )
-
-[sub_resource type="StyleBoxFlat" id=147]
-bg_color = Color( 0, 0, 0, 0 )
-
-[sub_resource type="StyleBoxFlat" id=148]
-bg_color = Color( 0, 0, 0, 0 )
-
 [sub_resource type="StyleBoxFlat" id=149]
 bg_color = Color( 0, 0, 0, 0 )
 
@@ -806,7 +787,7 @@ shape = SubResource( 148 )
 
 [node name="PihranhaPlant" type="Area2D" parent="."]
 position = Vector2( 2892, 613 )
-script = ExtResource( 14 )
+script = ExtResource( 17 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PihranhaPlant"]
 scale = Vector2( 2.5625, 2.5625 )
@@ -852,7 +833,7 @@ margin_left = -33.0
 margin_top = -59.0
 margin_right = -33.0
 margin_bottom = -59.0
-theme = SubResource( 145 )
+theme = null
 
 [node name="Dash" parent="Player" instance=ExtResource( 14 )]
 margin_left = -42.0
@@ -958,8 +939,6 @@ script = ExtResource( 13 )
 anims/RESET = SubResource( 143 )
 anims/fade = SubResource( 144 )
 
-[connection signal="area_entered" from="ChaseStartArea" to="PihranhaPlant" method="_on_ChaseStartArea_area_entered"]
-[connection signal="area_entered" from="PihranhaPlant" to="Player" method="_on_PihranhaPlant_area_entered"]
 [node name="pause1" type="CanvasLayer" parent="."]
 layer = 100
 
@@ -993,14 +972,13 @@ rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 2, 0 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0.866667, 0, 0, 1 )
-custom_fonts/font = SubResource( 146 )
-custom_styles/hover = SubResource( 147 )
-custom_styles/pressed = SubResource( 148 )
 custom_styles/focus = SubResource( 149 )
 custom_styles/normal = SubResource( 150 )
 text = "Main Menu"
 align = 0
 
+[connection signal="area_entered" from="ChaseStartArea" to="PihranhaPlant" method="_on_ChaseStartArea_area_entered"]
+[connection signal="area_entered" from="PihranhaPlant" to="Player" method="_on_PihranhaPlant_area_entered"]
 [connection signal="hit" from="Player" to="leprechaun1" method="_on_Player_hit"]
 [connection signal="area_entered" from="leprechaun1" to="Player" method="_on_leprechaun1_area_entered"]
 [connection signal="area_entered" from="obstacle1" to="Player" method="_on_obstacle1_area_entered"]
