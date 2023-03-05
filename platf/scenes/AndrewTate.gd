@@ -61,12 +61,13 @@ func _physics_process(delta):
 				xvel *= -1
 			else:
 				xvel += 1*direct
+			print(xvel)
 			motion.x += xvel
 		if abs(abs(get_parent().get_node('Player').position.x) - abs(position.x)) < 200 and is_on_floor():
 			motion.y -= JUMPFORCE
 	if cycle == 0:
 		motion.y = -JUMPFORCE
-		cycle = rng.randi_range(1,3)
+		cycle = rng.randi_range(3,3)
 		if cycle == 1:
 			JUMPFORCE = 460
 			var weight_direction = self.global_position.direction_to(get_parent().get_node('Player').position)
