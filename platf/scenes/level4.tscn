@@ -17,7 +17,7 @@
 [ext_resource path="res://img/dwayne.png" type="Texture" id=15]
 [ext_resource path="res://img/goodsand.png" type="Texture" id=16]
 [ext_resource path="res://img/goodsandtop.png" type="Texture" id=17]
-[ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://fonts/gameboy.ttf" type="DynamicFontData" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=54]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )

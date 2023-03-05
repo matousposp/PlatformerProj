@@ -18,7 +18,7 @@
 [ext_resource path="res://scenes/Dash.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/Health.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scenes/pause menu.gd" type="Script" id=18]
-[ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=19]
+[ext_resource path="res://fonts/gameboy.ttf" type="DynamicFontData" id=19]
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 4 )
