@@ -378,4 +378,6 @@ custom_styles/normal = SubResource( 45 )
 text = "Main Menu"
 align = 0
 
+[connection signal="area_entered" from="Player/Area2D" to="AndrewTate" method="_on_Area2D_area_entered"]
+[connection signal="knockback" from="AndrewTate" to="Player" method="_on_AndrewTate_knockback"]
 [connection signal="pressed" from="pause1/pause menu/go back" to="pause1/pause menu" method="_on_go_back_pressed"]
