@@ -230,6 +230,7 @@ func _on_Area2D_area_entered(area):
 
 
 func _on_tatearea_area_entered(area):
+	print(area)
 	if area.is_in_group('player'):
 		health -= 34
 	else:
