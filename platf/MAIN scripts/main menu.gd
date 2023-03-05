@@ -24,6 +24,6 @@ func _on_quit_pressed():
 
 
 func _on_level_select_pressed():
-	get_tree().change_scene("res://level select.tscn")
+	get_tree().change_scene("res://other/levelsel.tscn")
 
 
