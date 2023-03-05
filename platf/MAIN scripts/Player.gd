@@ -185,3 +185,7 @@ func _on_lvl6p_area_entered(area):
 
 
 
+
+
+func _on_PihranhaPlant_area_entered(area):
+	get_tree().reload_current_scene()
