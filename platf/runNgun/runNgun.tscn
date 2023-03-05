@@ -522,6 +522,16 @@ margin_bottom = 14.0
 text = "6898903428
 "
 
+[node name="winlose" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="winlose"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="winlose/Control"]
+margin_right = 40.0
+margin_bottom = 14.0
+
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_entered"]
 [connection signal="pressed" from="pause1/pause menu/go back" to="pause1/pause menu" method="_on_go_back_pressed"]
 [connection signal="area_entered" from="border" to="Player" method="_on_border_area_entered"]

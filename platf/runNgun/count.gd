@@ -14,7 +14,9 @@ func on_timer_timeout():
 
 	if countdown_time <= 0:
 		$Timer.stop()
-		# timer reach 0
+		# what happens after 0
+		
+		
 
 func format_time(time):
 	var minutes = floor(time / 60)
