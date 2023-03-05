@@ -17,6 +17,7 @@ var direct = 1
 var charge = 0
 var health = 100
 var dash = 100
+var coins = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -193,6 +194,11 @@ func _on_borderagain_area_entered(area):
 	get_tree().reload_current_scene() 
 
 
+
+
+func _on_PihranhaPlant_area_entered(area):
+	get_tree().reload_current_scene()
+
 func _on_peaEr_area_entered(area):
 	if area.is_in_group('player'):
 		health -= 34
@@ -202,4 +208,36 @@ func _on_peaEr_area_entered(area):
 
 func _on_AndrewTate_knockback():
 	motion.x *= 5
-	motion.y -= 600
+	motion.y -= 1000
+
+
+func _on_portal26_area_entered(area):
+	get_tree().change_scene("res://scenes/level6.tscn")
+	
+
+	
+func GetCoin():
+	coins += 1
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

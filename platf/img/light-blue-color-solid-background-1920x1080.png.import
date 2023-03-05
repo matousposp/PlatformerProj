@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/image.png-f0c258acb8ff1ff7a4bcb950498c0fee.stex"
+path="res://.import/light-blue-color-solid-background-1920x1080.png-ba31c75acd20a76d03183f3fb61a9a06.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/image.png"
-dest_files=[ "res://.import/image.png-f0c258acb8ff1ff7a4bcb950498c0fee.stex" ]
+source_file="res://img/light-blue-color-solid-background-1920x1080.png"
+dest_files=[ "res://.import/light-blue-color-solid-background-1920x1080.png-ba31c75acd20a76d03183f3fb61a9a06.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0
