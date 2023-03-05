@@ -23,7 +23,10 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Weight_area_entered(area):
 	print(area)
-	if area == get_parent().get_node('Player/Area2D'):
+	if area.is_in_group('player'):
 		emit_signal('tatehit')
 	else:
-		destroy()
+		if area.is_in_group('tate'):
+			pass
+		else:
+			destroy()

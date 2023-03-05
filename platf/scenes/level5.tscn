@@ -118,6 +118,7 @@ height = 30.0
 [sub_resource type="Animation" id=146]
 resource_name = "PlantChase"
 length = 40.0
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1

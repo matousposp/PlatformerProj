@@ -28,7 +28,6 @@ func _reset_jump():
 	
 
 func _physics_process(delta):
-	print(coins)
 	motion.y += GRAVITY
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
@@ -229,3 +228,10 @@ func _on_border_area_entered(area):
 func _on_Area2D_area_entered(area):
 	if area.is_in_group('coin'):
 		coins += 1
+
+
+func _on_tatearea_area_entered(area):
+	if area.is_in_group('player'):
+		health -= 34
+	else:
+		emit_signal('hit',2)

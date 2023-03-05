@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/finallevel.tres" type="TileSet" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://fonts/gameboy.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://other/BossBar.tscn" type="PackedScene" id=13]
 [ext_resource path="res://audio/bratu.mp3" type="AudioStream" id=14]
-
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
@@ -187,6 +186,10 @@ radius = 23.0
 radius = 22.0
 height = 52.0
 
+[sub_resource type="CapsuleShape2D" id=47]
+radius = 24.0
+height = 52.0
+
 [sub_resource type="Animation" id=38]
 length = 1.3
 
@@ -304,12 +307,11 @@ margin_bottom = 63.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -2, 0 )
-rotating = true
 current = true
 smoothing_enabled = true
 smoothing_speed = 8.0
 
-[node name="Area2D" type="Area2D" parent="Player"]
+[node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
 shape = SubResource( 46 )
@@ -324,9 +326,14 @@ scale = Vector2( 1.65625, 1.625 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AndrewTate"]
-visible = false
 position = Vector2( -1, 1 )
 shape = SubResource( 37 )
+
+[node name="tatearea" type="Area2D" parent="AndrewTate" groups=["tate"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AndrewTate/tatearea"]
+position = Vector2( -1, 1 )
+shape = SubResource( 47 )
 
 [node name="3224324-middle-removebg-preview" type="Sprite" parent="."]
 visible = false
@@ -388,9 +395,11 @@ layer = 5
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
-volume_db = -4.931
+volume_db = -10.0
 autoplay = true
 
+[connection signal="hit" from="Player" to="AndrewTate" method="_on_Player_hit"]
 [connection signal="area_entered" from="Player/Area2D" to="AndrewTate" method="_on_Area2D_area_entered"]
 [connection signal="knockback" from="AndrewTate" to="Player" method="_on_AndrewTate_knockback"]
+[connection signal="area_entered" from="AndrewTate/tatearea" to="Player" method="_on_tatearea_area_entered"]
 [connection signal="pressed" from="pause1/pause menu/go back" to="pause1/pause menu" method="_on_go_back_pressed"]

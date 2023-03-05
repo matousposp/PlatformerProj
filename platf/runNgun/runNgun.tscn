@@ -599,7 +599,7 @@ text = "6898903428
 "
 
 [node name="runAndGunenemy" parent="." instance=ExtResource( 17 )]
-position = Vector2( 864, 320 )
+position = Vector2( 646, 321 )
 
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_entered"]
 [connection signal="pressed" from="pause1/pause menu/go back" to="pause1/pause menu" method="_on_go_back_pressed"]
