@@ -199,11 +199,8 @@ func _on_borderagain_area_entered(area):
 func _on_PihranhaPlant_area_entered(area):
 	get_tree().reload_current_scene()
 
-func _on_peaEr_area_entered(area):
-	if area.is_in_group('player'):
-		health -= 34
-	else:
-		emit_signal('hit',2)
+
+
 
 
 func _on_AndrewTate_knockback():
@@ -241,3 +238,25 @@ func _on_cannonball_ballin():
 
 func _on_obstacle5_area_entered(area):
 	get_tree().reload_current_scene()
+
+
+func _on_pirrana_area_entered(area):
+	if area.is_in_group('player'):
+		health -= 34
+	else:
+		emit_signal('hit',2)
+
+
+
+func _on_pirrana2_area_entered(area):
+	if area.is_in_group('player'):
+		health -= 34
+	else:
+		emit_signal('hit',2)
+
+
+func _on_pirrana3_area_entered(area):
+	if area.is_in_group('player'):
+		health -= 34
+	else:
+		emit_signal('hit',2)
