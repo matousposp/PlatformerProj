@@ -27,3 +27,10 @@ func _on_level_select_pressed():
 	get_tree().change_scene("res://other/levelsel.tscn")
 
 
+
+
+
+
+
+func _on_options_pressed():
+	get_tree().change_scene("res://optionsMenu.tscn")

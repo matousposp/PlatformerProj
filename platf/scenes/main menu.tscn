@@ -104,10 +104,10 @@ text = "Level Select"
 align = 0
 
 [node name="quit" type="Button" parent="."]
-margin_left = 447.0
-margin_top = 396.0
-margin_right = 621.0
-margin_bottom = 416.0
+margin_left = 448.0
+margin_top = 440.0
+margin_right = 622.0
+margin_bottom = 460.0
 rect_scale = Vector2( 2, 2 )
 custom_colors/font_color = Color( 0.866667, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
@@ -116,6 +116,21 @@ custom_styles/pressed = SubResource( 14 )
 custom_styles/focus = SubResource( 15 )
 custom_styles/normal = SubResource( 16 )
 text = "Quit"
+align = 0
+
+[node name="options" type="Button" parent="."]
+margin_left = 392.0
+margin_top = 392.0
+margin_right = 566.0
+margin_bottom = 412.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.866667, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+text = "Options"
 align = 0
 
 [node name="Label" type="Label" parent="."]
@@ -136,3 +151,4 @@ autoplay = true
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="level select" to="." method="_on_level_select_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="options" to="." method="_on_options_pressed"]
