@@ -32,16 +32,24 @@ func _reset_jump():
 	
 
 func _physics_process(delta):
+	motion.y += GRAVITY
+	if motion.y > MAXFALLSPEED:
+		motion.y = MAXFALLSPEED
 	cycle -= 1
 	if get_parent().get_node('Player').position.x < position.x:
 		direct = 1
 	else:
 		direct = -1
+	if is_on_wall():
+		xvel *= 0.5
 	if cycle > 0:
 		if abs(abs(get_parent().get_node('Player').position.x) - abs(position.x)) < 400:
 			xvel += 1*direct
+			print(xvel)
 			motion.x += xvel
-	if is_on_floor() and cycle == 0:
+		if abs(abs(get_parent().get_node('Player').position.x) - abs(position.x)) < 100:
+			JUMPFORCE = 460
+	if cycle == 0:
 		motion.y = -JUMPFORCE
 		cycle = rng.randi_range(1,3)
 		if cycle == 1:
@@ -55,8 +63,11 @@ func _physics_process(delta):
 			else:
 				pass
 		else:
-			var beam_direction = self.global_position.direction_to(get_parent().get_node('Player').position)
-			beam(beam_direction)
+			if xvel > 0:
+				xvel -= 1
+			else:
+				xvel += 1
+		cycle = 600
 	move_and_slide(motion, UP)
 	
 func weight(weight_direction:Vector2):
