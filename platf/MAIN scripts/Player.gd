@@ -235,3 +235,7 @@ func _on_tatearea_area_entered(area):
 		health -= 34
 	else:
 		emit_signal('hit',2)
+
+
+func _on_obstacle5_area_entered(area):
+	get_tree().reload_current_scene()
