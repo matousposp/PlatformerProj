@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/finallevel.tres" type="TileSet" id=2]
@@ -185,6 +185,10 @@ radius = 23.0
 radius = 22.0
 height = 52.0
 
+[sub_resource type="CapsuleShape2D" id=47]
+radius = 23.0
+height = 48.0
+
 [sub_resource type="Animation" id=38]
 length = 1.3
 
@@ -322,9 +326,13 @@ scale = Vector2( 1.65625, 1.625 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AndrewTate"]
-visible = false
 position = Vector2( -1, 1 )
 shape = SubResource( 37 )
+
+[node name="tatearea" type="Area2D" parent="AndrewTate"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AndrewTate/tatearea"]
+shape = SubResource( 47 )
 
 [node name="3224324-middle-removebg-preview" type="Sprite" parent="."]
 visible = false

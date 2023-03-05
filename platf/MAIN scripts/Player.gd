@@ -134,7 +134,6 @@ func _on_burger_area_entered(area):
 func _on_lepreborder_area_entered(area):
 	get_tree().reload_current_scene()
 
-
 func _on_leprechaun1_area_entered(area):
 	print(area)
 	if area.is_in_group('player'):
@@ -142,38 +141,30 @@ func _on_leprechaun1_area_entered(area):
 	else:
 		emit_signal('hit',1)
 
-
 func _on_obstacle1_area_entered(area):
 	get_tree().reload_current_scene()
-
 
 func _on_obstacle2_area_entered(area):
 	get_tree().reload_current_scene()
 
-
 func _on_obstacle3_area_entered(area):
 	get_tree().reload_current_scene()
 	
-
 func _on_BiggestBird_area_entered(area):
 	get_tree().reload_current_scene()
 func _on_BiggestBird2_area_entered(area):
 	get_tree().reload_current_scene()
-
 
 func _on_border2_area_entered(area):
 	get_tree().reload_current_scene() # Replace with function body.
 func _on_bigbird1_area_entered(area):
 	get_tree().reload_current_scene()
 
-
 func _on_portal1000_area_entered(area):
 	get_tree().change_scene("res://scenes/level4.tscn")
 
 func _on_portal10_area_entered(area):
 	get_tree().change_scene("res://mountainlvl1.tscn")
-
-
 
 func _on_border5_area_entered(area):
 	get_tree().reload_current_scene() 
@@ -188,13 +179,8 @@ func _on_Weight_tatehit():
 func _on_borderbeta_area_entered(area):
 	get_tree().reload_current_scene() 
 
-
-
 func _on_borderagain_area_entered(area):
 	get_tree().reload_current_scene() 
-
-
-
 
 func _on_PihranhaPlant_area_entered(area):
 	get_tree().reload_current_scene()
@@ -207,8 +193,8 @@ func _on_peaEr_area_entered(area):
 
 
 func _on_AndrewTate_knockback():
-	motion.x *= 5
-	motion.y -= 1000
+	motion.x *= -10
+	motion.y -= 600
 
 
 func _on_portal26_area_entered(area):
@@ -218,26 +204,4 @@ func _on_portal26_area_entered(area):
 	
 func GetCoin():
 	coins += 1
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
