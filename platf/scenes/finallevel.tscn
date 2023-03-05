@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://tilemaps/finallevel.tres" type="TileSet" id=1]
 [ext_resource path="res://img/galacticgym.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://audio/gym.mp3" type="AudioStream" id=4]
 [ext_resource path="res://fonts/Early GameBoy.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://img/player.png" type="Texture" id=6]
+[ext_resource path="res://scenes/Dash.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Health.tscn" type="PackedScene" id=8]
 [ext_resource path="res://MAIN SCRIPTS/Player.gd" type="Script" id=9]
 [ext_resource path="res://img/movingplatf.png" type="Texture" id=21]
 [ext_resource path="res://scenes/movingplate.gd" type="Script" id=22]
@@ -171,6 +173,13 @@ extents = Vector2( 19.9045, 32 )
 [sub_resource type="RectangleShape2D" id=65]
 extents = Vector2( 18.8838, 32 )
 
+[sub_resource type="Theme" id=71]
+resource_local_to_scene = true
+ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
+ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+ProgressBar/styles/bg = null
+ProgressBar/styles/fg = null
+
 [sub_resource type="AtlasTexture" id=61]
 atlas = ExtResource( 23 )
 region = Rect2( 0, 0, 32, 32 )
@@ -315,6 +324,19 @@ shape = SubResource( 64 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( -0.510376, 0 )
 shape = SubResource( 65 )
+
+[node name="Health" parent="Player" instance=ExtResource( 8 )]
+margin_left = -36.7468
+margin_top = -64.0
+margin_right = -36.7468
+margin_bottom = -64.0
+theme = SubResource( 71 )
+
+[node name="Dash" parent="Player" instance=ExtResource( 7 )]
+margin_left = -40.8298
+margin_top = 53.0
+margin_right = -40.8298
+margin_bottom = 53.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
