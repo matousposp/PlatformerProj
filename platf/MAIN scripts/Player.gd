@@ -241,3 +241,7 @@ func GetCoin():
 	
 	
 	
+
+
+func _on_border_area_entered(area):
+	get_tree().reload_current_scene()
