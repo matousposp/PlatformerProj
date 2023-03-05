@@ -23,9 +23,21 @@ var xvel = 0
 export(int) var SPEED: int = 800
 
 export(PackedScene) var WEIGHT: PackedScene = preload('res://scenes/Weight.tscn')
+var sound_effect = preload("res://andrew.mp3")
+var audio_player = AudioStreamPlayer.new()
 
+var timer = Timer.new()
 func _ready():
-	pass
+	add_child(audio_player)
+	add_child(timer)
+	timer.set_wait_time(10.0)
+	timer.set_one_shot(false)
+	timer.connect("timeout", self, "_on_Timer_timeout")
+	timer.start()
+func _on_Timer_timeout():
+	audio_player.stream = sound_effect
+	audio_player.play()
+
 
 func _reset_jump():
 	JUMPFORCE = 460
