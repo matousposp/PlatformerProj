@@ -12,3 +12,11 @@ func _ready():
 
 func _process(delta):
 	$score/Control/Label.text = str($Player.coins)
+
+
+func _on_play_pressed():
+	get_tree().reload_current_scene()
+
+
+func _on_quit_pressed():
+	get_tree().change_scene("res://scenes/main menu.tscn")
