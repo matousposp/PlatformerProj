@@ -12,7 +12,7 @@ var JUMPFORCE = 460
 var motion = Vector2()
 var jumps = 0
 var direct = 1
-var cycle = 120
+var cycle = 90
 var x = 0
 var y = 0
 var rng = RandomNumberGenerator.new()
@@ -98,7 +98,7 @@ func _physics_process(delta):
 			var beam_direction = self.global_position.direction_to(get_parent().get_node('Player').position)
 			beam(beam_direction)
 		if x == 0:
-			cycle = 120
+			cycle = 90
 	move_and_slide(motion, UP)
 
 func weight(weight_direction:Vector2):
