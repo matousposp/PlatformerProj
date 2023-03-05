@@ -196,7 +196,12 @@ func _on_borderagain_area_entered(area):
 
 
 func _on_PihranhaPlant_area_entered(area):
-	get_tree().reload_current_scene()
+	# get_tree().reload_current_scene()
+	print(area)
+	if area.is_in_group('player'):
+		get_tree().reload_current_scene()
+	else:
+		emit_signal('hit',1)
 func _on_peaEr_area_entered(area):
 	if area.is_in_group('player'):
 		health -= 34

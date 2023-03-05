@@ -547,7 +547,7 @@ tracks/2/keys = {
 radius = 7.0
 
 [sub_resource type="RectangleShape2D" id=122]
-extents = Vector2( 3493.5, 13.5 )
+extents = Vector2( 1966.5, 12.25 )
 
 [sub_resource type="Animation" id=129]
 length = 0.001
@@ -895,7 +895,7 @@ shape = SubResource( 121 )
 [node name="lepreborder" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lepreborder"]
-position = Vector2( 2346.5, 700 )
+position = Vector2( 819.5, 674.25 )
 shape = SubResource( 122 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
