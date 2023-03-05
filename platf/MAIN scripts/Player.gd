@@ -196,12 +196,8 @@ func _on_borderagain_area_entered(area):
 
 
 func _on_PihranhaPlant_area_entered(area):
-	# get_tree().reload_current_scene()
-	print(area)
-	if area.is_in_group('player'):
-		get_tree().reload_current_scene()
-	else:
-		emit_signal('hit',1)
+	get_tree().reload_current_scene()
+
 func _on_peaEr_area_entered(area):
 	if area.is_in_group('player'):
 		health -= 34
@@ -212,3 +208,7 @@ func _on_peaEr_area_entered(area):
 func _on_AndrewTate_knockback():
 	motion.x *= 5
 	motion.y -= 1000
+
+
+func _on_portal26_area_entered(area):
+	get_tree().change_scene("res://scenes/level6.tscn")
