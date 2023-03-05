@@ -34,3 +34,7 @@ func _on_level_select_pressed():
 
 func _on_options_pressed():
 	get_tree().change_scene("res://optionsMenu.tscn")
+
+
+func _on_Extra_Modes_pressed():
+	get_tree().change_scene("res://ExtraModesMenu.tscn")

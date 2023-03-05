@@ -47,3 +47,7 @@ func _on_7_pressed():
 
 func _on_8_pressed():
 	get_tree().change_scene("res://scenes/level8mountainjew2.tscn")
+
+
+func _on_return1_pressed():
+	get_tree().change_scene("res://scenes/main menu.tscn")

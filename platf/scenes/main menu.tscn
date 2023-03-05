@@ -69,10 +69,10 @@ texture = ExtResource( 9 )
 expand = true
 
 [node name="start" type="Button" parent="."]
-margin_left = 367.0
-margin_top = 292.0
-margin_right = 519.0
-margin_bottom = 312.0
+margin_left = 360.0
+margin_top = 302.0
+margin_right = 512.0
+margin_bottom = 322.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 2, 0 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
@@ -105,9 +105,9 @@ align = 0
 
 [node name="quit" type="Button" parent="."]
 margin_left = 448.0
-margin_top = 440.0
+margin_top = 483.0
 margin_right = 622.0
-margin_bottom = 460.0
+margin_bottom = 503.0
 rect_scale = Vector2( 2, 2 )
 custom_colors/font_color = Color( 0.866667, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
@@ -119,10 +119,10 @@ text = "Quit"
 align = 0
 
 [node name="options" type="Button" parent="."]
-margin_left = 392.0
-margin_top = 392.0
-margin_right = 566.0
-margin_bottom = 412.0
+margin_left = 400.0
+margin_top = 440.0
+margin_right = 574.0
+margin_bottom = 460.0
 rect_scale = Vector2( 2, 2 )
 custom_colors/font_color = Color( 0.866667, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
@@ -131,6 +131,21 @@ custom_styles/pressed = SubResource( 14 )
 custom_styles/focus = SubResource( 15 )
 custom_styles/normal = SubResource( 16 )
 text = "Options"
+align = 0
+
+[node name="Extra Modes" type="Button" parent="."]
+margin_left = 344.0
+margin_top = 392.0
+margin_right = 518.0
+margin_bottom = 412.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.866667, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+text = "Extra Modes"
 align = 0
 
 [node name="Label" type="Label" parent="."]
@@ -152,3 +167,4 @@ autoplay = true
 [connection signal="pressed" from="level select" to="." method="_on_level_select_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Extra Modes" to="." method="_on_Extra_Modes_pressed"]
