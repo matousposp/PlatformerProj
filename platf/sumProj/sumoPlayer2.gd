@@ -29,7 +29,6 @@ func _reset_jump():
 	
 
 func _physics_process(delta):
-	xvel -= 1
 	if xvel < 0:
 		xvel += 1
 	if xvel > 0:
