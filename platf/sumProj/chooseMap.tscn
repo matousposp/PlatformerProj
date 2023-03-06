@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://fonts/gameboy.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://sumProj/chooseMap.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://img/dawnbackground.png" type="Texture" id=7]
 [ext_resource path="res://img/483c892db1825b1.png" type="Texture" id=8]
 [ext_resource path="res://img/light-blue-color-solid-background-1920x1080.png" type="Texture" id=9]
+[ext_resource path="res://audio/a-hero-of-the-80s-126684.mp3" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -124,6 +125,10 @@ custom_styles/focus = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
 text = "Return"
 align = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]
