@@ -187,7 +187,7 @@ radius = 22.0
 height = 52.0
 
 [sub_resource type="CapsuleShape2D" id=47]
-radius = 24.0
+radius = 29.0
 height = 52.0
 
 [sub_resource type="Animation" id=38]
@@ -336,6 +336,7 @@ position = Vector2( -1, 1 )
 shape = SubResource( 47 )
 
 [node name="3224324-middle-removebg-preview" type="Sprite" parent="."]
+visible = false
 position = Vector2( 352, 136 )
 rotation = 6.28319
 scale = Vector2( 10, 10 )
@@ -391,10 +392,12 @@ align = 0
 layer = 5
 
 [node name="BossBar" parent="Bar" instance=ExtResource( 13 )]
+margin_left = 5.0
+margin_right = 5.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
-volume_db = -10.0
+volume_db = 4.0
 autoplay = true
 
 [connection signal="hit" from="Player" to="AndrewTate" method="_on_Player_hit"]

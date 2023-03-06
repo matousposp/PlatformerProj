@@ -46,6 +46,7 @@ func _reset_jump():
 	
 
 func _physics_process(delta):
+	$placeholder.flip_h = (direct > 1)
 	motion.y += GRAVITY
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
@@ -85,8 +86,10 @@ func _physics_process(delta):
 					xvel -= 2
 				if get_parent().get_node('Player').position.x > position.x:
 					xvel += 2
-				if get_parent().get_node('Player').position.y <= position.y:
-					motion.y -= JUMPFORCE
+				if abs(abs(get_parent().get_node('Player').position.y) - abs(position.y)) < 100:
+					motion.y -= 100
+				if get_parent().get_node('Player').position.y >= position.y:
+					motion.y += 50
 				motion.x += xvel
 		else:
 			if xvel > 0:
@@ -121,4 +124,4 @@ func _on_Area2D_area_entered(area):
 	emit_signal('knockback')
 
 func _on_Player_hit(id):
-	health -= 2
+	health -= 1.5

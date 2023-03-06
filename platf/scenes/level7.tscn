@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=2]
+[gd_scene load_steps=127 format=2]
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://scenes/pause menu.gd" type="Script" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://scenes/brocc2.gd" type="Script" id=21]
 [ext_resource path="res://img/biggestbirdsprite.png" type="Texture" id=22]
 [ext_resource path="res://scenes/birg.gd" type="Script" id=23]
+[ext_resource path="res://scenes/waterm2.gd" type="Script" id=24]
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 3 )
@@ -667,6 +668,7 @@ shape = SubResource( 113 )
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -1, 3 )
 offset = Vector2( 0, -20 )
+current = true
 smoothing_enabled = true
 smoothing_speed = 8.0
 
@@ -824,6 +826,19 @@ texture = ExtResource( 20 )
 position = Vector2( 4, -25 )
 shape = SubResource( 150 )
 
+[node name="waterm2" type="Area2D" parent="."]
+position = Vector2( 4288, 1266 )
+script = ExtResource( 24 )
+
+[node name="Sprite" type="Sprite" parent="waterm2"]
+position = Vector2( 3, -24 )
+scale = Vector2( 2.90625, 2.71875 )
+texture = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="waterm2"]
+position = Vector2( 4, -25 )
+shape = SubResource( 150 )
+
 [node name="birg" type="Area2D" parent="."]
 position = Vector2( 5458, -2159 )
 script = ExtResource( 23 )
@@ -852,3 +867,4 @@ shape = SubResource( 157 )
 [connection signal="screen_entered" from="brocc2/VisibilityNotifier2D" to="brocc2" method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="screen_exited" from="brocc2/VisibilityNotifier2D" to="brocc2" method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="area_entered" from="waterm" to="Player" method="_on_waterm_area_entered"]
+[connection signal="area_entered" from="waterm2" to="Player" method="_on_waterm2_area_entered"]
