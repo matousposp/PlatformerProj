@@ -8,8 +8,6 @@ func _physics_process(delta):
 	velocity += GRAVITY * delta
 	velocity = move_and_slide(velocity)
 
-
-
 func _on_Area2D_area_entered(area):
 	if area.is_in_group('player'):
 		queue_free()

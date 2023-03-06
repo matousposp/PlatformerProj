@@ -107,11 +107,6 @@ height = 0.0
 
 [node name="sumo" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 2, 126 )
-current = true
-zoom = Vector2( 1.5, 1 )
-
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -776.0
 margin_top = -216.0
@@ -167,3 +162,8 @@ shape = SubResource( 22 )
 [node name="falling_cookie" parent="." instance=ExtResource( 5 )]
 
 [node name="falling_marmalade" parent="." instance=ExtResource( 7 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 2, 126 )
+current = true
+zoom = Vector2( 1.5, 1 )

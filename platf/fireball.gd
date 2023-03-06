@@ -1,6 +1,6 @@
 extends Area2D
 
-export(int) var SPEED: int = 400
+export(int) var SPEED: int = 500
 
 func _ready():
 	$AnimatedSprite.play("default")

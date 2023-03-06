@@ -32,22 +32,23 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=7]
-radius = 5.0
+radius = 9.0
 height = 0.0
 
 [node name="fireball" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 40, 0.5 )
+position = Vector2( 42, 0 )
+scale = Vector2( 1.84375, 1.8 )
 frames = SubResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 42, -0.5 )
+position = Vector2( 47, -2.5 )
 shape = SubResource( 7 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 40, 0.5 )
+position = Vector2( 46, -3 )
 
 [connection signal="area_entered" from="." to="." method="_on_fireball_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_fireball_body_entered"]
