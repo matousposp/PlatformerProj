@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=2]
+[gd_scene load_steps=104 format=2]
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://scenes/pause menu.gd" type="Script" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://scenes/Health.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/Dash.tscn" type="PackedScene" id=13]
 [ext_resource path="res://fonts/gameboy.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://img/nugget2.png" type="Texture" id=15]
+[ext_resource path="res://scenes/nugget.gd" type="Script" id=16]
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 3 )
@@ -455,6 +457,45 @@ bg_color = Color( 0, 0, 0, 0 )
 [sub_resource type="StyleBoxFlat" id=133]
 bg_color = Color( 0, 0, 0, 0 )
 
+[sub_resource type="AtlasTexture" id=134]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=135]
+atlas = ExtResource( 15 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=136]
+atlas = ExtResource( 15 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=137]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=138]
+atlas = ExtResource( 15 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=139]
+atlas = ExtResource( 15 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=140]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=141]
+animations = [ {
+"frames": [ SubResource( 134 ), SubResource( 135 ), SubResource( 136 ), SubResource( 137 ), SubResource( 138 ), SubResource( 139 ), SubResource( 140 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=142]
+radius = 52.0
+
 [node name="mountainlvl1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -655,5 +696,19 @@ custom_styles/normal = SubResource( 133 )
 text = "Main Menu"
 align = 0
 
+[node name="nugget" type="Area2D" parent="." groups=["portal"]]
+position = Vector2( 8150, -855 )
+script = ExtResource( 16 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="nugget"]
+position = Vector2( 48, -56 )
+scale = Vector2( 3.75, 3.53125 )
+frames = SubResource( 141 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nugget"]
+position = Vector2( 48, -53 )
+shape = SubResource( 142 )
+
+[connection signal="area_entered" from="Player/Area2D" to="nugget" method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="borderagain" to="Player" method="_on_borderagain_area_entered"]
 [connection signal="pressed" from="pause1/pause menu/go back" to="pause1/pause menu" method="_on_go_back_pressed"]

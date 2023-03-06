@@ -179,7 +179,9 @@ func _on_burger_area_entered(area):
 
 #level 3
 func _on_brocoli_area_entered(area):
+	print(area)
 	if area.is_in_group('player'):
+		print('hi')
 		if cooldown <= 0:
 			cooldown = 60
 			health -= 34
@@ -213,11 +215,36 @@ func _on_brocoli4_area_entered(area):
 
 func _on_melonwater_area_entered(area):
 	if area.is_in_group('player'):
+		print(area)
 		if cooldown <= 0:
 			cooldown = 60
 			health -= 34
 	else:
 		emit_signal('hit',4)
+
+func _on_pare_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit',6)
+
+func _on_pare2_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit',7)
+
+func _on_pare3_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit',8)
 
 func _on_lepreborder_area_entered(area):
 	get_tree().reload_current_scene()

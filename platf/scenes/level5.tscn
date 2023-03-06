@@ -61,42 +61,34 @@ radius = 23.0
 height = 42.0
 
 [sub_resource type="AtlasTexture" id=134]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=135]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=136]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=137]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 0, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=138]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 32, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=139]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 64, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=140]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 0, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=141]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 32, 64, 32, 32 )
 

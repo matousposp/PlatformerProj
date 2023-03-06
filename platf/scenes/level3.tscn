@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=2]
+[gd_scene load_steps=125 format=2]
 
 [ext_resource path="res://img/sky_lightened.png" type="Texture" id=1]
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=2]
@@ -28,6 +28,8 @@
 [ext_resource path="res://scenes/pare.gd" type="Script" id=26]
 [ext_resource path="res://img/pear.png" type="Texture" id=27]
 [ext_resource path="res://scenes/brocoli4.gd" type="Script" id=28]
+[ext_resource path="res://scenes/pare2.gd" type="Script" id=29]
+[ext_resource path="res://scenes/pare3.gd" type="Script" id=30]
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 4 )
@@ -894,7 +896,7 @@ drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
 
-[node name="Area2D" type="Area2D" parent="Player"]
+[node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
 position = Vector2( 1, -1 )
@@ -1117,7 +1119,7 @@ custom_styles/normal = SubResource( 87 )
 text = "Main Menu"
 align = 0
 
-[node name="brocoli" type="Area2D" parent="."]
+[node name="brocoli" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2( -325, 929 )
 script = ExtResource( 21 )
 
@@ -1133,7 +1135,7 @@ shape = SubResource( 94 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="brocoli"]
 
-[node name="brocoli2" type="Area2D" parent="."]
+[node name="brocoli2" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2( 158, 1153 )
 script = ExtResource( 23 )
 
@@ -1148,7 +1150,7 @@ shape = SubResource( 94 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="brocoli2"]
 
-[node name="brocoli3" type="Area2D" parent="."]
+[node name="brocoli3" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2( -327, 1696 )
 script = ExtResource( 22 )
 
@@ -1164,7 +1166,7 @@ shape = SubResource( 94 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="brocoli3"]
 
-[node name="brocoli4" type="Area2D" parent="."]
+[node name="brocoli4" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2( 1089, 1537 )
 script = ExtResource( 28 )
 
@@ -1180,7 +1182,7 @@ shape = SubResource( 94 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="brocoli4"]
 
-[node name="melonwater" type="Area2D" parent="."]
+[node name="melonwater" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2( 517, 2188 )
 script = ExtResource( 25 )
 
@@ -1192,7 +1194,7 @@ texture = ExtResource( 24 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="melonwater"]
 shape = SubResource( 95 )
 
-[node name="pare" type="Area2D" parent="."]
+[node name="pare" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2( 1008, 976 )
 script = ExtResource( 26 )
 
@@ -1205,12 +1207,40 @@ frames = SubResource( 102 )
 position = Vector2( -3, -11 )
 shape = SubResource( 103 )
 
+[node name="pare2" type="Area2D" parent="." groups=["enemy"]]
+position = Vector2( 1007, 752 )
+script = ExtResource( 29 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="pare2"]
+position = Vector2( 0, -19 )
+scale = Vector2( 2.03125, 2.21875 )
+frames = SubResource( 102 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pare2"]
+position = Vector2( -3, -11 )
+shape = SubResource( 103 )
+
+[node name="pare3" type="Area2D" parent="." groups=["enemy"]]
+position = Vector2( 1060, 528 )
+script = ExtResource( 30 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="pare3"]
+position = Vector2( 0, -19 )
+scale = Vector2( 2.03125, 2.21875 )
+frames = SubResource( 102 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pare3"]
+position = Vector2( -3, -11 )
+shape = SubResource( 103 )
+
 [connection signal="hit" from="Player" to="brocoli" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="brocoli2" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="brocoli3" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="melonwater" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="brocoli4" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="pare" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="pare2" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="pare3" method="_on_Player_hit"]
 [connection signal="area_entered" from="Player/Area2D" to="moving platform" method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="area_entered" from="portal1000" to="Player" method="_on_portallll_area_entered"]
@@ -1230,3 +1260,6 @@ shape = SubResource( 103 )
 [connection signal="screen_entered" from="brocoli4/VisibilityNotifier2D" to="brocoli4" method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="screen_exited" from="brocoli4/VisibilityNotifier2D" to="brocoli4" method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="area_entered" from="melonwater" to="Player" method="_on_melonwater_area_entered"]
+[connection signal="area_entered" from="pare" to="Player" method="_on_pare_area_entered"]
+[connection signal="area_entered" from="pare2" to="Player" method="_on_pare2_area_entered"]
+[connection signal="area_entered" from="pare3" to="Player" method="_on_pare3_area_entered"]
