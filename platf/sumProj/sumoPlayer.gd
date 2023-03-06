@@ -21,6 +21,7 @@ var health = 100
 var dash = 100
 var coins = 0
 var xvel = 0
+var z = -1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -30,15 +31,24 @@ func _reset_jump():
 	
 
 func _physics_process(delta):
+	if z == 0:
+		scale.x *= 2
+		scale.y *= 2
+		z = -1
+	if z > 0:
+		z -= 1
 	cool -= 1
 	if xvel < 0:
 		xvel += 1
 	if xvel > 0:
 		xvel -= 1
+	if xvel < -30:
+		xvel = -30
+	if xvel > 30:
+		xvel = 30
 	motion.y += GRAVITY
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
-	
 	if Input.is_action_pressed("sumoDash") and dash > 10:
 		dash -= 0.8
 		MAXSPEED = 300
@@ -53,15 +63,14 @@ func _physics_process(delta):
 		get_tree().reload_current_scene()
 	
 	elif Input.is_action_pressed("sumoR"):
-		
-		motion.x = MAXSPEED
+		xvel += 2
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("roll")
 		direct = 1
 		
 		
 	elif Input.is_action_pressed("sumoL"):
-		motion.x = -MAXSPEED
+		xvel -= 2
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("roll")
 		direct = -1
@@ -72,7 +81,6 @@ func _physics_process(delta):
 		fry(fry_direction)  
 		
 	else:
-		motion.x = 0
 		$AnimatedSprite.play("default")
 	if is_on_floor() or jump > 0:
 		if Input.is_action_just_pressed("sumoJump"):
@@ -100,12 +108,14 @@ func fry(fireball_direction:Vector2):
 		var fireball_rotation = fireball_direction.angle()
 		fireball.rotation = fireball_rotation		
 
-
 func _on_Area2D_area_entered(area):
-	if motion.x == 0:
+	if xvel== 0:
 		xvel = -100*direct
 	else:
-		xvel *= -10
+		if xvel > get_parent().get_node('Player2').xvel:
+			xvel *= -0.5
+		else:
+			xvel *= -2
 	motion.y = -500
 
 
@@ -116,3 +126,4 @@ func _on_border_area_entered(area):
 func _on_cookie_shrink():
 	scale.x *= 0.5
 	scale.y *= 0.5
+	z = 300

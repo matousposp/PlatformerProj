@@ -269,6 +269,7 @@ autoplay = true
 visible = false
 position = Vector2( 392, -12000 )
 
+[connection signal="hit" from="Player" to="Player2" method="_on_Player_hit"]
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="Player2/Area2D" to="Player2" method="_on_Area2D_area_entered"]
 [connection signal="pressed" from="win/win/go back" to="win/win" method="_on_go_back_pressed"]

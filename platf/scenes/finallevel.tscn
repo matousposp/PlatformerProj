@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://tilemaps/finallevel.tres" type="TileSet" id=1]
 [ext_resource path="res://img/fon-oboi-pikseli-kvadrat-fioletovyi.jpg" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://scenes/Dash.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Health.tscn" type="PackedScene" id=8]
 [ext_resource path="res://MAIN SCRIPTS/Player.gd" type="Script" id=9]
+[ext_resource path="res://scenes/buff.gd" type="Script" id=10]
+[ext_resource path="res://img/buff.png" type="Texture" id=11]
 [ext_resource path="res://img/movingplatf.png" type="Texture" id=21]
 [ext_resource path="res://scenes/movingplate.gd" type="Script" id=22]
 [ext_resource path="res://img/borger.png" type="Texture" id=23]
@@ -275,6 +277,34 @@ bg_color = Color( 0, 0, 0, 0 )
 [sub_resource type="StyleBoxFlat" id=70]
 bg_color = Color( 0, 0, 0, 0 )
 
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=73]
+atlas = ExtResource( 11 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 11 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=76]
+animations = [ {
+"frames": [ SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=77]
+radius = 34.0
+height = 32.0
+
 [node name="finallevel" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -403,6 +433,19 @@ custom_styles/focus = SubResource( 69 )
 custom_styles/normal = SubResource( 70 )
 text = "Main Menu"
 align = 0
+
+[node name="buff" type="Area2D" parent="."]
+position = Vector2( 2394, 55 )
+script = ExtResource( 10 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="buff"]
+position = Vector2( 39, -37 )
+scale = Vector2( 3.4375, 3.3125 )
+frames = SubResource( 76 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buff"]
+position = Vector2( 35, -32 )
+shape = SubResource( 77 )
 
 [connection signal="area_entered" from="burger" to="Player" method="_on_burger_area_entered"]
 [connection signal="pressed" from="pause1/pause menu/go back" to="pause1/pause menu" method="_on_go_back_pressed"]
