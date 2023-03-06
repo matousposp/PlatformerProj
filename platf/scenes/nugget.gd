@@ -12,6 +12,5 @@ func _ready():
 
 
 func _on_Area2D_area_entered(area):
-	print(area)
 	if area.is_in_group('portal'):
 		get_tree().change_scene("res://scenes/level8.tscn")

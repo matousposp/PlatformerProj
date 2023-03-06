@@ -410,3 +410,40 @@ func _on_birb_area_entered(area):
 		
 func _on_portalyesyesyes_area_entered(area):
 	get_tree().change_scene("res://scenes/finallevel.tscn")
+
+#level 7
+
+func _on_cat_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown >= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit',1)
+
+
+func _on_brocc_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown >= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit',2)
+
+
+func _on_brocc2_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown >= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit',3)
+
+
+func _on_waterm_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown >= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit',4)
