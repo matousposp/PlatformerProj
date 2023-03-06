@@ -55,3 +55,7 @@ func _on_return1_pressed():
 
 func _on_9_pressed():
 	get_tree().change_scene("res://scenes/finallevel.tscn")
+
+
+func _on_boss_battle_pressed():
+	get_tree().change_scene("res://scenes/bossbattle1.tscn")
