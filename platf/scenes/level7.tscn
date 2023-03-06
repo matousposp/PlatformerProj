@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=2]
+[gd_scene load_steps=124 format=2]
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://scenes/pause menu.gd" type="Script" id=2]
@@ -16,6 +16,12 @@
 [ext_resource path="res://fonts/gameboy.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://img/nugget2.png" type="Texture" id=15]
 [ext_resource path="res://scenes/nugget.gd" type="Script" id=16]
+[ext_resource path="res://img/broccoli.png" type="Texture" id=17]
+[ext_resource path="res://scenes/brocc.gd" type="Script" id=18]
+[ext_resource path="res://scenes/waterm.gd" type="Script" id=19]
+[ext_resource path="res://img/wotamelon.png" type="Texture" id=20]
+[ext_resource path="res://scenes/brocc2.gd" type="Script" id=21]
+[ext_resource path="res://img/biggestbirdsprite.png" type="Texture" id=22]
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 3 )
@@ -496,6 +502,69 @@ animations = [ {
 [sub_resource type="CapsuleShape2D" id=142]
 radius = 52.0
 
+[sub_resource type="AtlasTexture" id=143]
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=144]
+atlas = ExtResource( 17 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=145]
+atlas = ExtResource( 17 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=146]
+atlas = ExtResource( 17 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=147]
+atlas = ExtResource( 17 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=148]
+animations = [ {
+"frames": [ SubResource( 143 ), SubResource( 144 ), SubResource( 145 ), SubResource( 146 ), SubResource( 147 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=149]
+radius = 23.0
+height = 14.0
+
+[sub_resource type="CircleShape2D" id=150]
+radius = 40.0125
+
+[sub_resource type="AtlasTexture" id=151]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 0, 59, 32 )
+
+[sub_resource type="AtlasTexture" id=152]
+atlas = ExtResource( 22 )
+region = Rect2( 59, 0, 59, 32 )
+
+[sub_resource type="AtlasTexture" id=153]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 32, 59, 32 )
+
+[sub_resource type="AtlasTexture" id=154]
+atlas = ExtResource( 22 )
+region = Rect2( 59, 32, 59, 32 )
+
+[sub_resource type="AtlasTexture" id=155]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 64, 59, 32 )
+
+[sub_resource type="SpriteFrames" id=156]
+animations = [ {
+"frames": [ SubResource( 151 ), SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="mountainlvl1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -598,7 +667,7 @@ current = true
 smoothing_enabled = true
 smoothing_speed = 8.0
 
-[node name="Area2D" type="Area2D" parent="Player"]
+[node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
 position = Vector2( -1, 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/Area2D"]
@@ -622,19 +691,19 @@ stream = ExtResource( 6 )
 volume_db = 4.793
 autoplay = true
 
-[node name="mountainbird1" type="Area2D" parent="."]
+[node name="cat" type="Area2D" parent="."]
 script = ExtResource( 4 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="mountainbird1"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="cat"]
 position = Vector2( 926, 291 )
 scale = Vector2( 0.064, 0.061 )
 frames = SubResource( 116 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mountainbird1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cat"]
 position = Vector2( 926, 288 )
 shape = SubResource( 117 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="mountainbird1"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cat"]
 anims/RESET = SubResource( 118 )
 anims/move = SubResource( 119 )
 
@@ -709,6 +778,69 @@ frames = SubResource( 141 )
 position = Vector2( 48, -53 )
 shape = SubResource( 142 )
 
+[node name="brocc" type="Area2D" parent="."]
+position = Vector2( 1934, -557 )
+script = ExtResource( 18 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="brocc"]
+position = Vector2( 6, -17 )
+scale = Vector2( 2.5, 2.3125 )
+frames = SubResource( 148 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brocc"]
+position = Vector2( 2, -19 )
+shape = SubResource( 149 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="brocc"]
+
+[node name="brocc2" type="Area2D" parent="."]
+position = Vector2( 3404, 306 )
+script = ExtResource( 21 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="brocc2"]
+position = Vector2( 6, -17 )
+scale = Vector2( 2.5, 2.3125 )
+frames = SubResource( 148 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brocc2"]
+position = Vector2( 2, -19 )
+shape = SubResource( 149 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="brocc2"]
+
+[node name="waterm" type="Area2D" parent="."]
+position = Vector2( 3633, -685 )
+script = ExtResource( 19 )
+
+[node name="Sprite" type="Sprite" parent="waterm"]
+position = Vector2( 3, -24 )
+scale = Vector2( 2.90625, 2.71875 )
+texture = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="waterm"]
+position = Vector2( 4, -25 )
+shape = SubResource( 150 )
+
+[node name="birg" type="Area2D" parent="."]
+position = Vector2( 5522, -2201 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="birg"]
+frames = SubResource( 156 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="birg"]
+
+[connection signal="hit" from="Player" to="cat" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="brocc" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="brocc2" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="waterm" method="_on_Player_hit"]
 [connection signal="area_entered" from="Player/Area2D" to="nugget" method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="cat" to="Player" method="_on_cat_area_entered"]
 [connection signal="area_entered" from="borderagain" to="Player" method="_on_borderagain_area_entered"]
 [connection signal="pressed" from="pause1/pause menu/go back" to="pause1/pause menu" method="_on_go_back_pressed"]
+[connection signal="area_entered" from="brocc" to="Player" method="_on_brocc_area_entered"]
+[connection signal="screen_entered" from="brocc/VisibilityNotifier2D" to="brocc" method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="brocc/VisibilityNotifier2D" to="brocc" method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="area_entered" from="brocc2" to="Player" method="_on_brocc2_area_entered"]
+[connection signal="screen_entered" from="brocc2/VisibilityNotifier2D" to="brocc2" method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="brocc2/VisibilityNotifier2D" to="brocc2" method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="area_entered" from="waterm" to="Player" method="_on_waterm_area_entered"]
