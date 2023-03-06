@@ -218,7 +218,9 @@ func GetCoin():
 	
 	
 func _on_border_area_entered(area):
-	get_tree().reload_current_scene()
+	print(area)
+	if area.is_in_group('player'):
+		get_tree().reload_current_scene()
 
 
 func _on_Area2D_area_entered(area):

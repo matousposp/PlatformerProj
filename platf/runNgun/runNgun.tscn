@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=2]
+[gd_scene load_steps=132 format=2]
 
 [ext_resource path="res://scenes/Dash.tscn" type="PackedScene" id=1]
 [ext_resource path="res://runNgun/coin1.tscn" type="PackedScene" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://img/pear.png" type="Texture" id=23]
 [ext_resource path="res://runNgun/stationOP.gd" type="Script" id=24]
 [ext_resource path="res://runNgun/birb.gd" type="Script" id=25]
+[ext_resource path="res://runNgun/coin11.gd" type="Script" id=26]
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 9 )
@@ -796,8 +797,9 @@ position = Vector2( -456, 864 )
 [node name="coin10" parent="." groups=["coin"] instance=ExtResource( 2 )]
 position = Vector2( 544, 220 )
 
-[node name="coin11" parent="." groups=["coin"] instance=ExtResource( 2 )]
+[node name="coin11" parent="." groups=["coin11"] instance=ExtResource( 2 )]
 position = Vector2( 832, 220 )
+script = ExtResource( 26 )
 
 [node name="coin12" parent="." groups=["coin"] instance=ExtResource( 2 )]
 position = Vector2( 1152, 220 )

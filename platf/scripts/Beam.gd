@@ -4,6 +4,8 @@ export(int) var SPEED: int = 0
 
 signal tatehit
 
+var x = 0
+
 func _ready():
 	$AnimatedSprite.play("beam")
 	connect('tatehit',get_parent().get_node('Player'),'_on_Beam_tatehit')

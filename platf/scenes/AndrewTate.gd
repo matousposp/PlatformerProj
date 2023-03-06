@@ -82,10 +82,8 @@ func _physics_process(delta):
 			else:
 				x -= 1
 				if get_parent().get_node('Player').position.x < position.x:
-					print('bluds')
 					xvel -= 2
 				if get_parent().get_node('Player').position.x > position.x:
-					print('crips')
 					xvel += 2
 				if get_parent().get_node('Player').position.y <= position.y:
 					motion.y -= JUMPFORCE
@@ -121,7 +119,6 @@ func beam(beam_direction:Vector2):
 
 func _on_Area2D_area_entered(area):
 	emit_signal("knockback")
-
 
 func _on_Player_hit(id):
 	health -= 2
