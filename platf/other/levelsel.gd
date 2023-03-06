@@ -42,11 +42,11 @@ func _on_6_pressed():
 
 
 func _on_7_pressed():
-	get_tree().change_scene("res://scenes/level7mountainjew.tscn")
+	get_tree().change_scene("res://scenes/level7.tscn")
 
 
 func _on_8_pressed():
-	get_tree().change_scene("res://scenes/level8mountainjew2.tscn")
+	get_tree().change_scene("res://scenes/level8.tscn")
 
 
 func _on_return1_pressed():
