@@ -68,7 +68,7 @@ func _physics_process(delta):
 		$AnimatedSprite.play("default")
 		
 	if is_on_floor():
-		if Input.is_action_just_pressed("sumo2Jump"):
+		if Input.is_action_just_pressed("sumoJump"):
 			if burger == true:
 				JUMPFORCE = 1100
 				burger = false

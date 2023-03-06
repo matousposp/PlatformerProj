@@ -19,6 +19,7 @@ var charge = 0
 var health = 100
 var dash = 100
 var coins = 0
+var cooldown = 60
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -28,6 +29,7 @@ func _reset_jump():
 	
 
 func _physics_process(delta):
+	cooldown -= 1
 	motion.y += GRAVITY
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
@@ -94,37 +96,48 @@ func _on_bottom_border_area_entered(area):
 #level 1
 func _on_pear_area_entered(area):
 	if area.is_in_group('player'):
-		health -= 34
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
 	else:
 		emit_signal('hit',1)
 		
 func _on_broccoli_area_entered(area):
 	if area.is_in_group('player'):
-		health -= 34
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
 	else:
 		emit_signal('hit',2)
 
 func _on_wotamelon_area_entered(area):
 	print(area)
 	if area.is_in_group('player'):
-		health -= 34
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
 	else:
 		emit_signal('hit',3)
 
 func _on_wotamelon2_area_entered(area):
 	if area.is_in_group('player'):
-		health -= 34
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
 	else:
 		emit_signal('hit',4)
 
 func _on_broccoli2_area_entered(area):
 	if area.is_in_group('player') or area.is_in_group('enemy'):
-		health -= 34
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
 	else:
 		emit_signal('hit',5)
 
 func _on_brock_barack():
-	health -= 34
+	if cooldown >= 0:
+		health -= 34
 
 func _on_burger_area_entered(area):
 	print(area)
@@ -138,7 +151,7 @@ func _on_lepreborder_area_entered(area):
 func _on_leprechaun1_area_entered(area):
 	print(area)
 	if area.is_in_group('player'):
-		get_tree().reload_current_scene()
+		health -= 34
 	else:
 		emit_signal('hit',1)
 
@@ -182,8 +195,9 @@ func _on_lvl6p_area_entered(area):
 	get_tree().change_scene("res://level7.tscn")
 	
 func _on_Weight_tatehit():
-	print('ah')
-	health -= 34
+	if cooldown <= 0:
+		cooldown = 60
+		health -= 34
 
 func _on_borderbeta_area_entered(area):
 	get_tree().reload_current_scene() 
@@ -204,7 +218,9 @@ func _on_PihranhaPlant_area_entered(area):
 
 
 func _on_AndrewTate_knockback():
-	health -= 34
+	if cooldown <= 0:
+		cooldown = 60
+		health -= 34
 	motion.x *= 5
 	motion.y -= 1000
 
@@ -232,12 +248,16 @@ func _on_Area2D_area_entered(area):
 func _on_tatearea_area_entered(area):
 	print(area)
 	if area.is_in_group('player'):
-		health -= 34
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
 	else:
 		emit_signal('hit',2)
 
 func _on_cannonball_ballin():
-	health -= 34
+	if cooldown <= 0:
+		cooldown = 60
+		health -= 34
 
 func _on_obstacle5_area_entered(area):
 	get_tree().reload_current_scene()
@@ -245,36 +265,47 @@ func _on_obstacle5_area_entered(area):
 
 func _on_pirrana_area_entered(area):
 	if area.is_in_group('player'):
-		health -= 34
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
 	else:
 		emit_signal('hit',2)
 
 func _on_pirrana2_area_entered(area):
 	if area.is_in_group('player'):
-		health -= 34
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
 	else:
 		emit_signal('hit',2)
 
 
 func _on_pirrana3_area_entered(area):
 	if area.is_in_group('player'):
-		health -= 34
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
 	else:
 		emit_signal('hit',2)
 
 func _on_stationOP_area_entered(area):
 	if area.is_in_group('player'):
-		health -= 34
+		if cooldown >= 0:
+			cooldown = 60
+			health -= 34
 	else:
 		emit_signal('hit',2)
 
 func _on_Beam_beam():
-	print('nigga')
-	health -= 34
+	if cooldown <= 0:
+		cooldown = 60
+		health -= 34
 
 func _on_birb_area_entered(area):
 	if area.is_in_group('player'):
-		health -= 34
+		if cooldown >= 0:
+			cooldown = 60
+			health -= 34
 	else:
 		emit_signal('hit',2)
 		
