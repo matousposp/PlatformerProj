@@ -28,7 +28,6 @@ func _ready():
 
 func _reset_jump():
 	JUMPFORCE = 460
-	
 
 func _physics_process(delta):
 	if z == 0:
@@ -42,10 +41,10 @@ func _physics_process(delta):
 		xvel += 1
 	if xvel > 0:
 		xvel -= 1
-	if xvel < -30:
-		xvel = -30
-	if xvel > 30:
-		xvel = 30
+	if xvel < -20:
+		xvel = -20
+	if xvel > 20:
+		xvel = 20
 	motion.y += GRAVITY
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
@@ -109,19 +108,21 @@ func fry(fireball_direction:Vector2):
 		fireball.rotation = fireball_rotation		
 
 func _on_Area2D_area_entered(area):
-	if xvel== 0:
-		xvel = -100*direct
-	else:
-		if xvel > get_parent().get_node('Player2').xvel:
-			xvel *= -0.5
+	if area.is_in_group('player2'):
+		if xvel== 0:
+			xvel = -100*direct
 		else:
-			xvel *= -2
-	motion.y = -500
+			if xvel > get_parent().get_node('Player2').xvel:
+				xvel *= -0.5
+			else:
+				xvel *= -2
+		motion.y = -500
 
 
 func _on_border_area_entered(area):
-	get_parent().get_node('win').get_node('win').visible = true
-	get_tree().paused = true
+	if area.is_in_group('player') or area.is_in_group('player2'):
+		get_parent().get_node('win').get_node('win').visible = true
+		get_tree().paused = true
 
 func _on_cookie_shrink():
 	scale.x *= 0.5
