@@ -261,3 +261,4 @@ shape = SubResource( 28 )
 [connection signal="area_entered" from="Player2/Area2D" to="Player2" method="_on_Area2D_area_entered"]
 [connection signal="pressed" from="win/win/go back" to="win/win" method="_on_go_back_pressed"]
 [connection signal="area_entered" from="border" to="Player" method="_on_border_area_entered"]
+[connection signal="area_entered" from="border" to="Player2" method="_on_border_area_entered"]

@@ -102,3 +102,8 @@ func _on_Area2D_area_entered(area):
 	else:
 		xvel *= -10
 	motion.y = -500
+
+
+func _on_border_area_entered(area):
+	get_parent().get_node('win').get_node('win').visible = true
+	get_tree().paused = true
