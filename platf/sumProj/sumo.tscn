@@ -9,7 +9,7 @@
 [ext_resource path="res://sumProj/sumo.mp3" type="AudioStream" id=7]
 [ext_resource path="res://fonts/gameboy.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://sumProj/winsumo.gd" type="Script" id=9]
-[ext_resource path="res://sumProj/pngtree-circle-clipart-purple-circle-png-image_2381983-removebg-preview.png" type="Texture" id=10]
+[ext_resource path="res://sumProj/bab0baeebc846ca.png" type="Texture" id=10]
 [ext_resource path="res://food/falling_marmalade.tscn" type="PackedScene" id=11]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -229,7 +229,7 @@ margin_right = 655.0
 margin_bottom = 381.0
 rect_pivot_offset = Vector2( 2, 0 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0.482353, 0, 0.45098, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 23 )
 custom_styles/hover = SubResource( 24 )
 custom_styles/pressed = SubResource( 25 )
@@ -243,7 +243,7 @@ margin_left = 400.0
 margin_top = 195.0
 margin_right = 708.0
 margin_bottom = 336.0
-custom_colors/font_color = Color( 0.482353, 0, 0.45098, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 29 )
 text = "You 
 Won!!"
