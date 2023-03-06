@@ -501,9 +501,9 @@ expand = true
 
 [node name="TextureRect8" type="TextureRect" parent="TextureRect"]
 margin_left = 2926.0
-margin_top = 1798.0
+margin_top = 1769.0
 margin_right = 5998.0
-margin_bottom = 3574.0
+margin_bottom = 3545.0
 texture = ExtResource( 8 )
 expand = true
 flip_v = true
@@ -517,10 +517,10 @@ texture = ExtResource( 8 )
 expand = true
 
 [node name="TextureRect5" type="TextureRect" parent="TextureRect"]
-margin_left = 5955.0
-margin_top = 1783.0
-margin_right = 9205.0
-margin_bottom = 3565.0
+margin_left = 5948.0
+margin_top = 1762.0
+margin_right = 9198.0
+margin_bottom = 3544.0
 texture = ExtResource( 8 )
 expand = true
 flip_v = true
