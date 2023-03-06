@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=5 format=2]
 
-[ext_resource path="res://plat2 (1).png" type="Texture" id=1]
-[ext_resource path="res://undeground1 (2).png" type="Texture" id=2]
+[ext_resource path="res://map1/plat2 (1).png" type="Texture" id=1]
+[ext_resource path="res://map1/undeground1 (2).png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 28 )

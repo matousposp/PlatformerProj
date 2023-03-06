@@ -1,0 +1,262 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://fonts/gameboy.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://tilemaps/darktile.tres" type="TileSet" id=4]
+[ext_resource path="res://img/player.png" type="Texture" id=5]
+[ext_resource path="res://sumProj/action-replay-matrika-main-version-01-57-11457.mp3" type="AudioStream" id=6]
+[ext_resource path="res://sumProj/bab0baeebc846ca.png" type="Texture" id=7]
+[ext_resource path="res://sumProj/winsumo.gd" type="Script" id=8]
+[ext_resource path="res://sumProj/sumoPlayer.gd" type="Script" id=9]
+[ext_resource path="res://sumProj/sumoPlayer2.gd" type="Script" id=10]
+[ext_resource path="res://map1/castle.png" type="Texture" id=11]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 5 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 5 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 5 )
+region = Rect2( 192, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 5 )
+region = Rect2( 128, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 160, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 192, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 5 )
+region = Rect2( 128, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 5 )
+region = Rect2( 160, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 5 )
+region = Rect2( 192, 96, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "roll",
+"speed": 12.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=20]
+radius = 31.0
+height = 0.0
+
+[sub_resource type="CapsuleShape2D" id=21]
+radius = 30.0
+height = 4.0
+
+[sub_resource type="CapsuleShape2D" id=22]
+radius = 32.0
+height = 0.0
+
+[sub_resource type="DynamicFont" id=23]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="DynamicFont" id=29]
+size = 55
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 20252, 186.5 )
+
+[node name="sumo" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -1016.0
+margin_top = -424.0
+margin_right = 1056.0
+margin_bottom = 504.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+format = 1
+tile_data = PoolIntArray( 196600, 0, 0, 196601, 0, 0, 196602, 0, 0, 196603, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( -388, 91 )
+script = ExtResource( 9 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( 0, 2 )
+scale = Vector2( 3.875, 2.5625 )
+frames = SubResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0, 1 )
+shape = SubResource( 20 )
+
+[node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
+position = Vector2( 1, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+shape = SubResource( 21 )
+
+[node name="Player2" type="KinematicBody2D" parent="."]
+position = Vector2( 368, 92 )
+script = ExtResource( 10 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player2"]
+position = Vector2( 1, 1 )
+scale = Vector2( 3.875, 2.5625 )
+frames = SubResource( 19 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+position = Vector2( 1, 0 )
+shape = SubResource( 20 )
+
+[node name="Area2D" type="Area2D" parent="Player2" groups=["player2"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2/Area2D"]
+position = Vector2( 1, 0 )
+shape = SubResource( 22 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 16, 72 )
+current = true
+zoom = Vector2( 1.5, 1 )
+
+[node name="win" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="win" type="Control" parent="win"]
+pause_mode = 2
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 8 )
+
+[node name="ColorRect" type="ColorRect" parent="win/win"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 986.0
+margin_bottom = 576.0
+color = Color( 0, 0, 0, 0.498039 )
+
+[node name="TextureRect" type="TextureRect" parent="win/win"]
+margin_left = 336.0
+margin_top = 93.0
+margin_right = 744.0
+margin_bottom = 493.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="go back" type="Button" parent="win/win"]
+margin_left = 471.0
+margin_top = 361.0
+margin_right = 655.0
+margin_bottom = 381.0
+rect_pivot_offset = Vector2( 2, 0 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 23 )
+custom_styles/hover = SubResource( 24 )
+custom_styles/pressed = SubResource( 25 )
+custom_styles/focus = SubResource( 26 )
+custom_styles/normal = SubResource( 27 )
+text = "Main Menu"
+align = 0
+
+[node name="Label" type="Label" parent="win/win"]
+margin_left = 400.0
+margin_top = 195.0
+margin_right = 708.0
+margin_bottom = 336.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 29 )
+text = "You 
+Won!!"
+align = 1
+
+[node name="border" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border"]
+position = Vector2( 240, 744 )
+shape = SubResource( 28 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+
+[connection signal="hit" from="Player" to="Player2" method="_on_Player_hit"]
+[connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="Player2/Area2D" to="Player2" method="_on_Area2D_area_entered"]
+[connection signal="pressed" from="win/win/go back" to="win/win" method="_on_go_back_pressed"]
+[connection signal="area_entered" from="border" to="Player" method="_on_border_area_entered"]
+[connection signal="area_entered" from="border" to="Player2" method="_on_border_area_entered"]

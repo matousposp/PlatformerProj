@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/plat2 (1).png-c69ff1ca229cd9afa84d4c90fb93e99c.stex"
+path="res://.import/plat2 (1).png-d6509b95f3375581ba0d141ae60adaa6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://plat2 (1).png"
-dest_files=[ "res://.import/plat2 (1).png-c69ff1ca229cd9afa84d4c90fb93e99c.stex" ]
+source_file="res://map1/plat2 (1).png"
+dest_files=[ "res://.import/plat2 (1).png-d6509b95f3375581ba0d141ae60adaa6.stex" ]
 
 [params]
 

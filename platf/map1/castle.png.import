@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/undeground1 (2).png-3173a1e8bc7b0a3e8067b442922e0ebb.stex"
+path="res://.import/castle.png-0c11aa55d11e3be7011ae05acf2a9af1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://undeground1 (2).png"
-dest_files=[ "res://.import/undeground1 (2).png-3173a1e8bc7b0a3e8067b442922e0ebb.stex" ]
+source_file="res://map1/castle.png"
+dest_files=[ "res://.import/castle.png-0c11aa55d11e3be7011ae05acf2a9af1.stex" ]
 
 [params]
 
