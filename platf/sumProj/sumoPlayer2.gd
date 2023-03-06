@@ -82,10 +82,12 @@ func _physics_process(delta):
 				JUMPFORCE = 1100
 				burger = false
 			else:
+				jump -= 1
 				JUMPFORCE = 460
 			motion.y = -JUMPFORCE
 	if is_on_floor():
 		jump=1
+		
 	if health <= 0:
 		get_tree().reload_current_scene()
 	motion.x += xvel
@@ -113,3 +115,7 @@ func _on_Area2D_area_entered(area):
 func _on_border_area_entered(area):
 	get_parent().get_node('win').get_node('win').visible = true
 	get_tree().paused = true
+
+func _on_cookie_shrink():
+	scale.x *= 0.5
+	scale.y *= 0.5
