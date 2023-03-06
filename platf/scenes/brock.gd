@@ -21,7 +21,7 @@ func _on_brock_body_entered(body):
 	destroy()
 
 func _on_brock_area_entered(area):
-	print(area)
-	if area == get_parent().get_node('Player/Area2D'):
+	if area.is_in_group('player'):
+		print('balls')
 		emit_signal('barack')
 	destroy()

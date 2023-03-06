@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=2]
+[gd_scene load_steps=119 format=2]
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/level1tiles.tres" type="TileSet" id=2]
@@ -15,6 +15,12 @@
 [ext_resource path="res://scenes/Health.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/pause menu.gd" type="Script" id=14]
 [ext_resource path="res://fonts/gameboy.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://img/pear.png" type="Texture" id=16]
+[ext_resource path="res://scenes/peer.gd" type="Script" id=17]
+[ext_resource path="res://img/broccoli.png" type="Texture" id=18]
+[ext_resource path="res://scenes/broke.gd" type="Script" id=19]
+[ext_resource path="res://scenes/broke2.gd" type="Script" id=20]
+[ext_resource path="res://scenes/peer2.gd" type="Script" id=21]
 
 [sub_resource type="RectangleShape2D" id=60]
 extents = Vector2( 1424, 4.5 )
@@ -411,6 +417,74 @@ bg_color = Color( 0, 0, 0, 0 )
 [sub_resource type="StyleBoxFlat" id=96]
 bg_color = Color( 0, 0, 0, 0 )
 
+[sub_resource type="AtlasTexture" id=97]
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=98]
+atlas = ExtResource( 16 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=99]
+atlas = ExtResource( 16 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=100]
+atlas = ExtResource( 16 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=101]
+atlas = ExtResource( 16 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=102]
+atlas = ExtResource( 16 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=103]
+animations = [ {
+"frames": [ SubResource( 97 ), SubResource( 98 ), SubResource( 99 ), SubResource( 100 ), SubResource( 101 ), SubResource( 102 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=104]
+radius = 27.0
+height = 0.0
+
+[sub_resource type="AtlasTexture" id=105]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=106]
+atlas = ExtResource( 18 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=107]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=108]
+atlas = ExtResource( 18 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=109]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=110]
+animations = [ {
+"frames": [ SubResource( 105 ), SubResource( 106 ), SubResource( 107 ), SubResource( 108 ), SubResource( 109 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=111]
+radius = 24.0
+height = 6.0
+
 [node name="level2" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -618,8 +692,80 @@ custom_styles/normal = SubResource( 96 )
 text = "Main Menu"
 align = 0
 
+[node name="peer" type="Area2D" parent="." groups=["enemy"]]
+position = Vector2( 877, 343 )
+script = ExtResource( 17 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="peer"]
+position = Vector2( 15.5, 9 )
+scale = Vector2( 1.96875, 2 )
+frames = SubResource( 103 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="peer"]
+position = Vector2( 13, 15 )
+shape = SubResource( 104 )
+
+[node name="peer2" type="Area2D" parent="." groups=["enemy"]]
+position = Vector2( 2685, 1366 )
+script = ExtResource( 21 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="peer2"]
+position = Vector2( 15.5, 9 )
+scale = Vector2( 1.96875, 2 )
+frames = SubResource( 103 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="peer2"]
+position = Vector2( 13, 15 )
+shape = SubResource( 104 )
+
+[node name="broke" type="Area2D" parent="." groups=["enemy"]]
+position = Vector2( 1422, 531 )
+script = ExtResource( 19 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="broke"]
+position = Vector2( 6, -15 )
+scale = Vector2( 2.15625, 2.21875 )
+frames = SubResource( 110 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="broke"]
+position = Vector2( 4, -15 )
+shape = SubResource( 111 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="broke"]
+position = Vector2( 4.00004, -18 )
+scale = Vector2( 2.8, 2.8 )
+
+[node name="broke2" type="Area2D" parent="." groups=["enemy"]]
+position = Vector2( 1741, 659 )
+script = ExtResource( 20 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="broke2"]
+position = Vector2( 6, -15 )
+scale = Vector2( 2.15625, 2.21875 )
+frames = SubResource( 110 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="broke2"]
+position = Vector2( 4, -15 )
+shape = SubResource( 111 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="broke2"]
+position = Vector2( 4.00004, -18 )
+scale = Vector2( 2.8, 2.8 )
+
 [connection signal="area_entered" from="bottom border" to="Player" method="_on_bottom_border_area_entered"]
 [connection signal="area_entered" from="bottom border2" to="Player" method="_on_bottom_border_area_entered"]
 [connection signal="area_entered" from="burger" to="Player" method="_on_burger_area_entered"]
+[connection signal="hit" from="Player" to="peer" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="broke" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="broke2" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="peer2" method="_on_Player_hit"]
 [connection signal="area_entered" from="Player/Area2D" to="portal2" method="_on_Area2D_area_entered"]
 [connection signal="pressed" from="pause1/pause menu/go back" to="pause1/pause menu" method="_on_go_back_pressed"]
+[connection signal="area_entered" from="peer" to="Player" method="_on_peer_area_entered"]
+[connection signal="area_entered" from="peer2" to="Player" method="_on_peer2_area_entered"]
+[connection signal="area_entered" from="broke" to="Player" method="_on_broke_area_entered"]
+[connection signal="screen_entered" from="broke/VisibilityNotifier2D" to="broke" method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="broke/VisibilityNotifier2D" to="broke" method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="area_entered" from="broke2" to="Player" method="_on_broke2_area_entered"]
+[connection signal="screen_entered" from="broke2/VisibilityNotifier2D" to="broke2" method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="broke2/VisibilityNotifier2D" to="broke2" method="_on_VisibilityNotifier2D_screen_exited"]
