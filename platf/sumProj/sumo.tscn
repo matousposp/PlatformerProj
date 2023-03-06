@@ -132,12 +132,11 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 8 )
 
 [sub_resource type="RectangleShape2D" id=28]
-extents = Vector2( 1056.5, 5 )
+extents = Vector2( 20252, 186.5 )
 
 [node name="sumo" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 margin_left = -1024.0
 margin_top = -336.0
 margin_right = 1048.0
@@ -178,6 +177,7 @@ script = ExtResource( 3 )
 position = Vector2( 1, 1 )
 scale = Vector2( 3.875, 2.5625 )
 frames = SubResource( 19 )
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
 position = Vector2( 1, 0 )
@@ -254,7 +254,7 @@ align = 1
 [node name="border" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border"]
-position = Vector2( 32, 544 )
+position = Vector2( 812, 725.5 )
 shape = SubResource( 28 )
 
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_entered"]

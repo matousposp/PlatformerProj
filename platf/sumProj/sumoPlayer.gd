@@ -13,6 +13,7 @@ var JUMPFORCE = 460
 var motion = Vector2()
 var jumps = 0
 var bullet_speed = 10
+var cool = 40
 var burger = false
 var direct = 1
 var charge = 0
@@ -29,6 +30,7 @@ func _reset_jump():
 	
 
 func _physics_process(delta):
+	cool -= 1
 	if xvel < 0:
 		xvel += 1
 	if xvel > 0:
@@ -64,7 +66,8 @@ func _physics_process(delta):
 		$AnimatedSprite.play("roll")
 		direct = -1
 		
-	elif Input.is_action_just_pressed("sumoAttack"):
+	elif Input.is_action_just_pressed("sumoAttack") and cool <= 0:
+		cool = 40
 		var fry_direction = self.global_position.direction_to(Vector2(position.x+(50)*direct,position.y))
 		fry(fry_direction)  
 		
