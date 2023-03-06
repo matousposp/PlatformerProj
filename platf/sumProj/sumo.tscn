@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://sumProj/706ed7a3a5eb8f7e4bd227188cff51d1.png" type="Texture" id=1]
 [ext_resource path="res://tilemaps/finallevel.tres" type="TileSet" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://sumProj/winsumo.gd" type="Script" id=9]
 [ext_resource path="res://sumProj/bab0baeebc846ca.png" type="Texture" id=10]
 [ext_resource path="res://food/falling_marmalade.tscn" type="PackedScene" id=11]
+[ext_resource path="res://sumProj/bc74a354f320c0766c0c4d77cc4d483f.png" type="Texture" id=12]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 4 )
@@ -144,6 +145,11 @@ margin_right = 1048.0
 margin_bottom = 592.0
 texture = ExtResource( 1 )
 expand = true
+
+[node name="sumo text" type="Sprite" parent="."]
+position = Vector2( -8, 16 )
+scale = Vector2( 5.30806, 4.4291 )
+texture = ExtResource( 12 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
