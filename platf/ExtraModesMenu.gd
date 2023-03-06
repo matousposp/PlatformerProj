@@ -24,5 +24,9 @@ func _on_return1_pressed():
 	get_tree().change_scene("res://scenes/main menu.tscn")
 
 
+
+	
+
+
 func _on_sumo_pressed():
-	get_tree().change_scene("res://scenes/sumo.tscn")
+	get_tree().change_scene("res://sumProj/sumo.tscn")
