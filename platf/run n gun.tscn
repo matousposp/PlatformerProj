@@ -356,7 +356,6 @@ one_way_collision_margin = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 0, -65 )
-current = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
