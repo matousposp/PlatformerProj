@@ -307,6 +307,7 @@ margin_bottom = 63.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -2, 0 )
+current = true
 smoothing_enabled = true
 smoothing_speed = 8.0
 

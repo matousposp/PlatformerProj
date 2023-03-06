@@ -44,7 +44,7 @@ func _physics_process(delta):
 		else:
 			dash += 0.5
 	
-	if Input.is_action_pressed("restart"):
+	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
 	
 	elif Input.is_action_pressed("right"):
@@ -410,7 +410,7 @@ func _on_portalyesyesyes_area_entered(area):
 
 func _on_cat_area_entered(area):
 	if area.is_in_group('player'):
-		if cooldown >= 0:
+		if cooldown <= 0:
 			cooldown = 60
 			health -= 34
 	else:
@@ -419,7 +419,7 @@ func _on_cat_area_entered(area):
 
 func _on_brocc_area_entered(area):
 	if area.is_in_group('player'):
-		if cooldown >= 0:
+		if cooldown <= 0:
 			cooldown = 60
 			health -= 34
 	else:
@@ -428,7 +428,7 @@ func _on_brocc_area_entered(area):
 
 func _on_brocc2_area_entered(area):
 	if area.is_in_group('player'):
-		if cooldown >= 0:
+		if cooldown <= 0:
 			cooldown = 60
 			health -= 34
 	else:
@@ -437,7 +437,7 @@ func _on_brocc2_area_entered(area):
 
 func _on_waterm_area_entered(area):
 	if area.is_in_group('player'):
-		if cooldown >= 0:
+		if cooldown <= 0:
 			cooldown = 60
 			health -= 34
 	else:
@@ -446,8 +446,16 @@ func _on_waterm_area_entered(area):
 
 func _on_waterm2_area_entered(area):
 	if area.is_in_group('player'):
-		if cooldown >= 0:
+		if cooldown <= 0:
 			cooldown = 60
 			health -= 34
 	else:
 		emit_signal('hit',5)
+
+func _on_birg_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit',6)
