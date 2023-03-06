@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sumo.mp3-b2eb833bf81a571eb4bb6aa9748b54ba.mp3str"
+
+[deps]
+
+source_file="res://sumProj/sumo.mp3"
+dest_files=[ "res://.import/sumo.mp3-b2eb833bf81a571eb4bb6aa9748b54ba.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
