@@ -6,7 +6,7 @@
 [ext_resource path="res://img/player.png" type="Texture" id=4]
 [ext_resource path="res://food/falling_cookie.tscn" type="PackedScene" id=5]
 [ext_resource path="res://sumProj/sumoPlayer.gd" type="Script" id=6]
-[ext_resource path="res://food/falling_marmalade.tscn" type="PackedScene" id=7]
+[ext_resource path="res://sumProj/sumo.mp3" type="AudioStream" id=7]
 [ext_resource path="res://fonts/gameboy.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://sumProj/winsumo.gd" type="Script" id=9]
 [ext_resource path="res://sumProj/pngtree-circle-clipart-purple-circle-png-image_2381983-removebg-preview.png" type="Texture" id=10]
@@ -191,9 +191,6 @@ shape = SubResource( 22 )
 
 [node name="falling_cookie" parent="." instance=ExtResource( 5 )]
 
-[node name="falling_marmalade" parent="." instance=ExtResource( 7 )]
-visible = false
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 2, 126 )
 current = true
@@ -256,6 +253,10 @@ align = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border"]
 position = Vector2( 812, 725.5 )
 shape = SubResource( 28 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
 
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="Player2/Area2D" to="Player2" method="_on_Area2D_area_entered"]
