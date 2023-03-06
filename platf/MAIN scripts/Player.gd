@@ -179,7 +179,7 @@ func _on_border5_area_entered(area):
 	get_tree().reload_current_scene() 
 	
 func _on_lvl6p_area_entered(area):
-	get_tree().change_scene("res://level7mountainjew.tscn")
+	get_tree().change_scene("res://level7.tscn")
 	
 func _on_Weight_tatehit():
 	print('ah')
@@ -282,3 +282,6 @@ func _on_birb_area_entered(area):
 		health -= 34
 	else:
 		emit_signal('hit',2)
+		
+func _on_portalyesyesyes_area_entered(area):
+	get_tree().change_scene("res://scenes/finallevel.tscn")
