@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export(PackedScene) var BEAM: PackedScene = preload('res://scenes/Beam.tscn')
 
-signal knockback()
+signal knockback(attacker)
 
 const UP= Vector2(0, -1) 
 var GRAVITY= 20
@@ -118,7 +118,11 @@ func beam(beam_direction:Vector2):
 		beam.rotation = beam_rotation
 
 func _on_Area2D_area_entered(area):
-	emit_signal("knockback")
+	print(area)
+	if area.name == 'Beam':
+		emit_signal("knockback",1)
+	else:
+		emit_signal("knockback",2)
 
 func _on_Player_hit(id):
 	health -= 2

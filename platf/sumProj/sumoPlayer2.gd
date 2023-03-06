@@ -32,7 +32,7 @@ func _physics_process(delta):
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
 	
-	if Input.is_action_pressed("dash") and dash > 10:
+	if Input.is_action_pressed("sumo2Dash") and dash > 10:
 		dash -= 0.8
 		MAXSPEED = 300
 	else:
@@ -45,7 +45,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("restart"):
 		get_tree().reload_current_scene()
 	
-	elif Input.is_action_pressed("right"):
+	elif Input.is_action_pressed("sumo2R"):
 		
 		motion.x = MAXSPEED
 		$AnimatedSprite.flip_h = false
@@ -53,13 +53,13 @@ func _physics_process(delta):
 		direct = 1
 		
 		
-	elif Input.is_action_pressed("left"):
+	elif Input.is_action_pressed("sumo2L"):
 		motion.x = -MAXSPEED
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("roll")
 		direct = -1
 		
-	elif Input.is_action_just_pressed("attack"):
+	elif Input.is_action_just_pressed("sumo2Attack"):
 		var fry_direction = self.global_position.direction_to(Vector2(position.x+(50)*direct,position.y))
 		fry(fry_direction)  
 		
@@ -68,7 +68,7 @@ func _physics_process(delta):
 		$AnimatedSprite.play("default")
 		
 	if is_on_floor():
-		if Input.is_action_just_pressed("jump"):
+		if Input.is_action_just_pressed("sumo2Jump"):
 			if burger == true:
 				JUMPFORCE = 1100
 				burger = false
@@ -179,7 +179,7 @@ func _on_border5_area_entered(area):
 	get_tree().reload_current_scene() 
 	
 func _on_lvl6p_area_entered(area):
-	get_tree().change_scene("res://level7.tscn")
+	get_tree().change_scene("res://level7mountainjew.tscn")
 	
 func _on_Weight_tatehit():
 	print('ah')
@@ -269,7 +269,6 @@ func _on_stationOP_area_entered(area):
 		emit_signal('hit',2)
 
 func _on_Beam_beam():
-	print('nigga')
 	health -= 34
 
 func _on_birb_area_entered(area):
@@ -277,6 +276,3 @@ func _on_birb_area_entered(area):
 		health -= 34
 	else:
 		emit_signal('hit',2)
-		
-func _on_portalyesyesyes_area_entered(area):
-	get_tree().change_scene("res://scenes/finallevel.tscn")
