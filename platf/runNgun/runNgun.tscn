@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=2]
+[gd_scene load_steps=131 format=2]
 
 [ext_resource path="res://scenes/Dash.tscn" type="PackedScene" id=1]
 [ext_resource path="res://runNgun/coin1.tscn" type="PackedScene" id=2]
@@ -22,6 +22,9 @@
 [ext_resource path="res://pirrana.tscn" type="PackedScene" id=20]
 [ext_resource path="res://img/biggestbirdsprite.png" type="Texture" id=21]
 [ext_resource path="res://runNgun/bird.gd" type="Script" id=22]
+[ext_resource path="res://img/pear.png" type="Texture" id=23]
+[ext_resource path="res://runNgun/stationOP.gd" type="Script" id=24]
+[ext_resource path="res://runNgun/birb.gd" type="Script" id=25]
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 9 )
@@ -500,6 +503,147 @@ tracks/2/keys = {
 "values": [ Vector2( -124, 286.5 ), Vector2( -328, 64 ), Vector2( -124, 286.5 ) ]
 }
 
+[sub_resource type="AtlasTexture" id=144]
+atlas = ExtResource( 23 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=145]
+atlas = ExtResource( 23 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=146]
+atlas = ExtResource( 23 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=147]
+atlas = ExtResource( 23 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=148]
+atlas = ExtResource( 23 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=149]
+atlas = ExtResource( 23 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=150]
+animations = [ {
+"frames": [ SubResource( 144 ), SubResource( 145 ), SubResource( 146 ), SubResource( 147 ), SubResource( 148 ), SubResource( 149 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=151]
+radius = 24.0
+
+[sub_resource type="AtlasTexture" id=152]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 0, 59, 32 )
+
+[sub_resource type="AtlasTexture" id=153]
+atlas = ExtResource( 21 )
+region = Rect2( 59, 0, 59, 32 )
+
+[sub_resource type="AtlasTexture" id=154]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 32, 59, 32 )
+
+[sub_resource type="AtlasTexture" id=155]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 64, 59, 32 )
+
+[sub_resource type="SpriteFrames" id=156]
+animations = [ {
+"frames": [ SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=157]
+extents = Vector2( 44, 38.25 )
+
+[sub_resource type="Animation" id=158]
+resource_name = "ATTak"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 25, -760 ), Vector2( 2056, 824 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 24, -752 ), Vector2( 2064, 840 ) ]
+}
+
+[sub_resource type="Animation" id=159]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 25, -760 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 24, -752 ) ]
+}
+
 [node name="run n gun" type="Node2D"]
 script = ExtResource( 14 )
 
@@ -653,7 +797,7 @@ position = Vector2( -456, 864 )
 position = Vector2( 544, 220 )
 
 [node name="coin11" parent="." groups=["coin"] instance=ExtResource( 2 )]
-position = Vector2( 832, 224 )
+position = Vector2( 832, 220 )
 
 [node name="coin12" parent="." groups=["coin"] instance=ExtResource( 2 )]
 position = Vector2( 1152, 220 )
@@ -899,7 +1043,39 @@ shape = SubResource( 140 )
 anims/RESET = SubResource( 141 )
 anims/new = SubResource( 142 )
 
+[node name="stationOP" type="Area2D" parent="."]
+script = ExtResource( 24 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="stationOP"]
+position = Vector2( 368, 152 )
+scale = Vector2( 2.625, 2.625 )
+frames = SubResource( 150 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stationOP"]
+position = Vector2( 368, 160 )
+shape = SubResource( 151 )
+
+[node name="birb" type="Area2D" parent="."]
+script = ExtResource( 25 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="birb"]
+position = Vector2( 25, -760 )
+scale = Vector2( 3.07627, 3.4375 )
+frames = SubResource( 156 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="birb"]
+position = Vector2( 24, -752 )
+shape = SubResource( 157 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="birb"]
+anims/ATTak = SubResource( 158 )
+anims/RESET = SubResource( 159 )
+
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="Player/Area2D" to="coin11" method="_on_Area2D_area_entered"]
+[connection signal="Attack" from="coin11" to="birb" method="_on_coin11_Attack"]
 [connection signal="pressed" from="pause1/pause menu/go back" to="pause1/pause menu" method="_on_go_back_pressed"]
 [connection signal="pressed" from="winlose/endscreen/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="winlose/endscreen/quit" to="." method="_on_quit_pressed"]
@@ -908,3 +1084,5 @@ anims/new = SubResource( 142 )
 [connection signal="area_entered" from="pirrana" to="Player" method="_on_pirrana_area_entered"]
 [connection signal="area_entered" from="pirrana2" to="Player" method="_on_pirrana2_area_entered"]
 [connection signal="area_entered" from="pirrana3" to="Player" method="_on_pirrana3_area_entered"]
+[connection signal="area_entered" from="stationOP" to="Player" method="_on_stationOP_area_entered"]
+[connection signal="area_entered" from="birb" to="Player" method="_on_birb_area_entered"]

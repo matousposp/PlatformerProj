@@ -260,3 +260,23 @@ func _on_pirrana3_area_entered(area):
 		health -= 34
 	else:
 		emit_signal('hit',2)
+
+
+
+
+
+func _on_stationOP_area_entered(area):
+	if area.is_in_group('player'):
+		health -= 34
+	else:
+		emit_signal('hit',2)
+
+
+
+
+
+func _on_birb_area_entered(area):
+	if area.is_in_group('player'):
+		health -= 34
+	else:
+		emit_signal('hit',2)
