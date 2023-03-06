@@ -187,7 +187,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=37]
-extents = Vector2( 473, 76 )
+extents = Vector2( 472, 74 )
 
 [node name="Beam" type="Area2D"]
 script = ExtResource( 2 )
@@ -199,7 +199,7 @@ frames = SubResource( 36 )
 animation = "beam"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 559, 4 )
+position = Vector2( 565, -1 )
 shape = SubResource( 37 )
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
