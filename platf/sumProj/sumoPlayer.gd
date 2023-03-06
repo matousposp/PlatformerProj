@@ -113,16 +113,6 @@ func _on_border_area_entered(area):
 	get_parent().get_node('win').get_node('win').visible = true
 	get_tree().paused = true
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+func _on_cookie_shrink():
+	scale.x *= 0.5
+	scale.y *= 0.5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=2]
+[gd_scene load_steps=126 format=2]
 
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://scenes/pause menu.gd" type="Script" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://img/wotamelon.png" type="Texture" id=20]
 [ext_resource path="res://scenes/brocc2.gd" type="Script" id=21]
 [ext_resource path="res://img/biggestbirdsprite.png" type="Texture" id=22]
+[ext_resource path="res://scenes/birg.gd" type="Script" id=23]
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 3 )
@@ -565,6 +566,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=157]
+extents = Vector2( 34.5, 34 )
+
 [node name="mountainlvl1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -663,7 +667,6 @@ shape = SubResource( 113 )
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -1, 3 )
 offset = Vector2( 0, -20 )
-current = true
 smoothing_enabled = true
 smoothing_speed = 8.0
 
@@ -822,12 +825,17 @@ position = Vector2( 4, -25 )
 shape = SubResource( 150 )
 
 [node name="birg" type="Area2D" parent="."]
-position = Vector2( 5522, -2201 )
+position = Vector2( 5458, -2159 )
+script = ExtResource( 23 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="birg"]
+position = Vector2( 44.75, -33.5 )
+scale = Vector2( 2.51695, 3.09375 )
 frames = SubResource( 156 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="birg"]
+position = Vector2( 40.5, -22 )
+shape = SubResource( 157 )
 
 [connection signal="hit" from="Player" to="cat" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="brocc" method="_on_Player_hit"]
