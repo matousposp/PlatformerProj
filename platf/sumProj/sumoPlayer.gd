@@ -19,6 +19,7 @@ var charge = 0
 var health = 100
 var dash = 100
 var coins = 0
+var xvel = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -76,6 +77,7 @@ func _physics_process(delta):
 			motion.y = -JUMPFORCE
 	if health <= 0:
 		get_tree().reload_current_scene()
+	motion.x += xvel
 	motion = move_and_slide(motion, UP)
 
 func fry(fireball_direction:Vector2):
@@ -86,3 +88,11 @@ func fry(fireball_direction:Vector2):
 		
 		var fireball_rotation = fireball_direction.angle()
 		fireball.rotation = fireball_rotation		
+
+
+func _on_Area2D_area_entered(area):
+	if motion.x == 0:
+		xvel = -100*direct
+	else:
+		xvel *= -10
+	motion.y = -500
