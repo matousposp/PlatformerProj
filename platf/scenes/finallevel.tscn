@@ -1,7 +1,7 @@
 [gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://tilemaps/finallevel.tres" type="TileSet" id=1]
-[ext_resource path="res://img/galacticgym.png" type="Texture" id=2]
+[ext_resource path="res://img/fon-oboi-pikseli-kvadrat-fioletovyi.jpg" type="Texture" id=2]
 [ext_resource path="res://scenes/pause menu.gd" type="Script" id=3]
 [ext_resource path="res://audio/gym.mp3" type="AudioStream" id=4]
 [ext_resource path="res://fonts/gameboy.ttf" type="DynamicFontData" id=5]
@@ -280,19 +280,10 @@ bg_color = Color( 0, 0, 0, 0 )
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -804.0
 margin_top = -1750.0
-margin_right = 2391.0
-margin_bottom = 1383.0
+margin_right = 8040.0
+margin_bottom = 1629.0
 texture = ExtResource( 2 )
 expand = true
-
-[node name="TextureRect" type="TextureRect" parent="TextureRect"]
-margin_left = 3199.0
-margin_top = 6.0
-margin_right = 6389.0
-margin_bottom = 3139.0
-texture = ExtResource( 2 )
-expand = true
-flip_h = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
