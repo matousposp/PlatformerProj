@@ -11,7 +11,7 @@ var MAXFALLSPEED= 1000
 var MAXSPEED= 200
 var JUMPFORCE = 460
 var motion = Vector2()
-var jumps = 0
+var jump = 1
 var bullet_speed = 10
 var cool = 40
 var burger = false
@@ -74,14 +74,18 @@ func _physics_process(delta):
 	else:
 		motion.x = 0
 		$AnimatedSprite.play("default")
-	if is_on_floor():
+	if is_on_floor() or jump > 0:
 		if Input.is_action_just_pressed("sumoJump"):
 			if burger == true:
 				JUMPFORCE = 1100
 				burger = false
 			else:
 				JUMPFORCE = 460
+				jump -= 1 
 			motion.y = -JUMPFORCE
+	if is_on_floor():
+		jump = 1
+	
 	if health <= 0:
 		get_tree().reload_current_scene()
 	motion.x += xvel
