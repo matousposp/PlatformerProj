@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/action-replay-matrika-main-version-01-57-11457.mp3-1843cb0e10aa99699196dba855f29d24.mp3str"
+
+[deps]
+
+source_file="res://sumProj/action-replay-matrika-main-version-01-57-11457.mp3"
+dest_files=[ "res://.import/action-replay-matrika-main-version-01-57-11457.mp3-1843cb0e10aa99699196dba855f29d24.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
