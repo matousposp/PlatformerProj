@@ -167,3 +167,5 @@ shape = SubResource( 22 )
 position = Vector2( 2, 126 )
 current = true
 zoom = Vector2( 1.5, 1 )
+
+[connection signal="area_entered" from="Player2/Area2D" to="Player2" method="_on_Area2D_area_entered"]
