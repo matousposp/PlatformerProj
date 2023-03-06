@@ -1,9 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://food/Cookie.png" type="Texture" id=1]
 [ext_resource path="res://food/Cookie.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
+radius = 16.0
+height = 28.0
+
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 16.0
 height = 28.0
 
@@ -21,3 +25,13 @@ texture = ExtResource( 1 )
 position = Vector2( -72, -464 )
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="KinematicBody2D"]
+position = Vector2( -76, -463 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Area2D"]
+position = Vector2( 4, -1 )
+rotation = -1.5708
+shape = SubResource( 2 )
+
+[connection signal="area_entered" from="KinematicBody2D/Area2D" to="KinematicBody2D" method="_on_Area2D_area_entered"]

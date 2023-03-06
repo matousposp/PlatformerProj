@@ -578,7 +578,7 @@ theme = SubResource( 127 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = 4.616
+volume_db = 4.793
 autoplay = true
 
 [node name="mountainbird1" type="Area2D" parent="."]
