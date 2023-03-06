@@ -112,3 +112,17 @@ func _on_Area2D_area_entered(area):
 func _on_border_area_entered(area):
 	get_parent().get_node('win').get_node('win').visible = true
 	get_tree().paused = true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
