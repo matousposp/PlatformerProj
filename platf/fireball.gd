@@ -15,7 +15,6 @@ func destroy():
 func _on_fireball_area_entered(area):
 	destroy()
 
-
 func _on_fireball_body_entered(body):
 	destroy()
 	

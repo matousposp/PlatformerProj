@@ -85,7 +85,7 @@ func fry(fireball_direction:Vector2):
 		fireball.global_position = self.global_position
 		
 		var fireball_rotation = fireball_direction.angle()
-		fireball.rotation = fry_rotation		
+		fireball.rotation = fireball_rotation		
 
 func _on_bottom_border_area_entered(area):
 	get_tree().reload_current_scene() 

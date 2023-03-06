@@ -139,7 +139,7 @@ frames = SubResource( 19 )
 position = Vector2( 0, 1 )
 shape = SubResource( 20 )
 
-[node name="Area2D" type="Area2D" parent="Player"]
+[node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
 position = Vector2( 1, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
@@ -158,7 +158,7 @@ frames = SubResource( 19 )
 position = Vector2( 1, 0 )
 shape = SubResource( 20 )
 
-[node name="Area2D" type="Area2D" parent="Player2"]
+[node name="Area2D" type="Area2D" parent="Player2" groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2/Area2D"]
 position = Vector2( 1, 0 )
