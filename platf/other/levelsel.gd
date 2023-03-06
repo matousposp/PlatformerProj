@@ -51,3 +51,7 @@ func _on_8_pressed():
 
 func _on_return1_pressed():
 	get_tree().change_scene("res://scenes/main menu.tscn")
+
+
+func _on_9_pressed():
+	get_tree().change_scene("res://scenes/finallevel.tscn")

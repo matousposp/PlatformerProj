@@ -54,9 +54,9 @@ expand = true
 
 [node name="7" type="Button" parent="."]
 margin_left = 405.0
-margin_top = 385.0
+margin_top = 349.0
 margin_right = 589.0
-margin_bottom = 405.0
+margin_bottom = 369.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 2, 0 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
@@ -71,9 +71,9 @@ align = 0
 
 [node name="8" type="Button" parent="."]
 margin_left = 404.0
-margin_top = 435.0
+margin_top = 402.0
 margin_right = 588.0
-margin_bottom = 455.0
+margin_bottom = 422.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 2, 0 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
@@ -86,11 +86,28 @@ custom_styles/normal = SubResource( 5 )
 text = "Level 8"
 align = 0
 
+[node name="9" type="Button" parent="."]
+margin_left = 404.0
+margin_top = 454.0
+margin_right = 588.0
+margin_bottom = 474.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 2, 0 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.866667, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "Level 9"
+align = 0
+
 [node name="6" type="Button" parent="."]
-margin_left = 406.0
-margin_top = 337.0
-margin_right = 590.0
-margin_bottom = 357.0
+margin_left = 404.0
+margin_top = 301.0
+margin_right = 588.0
+margin_bottom = 321.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 2, 0 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
@@ -104,10 +121,10 @@ text = "Level 6"
 align = 0
 
 [node name="5" type="Button" parent="."]
-margin_left = 406.0
-margin_top = 289.0
-margin_right = 590.0
-margin_bottom = 309.0
+margin_left = 404.0
+margin_top = 252.0
+margin_right = 588.0
+margin_bottom = 272.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 2, 0 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
@@ -121,10 +138,10 @@ text = "Level 5"
 align = 0
 
 [node name="4" type="Button" parent="."]
-margin_left = 405.0
-margin_top = 237.0
-margin_right = 589.0
-margin_bottom = 257.0
+margin_left = 403.0
+margin_top = 205.0
+margin_right = 587.0
+margin_bottom = 225.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 2, 0 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
@@ -138,10 +155,10 @@ text = "Level 4"
 align = 0
 
 [node name="3" type="Button" parent="."]
-margin_left = 408.0
-margin_top = 188.0
-margin_right = 592.0
-margin_bottom = 208.0
+margin_left = 404.0
+margin_top = 156.0
+margin_right = 588.0
+margin_bottom = 176.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 2, 0 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
@@ -155,10 +172,10 @@ text = "Level 3"
 align = 0
 
 [node name="2" type="Button" parent="."]
-margin_left = 408.0
-margin_top = 136.0
-margin_right = 592.0
-margin_bottom = 156.0
+margin_left = 403.0
+margin_top = 108.0
+margin_right = 587.0
+margin_bottom = 128.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 2, 0 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
@@ -172,10 +189,10 @@ text = "Level 2"
 align = 0
 
 [node name="1" type="Button" parent="."]
-margin_left = 410.0
-margin_top = 74.0
-margin_right = 582.0
-margin_bottom = 104.0
+margin_left = 404.0
+margin_top = 47.0
+margin_right = 576.0
+margin_bottom = 77.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 2, 0 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
@@ -213,6 +230,7 @@ align = 0
 
 [connection signal="pressed" from="7" to="." method="_on_7_pressed"]
 [connection signal="pressed" from="8" to="." method="_on_8_pressed"]
+[connection signal="pressed" from="9" to="." method="_on_9_pressed"]
 [connection signal="pressed" from="6" to="." method="_on_6_pressed"]
 [connection signal="pressed" from="5" to="." method="_on_5_pressed"]
 [connection signal="pressed" from="4" to="." method="_on_4_pressed"]
