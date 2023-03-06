@@ -7,3 +7,8 @@ var velocity = Vector2.ZERO
 func _physics_process(delta):
 	velocity += GRAVITY * delta
 	velocity = move_and_slide(velocity)
+
+
+
+func _on_Area2D_area_entered(area):
+	queue_free()

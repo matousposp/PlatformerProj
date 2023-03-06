@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export(PackedScene) var FRY: PackedScene = preload('res://scenes/Fry.tscn')
+export(PackedScene) var FIRE: PackedScene = preload('res://SumProj/fireball.tscn')
 
 signal hit(id)
 signal update()
@@ -66,7 +66,6 @@ func _physics_process(delta):
 	else:
 		motion.x = 0
 		$AnimatedSprite.play("default")
-		
 	if is_on_floor():
 		if Input.is_action_just_pressed("sumoJump"):
 			if burger == true:
@@ -79,14 +78,14 @@ func _physics_process(delta):
 		get_tree().reload_current_scene()
 	motion = move_and_slide(motion, UP)
 
-func fry(fry_direction:Vector2):
-	if FRY:
-		var fry = FRY.instance()
-		get_tree().current_scene.add_child(fry)
-		fry.global_position = self.global_position
+func fry(fireball_direction:Vector2):
+	if FIRE:
+		var fireball = FIRE.instance()
+		get_tree().current_scene.add_child(fireball)
+		fireball.global_position = self.global_position
 		
-		var fry_rotation = fry_direction.angle()
-		fry.rotation = fry_rotation		
+		var fireball_rotation = fireball_direction.angle()
+		fireball.rotation = fry_rotation		
 
 func _on_bottom_border_area_entered(area):
 	get_tree().reload_current_scene() 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://food/Marmalade.gd" type="Script" id=1]
 [ext_resource path="res://food/Marmalade.png" type="Texture" id=2]
@@ -6,6 +6,10 @@
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 24.0
 height = 0.0
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 24.0
+height = 2.0
 
 [node name="falling_marmalade" type="Node2D"]
 
@@ -21,3 +25,12 @@ texture = ExtResource( 2 )
 position = Vector2( 104, -464 )
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="KinematicBody2D"]
+position = Vector2( 103, -464 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Area2D"]
+position = Vector2( 1, 0 )
+shape = SubResource( 2 )
+
+[connection signal="area_entered" from="KinematicBody2D/Area2D" to="KinematicBody2D" method="_on_Area2D_area_entered"]
