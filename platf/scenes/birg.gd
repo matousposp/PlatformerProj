@@ -24,7 +24,7 @@ func _process(delta):
 		x += 120
 
 func _on_Player_hit(id):
-	if id == 5:
+	if id == 6:
 		health -= 1
 	if health == 0:
 		queue_free()
