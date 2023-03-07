@@ -605,12 +605,12 @@ anims/fade = SubResource( 76 )
 script = ExtResource( 12 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="piranha"]
-position = Vector2( 3826, 481.5 )
-scale = Vector2( 2.125, 1.59375 )
+position = Vector2( 3827.5, 475.5 )
+scale = Vector2( 2.21875, 1.96875 )
 frames = SubResource( 86 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piranha"]
-position = Vector2( 3827, 481 )
+position = Vector2( 3827, 472 )
 shape = SubResource( 87 )
 
 [node name="pause1" type="CanvasLayer" parent="."]
