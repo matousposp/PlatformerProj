@@ -16,21 +16,24 @@ func _ready():
 #	pass
 
 
-func _on_TextureButton_pressed():
-	get_tree().change_scene("res://map1/darksumo.tscn")
-
-
-func _on_TextureButton2_pressed():
-	get_tree().change_scene("res://sumProj/sumo.tscn")
-
-
-func _on_TextureButton3_pressed():
-	get_tree().change_scene("res://map2/cloud.tscn")
-
-
-func _on_TextureButton4_pressed():
-	get_tree().change_scene("res://map2/mario.tscn")
+	
 
 
 func _on_return1_pressed():
 	get_tree().change_scene("res://scenes/main menu.tscn")
+
+
+func _on_grass_pressed():
+	get_tree().change_scene("res://map2/mario.tscn")
+
+
+func _on_cloud_pressed():
+	get_tree().change_scene("res://map2/cloud.tscn")
+
+
+func _on_castle_pressed():
+	get_tree().change_scene("res://map1/darksumo.tscn")
+
+
+func _on_dawn_pressed():
+	get_tree().change_scene("res://sumProj/sumo.tscn")

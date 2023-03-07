@@ -1,14 +1,9 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://fonts/gameboy.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://sumProj/chooseMap.gd" type="Script" id=2]
 [ext_resource path="res://img/69e4cc7c-29a2-472c-b35f-a899ac5ef803_rw_1920.jpg" type="Texture" id=3]
-[ext_resource path="res://map1/castle.png" type="Texture" id=4]
 [ext_resource path="res://fonts/8-BIT WONDER.TTF" type="DynamicFontData" id=5]
-[ext_resource path="res://sumProj/706ed7a3a5eb8f7e4bd227188cff51d1.png" type="Texture" id=6]
-[ext_resource path="res://img/dawnbackground.png" type="Texture" id=7]
-[ext_resource path="res://img/483c892db1825b1.png" type="Texture" id=8]
-[ext_resource path="res://img/light-blue-color-solid-background-1920x1080.png" type="Texture" id=9]
 [ext_resource path="res://audio/a-hero-of-the-80s-126684.mp3" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
@@ -16,6 +11,10 @@ size = 50
 outline_size = 1
 outline_color = Color( 0.772549, 0, 0, 1 )
 font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 35
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 8
@@ -60,52 +59,37 @@ text = "CHOOSE YOUR
 SUMO MAP"
 align = 1
 
-[node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 300.0
-margin_top = 232.0
-margin_right = 492.0
-margin_bottom = 336.0
-texture_normal = ExtResource( 4 )
-expand = true
+[node name="grass" type="Button" parent="."]
+margin_left = 312.0
+margin_top = 256.0
+margin_right = 499.0
+margin_bottom = 306.0
+custom_fonts/font = SubResource( 7 )
+text = "GRASS"
 
-[node name="TextureButton2" type="TextureButton" parent="."]
-margin_left = 507.0
-margin_top = 232.0
-margin_right = 699.0
-margin_bottom = 336.0
-texture_normal = ExtResource( 6 )
-expand = true
+[node name="cloud" type="Button" parent="."]
+margin_left = 520.0
+margin_top = 256.0
+margin_right = 707.0
+margin_bottom = 306.0
+custom_fonts/font = SubResource( 7 )
+text = "Clouds"
 
-[node name="TextureButton3" type="TextureButton" parent="."]
-margin_left = 507.0
-margin_top = 352.0
-margin_right = 699.0
-margin_bottom = 456.0
-texture_normal = ExtResource( 7 )
-expand = true
+[node name="castle" type="Button" parent="."]
+margin_left = 296.0
+margin_top = 344.0
+margin_right = 518.0
+margin_bottom = 394.0
+custom_fonts/font = SubResource( 7 )
+text = "Castle"
 
-[node name="TextureButton4" type="TextureButton" parent="."]
-margin_left = 301.0
-margin_top = 352.0
-margin_right = 493.0
-margin_bottom = 456.0
-texture_normal = ExtResource( 9 )
-expand = true
-
-[node name="483C892Db1825B2" type="Sprite" parent="."]
-position = Vector2( 400, 416 )
-scale = Vector2( 0.132051, 0.140909 )
-texture = ExtResource( 8 )
-
-[node name="483C892Db1825B1" type="Sprite" parent="."]
-position = Vector2( 448, 384 )
-scale = Vector2( 0.132051, 0.140909 )
-texture = ExtResource( 8 )
-
-[node name="483C892Db1825B3" type="Sprite" parent="."]
-position = Vector2( 336, 384 )
-scale = Vector2( 0.132051, 0.140909 )
-texture = ExtResource( 8 )
+[node name="dawn" type="Button" parent="."]
+margin_left = 536.0
+margin_top = 344.0
+margin_right = 758.0
+margin_bottom = 394.0
+custom_fonts/font = SubResource( 7 )
+text = "space"
 
 [node name="return1" type="Button" parent="."]
 anchor_left = 0.5
@@ -130,8 +114,8 @@ align = 0
 stream = ExtResource( 10 )
 autoplay = true
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]
-[connection signal="pressed" from="TextureButton3" to="." method="_on_TextureButton3_pressed"]
-[connection signal="pressed" from="TextureButton4" to="." method="_on_TextureButton4_pressed"]
+[connection signal="pressed" from="grass" to="." method="_on_grass_pressed"]
+[connection signal="pressed" from="cloud" to="." method="_on_cloud_pressed"]
+[connection signal="pressed" from="castle" to="." method="_on_castle_pressed"]
+[connection signal="pressed" from="dawn" to="." method="_on_dawn_pressed"]
 [connection signal="pressed" from="return1" to="." method="_on_return1_pressed"]
