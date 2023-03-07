@@ -103,6 +103,9 @@ func _physics_process(delta):
 		if x == 0:
 			cycle = 90
 	move_and_slide(motion, UP)
+	if health < 1:
+		get_tree().change_scene("res://fonts/winscreen.tscn")
+		
 
 func weight(weight_direction:Vector2):
 	if WEIGHT:
