@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://fonts/gameboy.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://sumProj/chooseMap.gd" type="Script" id=2]
@@ -14,7 +14,21 @@ font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 35
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 8
@@ -65,14 +79,16 @@ margin_top = 256.0
 margin_right = 499.0
 margin_bottom = 306.0
 custom_fonts/font = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
 text = "GRASS"
 
 [node name="cloud" type="Button" parent="."]
-margin_left = 520.0
+margin_left = 544.0
 margin_top = 256.0
-margin_right = 707.0
+margin_right = 754.0
 margin_bottom = 306.0
 custom_fonts/font = SubResource( 7 )
+custom_styles/normal = SubResource( 9 )
 text = "Clouds"
 
 [node name="castle" type="Button" parent="."]
@@ -81,6 +97,7 @@ margin_top = 344.0
 margin_right = 518.0
 margin_bottom = 394.0
 custom_fonts/font = SubResource( 7 )
+custom_styles/normal = SubResource( 10 )
 text = "Castle"
 
 [node name="dawn" type="Button" parent="."]
@@ -89,6 +106,7 @@ margin_top = 344.0
 margin_right = 758.0
 margin_bottom = 394.0
 custom_fonts/font = SubResource( 7 )
+custom_styles/normal = SubResource( 11 )
 text = "space"
 
 [node name="return1" type="Button" parent="."]
