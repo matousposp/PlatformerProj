@@ -557,3 +557,7 @@ func _on_appel_area_entered(area):
 			health -= 34
 	else:
 		emit_signal('hit', 2)
+
+
+func _on_borderyay_area_entered(area):
+	get_tree().reload_current_scene()
