@@ -488,7 +488,6 @@ align = 0
 
 [node name="Bar" type="CanvasLayer" parent="."]
 layer = 5
-visible = false
 
 [node name="BossBar" parent="Bar" instance=ExtResource( 13 )]
 

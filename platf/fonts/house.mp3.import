@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/house.mp3-f13b3a9da6131e32e540ad347a9b69f6.mp3str"
+
+[deps]
+
+source_file="res://fonts/house.mp3"
+dest_files=[ "res://.import/house.mp3-f13b3a9da6131e32e540ad347a9b69f6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
