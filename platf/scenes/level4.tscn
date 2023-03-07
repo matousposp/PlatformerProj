@@ -602,6 +602,7 @@ shape = SubResource( 15 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -0.500092, 0 )
+current = true
 
 [node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
 
