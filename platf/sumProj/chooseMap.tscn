@@ -92,18 +92,18 @@ margin_bottom = 456.0
 texture_normal = ExtResource( 9 )
 expand = true
 
-[node name="483C892Db1825B1" type="Sprite" parent="TextureButton4"]
-position = Vector2( 147, 32 )
+[node name="483C892Db1825B2" type="Sprite" parent="."]
+position = Vector2( 400, 416 )
 scale = Vector2( 0.132051, 0.140909 )
 texture = ExtResource( 8 )
 
-[node name="483C892Db1825B2" type="Sprite" parent="TextureButton4"]
-position = Vector2( 99, 64 )
+[node name="483C892Db1825B1" type="Sprite" parent="."]
+position = Vector2( 448, 384 )
 scale = Vector2( 0.132051, 0.140909 )
 texture = ExtResource( 8 )
 
-[node name="483C892Db1825B3" type="Sprite" parent="TextureButton4"]
-position = Vector2( 35, 32 )
+[node name="483C892Db1825B3" type="Sprite" parent="."]
+position = Vector2( 336, 384 )
 scale = Vector2( 0.132051, 0.140909 )
 texture = ExtResource( 8 )
 
@@ -134,3 +134,4 @@ autoplay = true
 [connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]
 [connection signal="pressed" from="TextureButton3" to="." method="_on_TextureButton3_pressed"]
 [connection signal="pressed" from="TextureButton4" to="." method="_on_TextureButton4_pressed"]
+[connection signal="pressed" from="return1" to="." method="_on_return1_pressed"]

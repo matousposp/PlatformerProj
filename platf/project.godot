@@ -22,7 +22,7 @@ _global_script_class_icons={
 
 config/name="platf"
 run/main_scene="res://scenes/main menu.tscn"
-config/icon="res://img/icon.png"
+config/icon="res://img/ground.PNG"
 
 [autoload]
 

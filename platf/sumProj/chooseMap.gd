@@ -30,3 +30,7 @@ func _on_TextureButton3_pressed():
 
 func _on_TextureButton4_pressed():
 	get_tree().change_scene("res://map2/mario.tscn")
+
+
+func _on_return1_pressed():
+	get_tree().change_scene("res://scenes/main menu.tscn")
