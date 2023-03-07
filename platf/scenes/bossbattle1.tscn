@@ -222,7 +222,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="DynamicFont" id=41]
-outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 12 )
 
@@ -390,10 +389,9 @@ align = 0
 
 [node name="Bar" type="CanvasLayer" parent="."]
 layer = 5
+visible = false
 
 [node name="BossBar" parent="Bar" instance=ExtResource( 13 )]
-margin_left = 5.0
-margin_right = 5.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )

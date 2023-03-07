@@ -1,0 +1,431 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://img/light-blue-color-solid-background-1920x1080.png" type="Texture" id=1]
+[ext_resource path="res://img/483c892db1825b1.png" type="Texture" id=2]
+[ext_resource path="res://z/78708e029015e24 (1).png" type="Texture" id=3]
+[ext_resource path="res://fonts/Mario-Kart-DS.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://fonts/win.gd" type="Script" id=5]
+[ext_resource path="res://fonts/gameboy.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://fonts/cloud.gd" type="Script" id=7]
+[ext_resource path="res://fonts/cloud2.gd" type="Script" id=8]
+[ext_resource path="res://fonts/cloud3.gd" type="Script" id=9]
+[ext_resource path="res://fonts/cloud4.gd" type="Script" id=10]
+[ext_resource path="res://fonts/cloud5.gd" type="Script" id=11]
+[ext_resource path="res://fonts/Label2.gd" type="Script" id=12]
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -300, 136 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "go in"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -300, 136 ), Vector2( 160, 136 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+tracks/0/type = "value"
+tracks/0/path = NodePath("../cloud2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1500, 184 ), Vector2( 734, 184 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "go in"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -300, 136 ), Vector2( 160, 136 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "New Anim"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -500, 416 ), Vector2( 288, 416 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 288, 416 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "New Anim"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -500, 240 ), Vector2( 352, 240 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 352, 240 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "New Anim"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1300, 360 ), Vector2( 776, 360 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 776, 360 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 304, 112 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 416, 400 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "scroll"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 416, 80 ), Vector2( 416, 400 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 6790, 1820 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 1820, 6790, 1820 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 3640, 6790, 1820 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 5460, 6790, 1820 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": false,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="DynamicFont" id=6]
+size = 88
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 50
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=20]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 384, 232 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_top = -4.0
+margin_right = 1024.0
+margin_bottom = 603.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="cloud" type="Sprite" parent="."]
+position = Vector2( -300, 136 )
+texture = ExtResource( 2 )
+script = ExtResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cloud"]
+anims/RESET = SubResource( 10 )
+"anims/go in" = SubResource( 11 )
+
+[node name="cloud2" type="Sprite" parent="."]
+position = Vector2( 1500, 184 )
+texture = ExtResource( 2 )
+flip_h = true
+script = ExtResource( 8 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="cloud2"]
+root_node = NodePath("../../cloud")
+anims/RESET = SubResource( 12 )
+"anims/go in" = SubResource( 13 )
+
+[node name="cloud3" type="Sprite" parent="."]
+position = Vector2( 288, 416 )
+texture = ExtResource( 2 )
+flip_h = true
+script = ExtResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cloud3"]
+"anims/New Anim" = SubResource( 14 )
+anims/RESET = SubResource( 15 )
+
+[node name="cloud4" type="Sprite" parent="."]
+position = Vector2( 352, 240 )
+texture = ExtResource( 2 )
+flip_h = true
+script = ExtResource( 10 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cloud4"]
+"anims/New Anim" = SubResource( 16 )
+anims/RESET = SubResource( 17 )
+
+[node name="cloud5" type="Sprite" parent="."]
+position = Vector2( 776, 360 )
+texture = ExtResource( 2 )
+script = ExtResource( 11 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cloud5"]
+"anims/New Anim" = SubResource( 18 )
+anims/RESET = SubResource( 19 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 304.0
+margin_top = 112.0
+margin_right = 720.0
+margin_bottom = 512.0
+color = Color( 1, 0, 0, 1 )
+script = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+anims/RESET = SubResource( 7 )
+anims/scroll = SubResource( 8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 512, 168 )
+scale = Vector2( 0.106848, 0.0983517 )
+frames = SubResource( 5 )
+frame = 3
+
+[node name="Label" type="Label" parent="."]
+margin_left = 296.0
+margin_top = 106.0
+margin_right = 778.0
+margin_bottom = 188.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "YOU WON!"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 384.0
+margin_top = 232.0
+margin_right = 687.0
+margin_bottom = 295.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "matous"
+script = ExtResource( 12 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label2"]
+anims/RESET = SubResource( 20 )
+anims/in = SubResource( 21 )
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 384.0
+margin_top = 296.0
+margin_right = 687.0
+margin_bottom = 359.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "david"
+script = ExtResource( 12 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label3"]
+anims/RESET = SubResource( 22 )
+anims/in = SubResource( 23 )
