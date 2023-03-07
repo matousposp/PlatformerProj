@@ -23,7 +23,7 @@ var xvel = 0
 
 export(int) var SPEED: int = 800
 
-export(PackedScene) var WEIGHT: PackedScene = preload('res://scenes/Weight.tscn')
+export(PackedScene) var WEIGHT: PackedScene = preload('res://scenes/Weight2.tscn')
 #var sound_effect = preload("res://andrew.mp3")
 var audio_player = AudioStreamPlayer.new()
 
