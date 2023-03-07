@@ -183,8 +183,8 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=64]
 extents = Vector2( 19.9045, 32 )
 
-[sub_resource type="CapsuleShape2D" id=97]
-radius = 25.0082
+[sub_resource type="RectangleShape2D" id=65]
+extents = Vector2( 18.8838, 32 )
 
 [sub_resource type="Theme" id=71]
 resource_local_to_scene = true
@@ -437,8 +437,8 @@ position = Vector2( -1.06432, -0.470558 )
 shape = SubResource( 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( -0.510376, -1 )
-shape = SubResource( 97 )
+position = Vector2( -0.510376, 0 )
+shape = SubResource( 65 )
 
 [node name="Health" parent="Player" instance=ExtResource( 8 )]
 margin_left = -36.7468

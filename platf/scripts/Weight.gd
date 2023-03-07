@@ -24,7 +24,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_Weight_area_entered(area):
-	print(area)
 	if area.is_in_group('player'):
 		emit_signal('tatehit')
 	else:
