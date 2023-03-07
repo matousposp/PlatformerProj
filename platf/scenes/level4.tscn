@@ -542,7 +542,7 @@ tile_data = PoolIntArray( -1245184, 6, 0, -1245183, 6, 0, -1245182, 6, 0, -12451
 stream = ExtResource( 9 )
 autoplay = true
 
-[node name="portal10" type="Area2D" parent="."]
+[node name="portal10" type="Area2D" parent="." groups=["portal"]]
 script = ExtResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="portal10"]
