@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=101 format=2]
 
 [ext_resource path="res://tilemaps/finallevel.tres" type="TileSet" id=1]
 [ext_resource path="res://img/fon-oboi-pikseli-kvadrat-fioletovyi.jpg" type="Texture" id=2]
@@ -11,9 +11,20 @@
 [ext_resource path="res://MAIN SCRIPTS/Player.gd" type="Script" id=9]
 [ext_resource path="res://scenes/buff.gd" type="Script" id=10]
 [ext_resource path="res://img/buff.png" type="Texture" id=11]
+[ext_resource path="res://scenes/buff2.gd" type="Script" id=12]
+[ext_resource path="res://img/buffthrow.png" type="Texture" id=13]
+[ext_resource path="res://scenes/buffthrow.gd" type="Script" id=14]
+[ext_resource path="res://scenes/buffthrow2.gd" type="Script" id=15]
+[ext_resource path="res://scenes/buff3.gd" type="Script" id=16]
+[ext_resource path="res://scenes/buff4.gd" type="Script" id=17]
+[ext_resource path="res://scenes/buffthrow3.gd" type="Script" id=18]
+[ext_resource path="res://scenes/buffthrow4.gd" type="Script" id=19]
+[ext_resource path="res://scenes/buffthrow5.gd" type="Script" id=20]
 [ext_resource path="res://img/movingplatf.png" type="Texture" id=21]
 [ext_resource path="res://scenes/movingplate.gd" type="Script" id=22]
 [ext_resource path="res://img/borger.png" type="Texture" id=23]
+[ext_resource path="res://img/nugget2.png" type="Texture" id=24]
+[ext_resource path="res://scenes/nugget.gd" type="Script" id=25]
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 6 )
@@ -305,13 +316,96 @@ animations = [ {
 radius = 34.0
 height = 32.0
 
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 13 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 13 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 13 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=83]
+atlas = ExtResource( 13 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=84]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=85]
+atlas = ExtResource( 13 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=86]
+animations = [ {
+"frames": [ SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=87]
+radius = 28.0
+height = 56.0
+
+[sub_resource type="AtlasTexture" id=88]
+atlas = ExtResource( 24 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=89]
+atlas = ExtResource( 24 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=90]
+atlas = ExtResource( 24 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=91]
+atlas = ExtResource( 24 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=92]
+atlas = ExtResource( 24 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=93]
+atlas = ExtResource( 24 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=94]
+atlas = ExtResource( 24 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=95]
+animations = [ {
+"frames": [ SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=96]
+radius = 45.0
+
 [node name="finallevel" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -804.0
-margin_top = -1750.0
-margin_right = 8040.0
-margin_bottom = 1629.0
+margin_left = -907.0
+margin_top = -1774.0
+margin_right = 7937.0
+margin_bottom = 1605.0
 texture = ExtResource( 2 )
 expand = true
 
@@ -327,8 +421,8 @@ scale = Vector2( 0.979677, 1 )
 script = ExtResource( 9 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( -0.466835, 0.470561 )
-scale = Vector2( 2.77787, 2.59191 )
+position = Vector2( -2.04149, -3.52944 )
+scale = Vector2( 2.87084, 2.84191 )
 frames = SubResource( 50 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -447,5 +541,172 @@ frames = SubResource( 76 )
 position = Vector2( 35, -32 )
 shape = SubResource( 77 )
 
+[node name="buff2" type="Area2D" parent="."]
+position = Vector2( 3092, -816 )
+script = ExtResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="buff2"]
+position = Vector2( 39, -37 )
+scale = Vector2( 3.4375, 3.3125 )
+frames = SubResource( 76 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buff2"]
+position = Vector2( 35, -32 )
+shape = SubResource( 77 )
+
+[node name="buff3" type="Area2D" parent="."]
+position = Vector2( 5463, -302 )
+script = ExtResource( 16 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="buff3"]
+position = Vector2( 39, -37 )
+scale = Vector2( 3.4375, 3.3125 )
+frames = SubResource( 76 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buff3"]
+position = Vector2( 35, -32 )
+shape = SubResource( 77 )
+
+[node name="buff4" type="Area2D" parent="."]
+position = Vector2( 5827, 499 )
+script = ExtResource( 17 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="buff4"]
+position = Vector2( 39, -37 )
+scale = Vector2( 3.4375, 3.3125 )
+frames = SubResource( 76 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buff4"]
+position = Vector2( 35, -32 )
+shape = SubResource( 77 )
+
+[node name="buffthrow" type="Area2D" parent="."]
+position = Vector2( 1265, 144 )
+script = ExtResource( 14 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="buffthrow"]
+position = Vector2( 44, -44 )
+scale = Vector2( 3.75, 3.75 )
+frames = SubResource( 86 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buffthrow"]
+position = Vector2( 40, -43 )
+shape = SubResource( 87 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="buffthrow"]
+position = Vector2( 41, -40 )
+scale = Vector2( 2.7, 4.7 )
+
+[node name="buffthrow2" type="Area2D" parent="."]
+position = Vector2( 5921, -555 )
+script = ExtResource( 15 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="buffthrow2"]
+position = Vector2( 44, -44 )
+scale = Vector2( 3.75, 3.75 )
+frames = SubResource( 86 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buffthrow2"]
+position = Vector2( 40, -43 )
+shape = SubResource( 87 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="buffthrow2"]
+position = Vector2( 41, -40 )
+scale = Vector2( 2.7, 4.7 )
+
+[node name="buffthrow3" type="Area2D" parent="."]
+position = Vector2( 4827, 78 )
+script = ExtResource( 18 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="buffthrow3"]
+position = Vector2( 44, -44 )
+scale = Vector2( 3.75, 3.75 )
+frames = SubResource( 86 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buffthrow3"]
+position = Vector2( 40, -43 )
+shape = SubResource( 87 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="buffthrow3"]
+position = Vector2( 41, -40 )
+scale = Vector2( 2.7, 4.7 )
+
+[node name="buffthrow4" type="Area2D" parent="."]
+position = Vector2( 5654, 303 )
+script = ExtResource( 19 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="buffthrow4"]
+position = Vector2( 44, -44 )
+scale = Vector2( 3.75, 3.75 )
+frames = SubResource( 86 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buffthrow4"]
+position = Vector2( 40, -43 )
+shape = SubResource( 87 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="buffthrow4"]
+position = Vector2( 41, -40 )
+scale = Vector2( 2.7, 4.7 )
+
+[node name="buffthrow5" type="Area2D" parent="."]
+position = Vector2( 6917, -555 )
+script = ExtResource( 20 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="buffthrow5"]
+position = Vector2( 44, -44 )
+scale = Vector2( 3.75, 3.75 )
+frames = SubResource( 86 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buffthrow5"]
+position = Vector2( 40, -43 )
+shape = SubResource( 87 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="buffthrow5"]
+position = Vector2( 41, -40 )
+scale = Vector2( 2.7, 4.7 )
+
+[node name="nugget" type="Area2D" parent="." groups=["portal"]]
+position = Vector2( 7422, -747 )
+script = ExtResource( 25 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="nugget"]
+position = Vector2( 28, -4 )
+scale = Vector2( 3.40625, 3.34375 )
+frames = SubResource( 95 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nugget"]
+position = Vector2( 28, 1 )
+shape = SubResource( 96 )
+
+[connection signal="hit" from="Player" to="buff" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="buff2" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="buffthrow" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="buff3" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="buffthrow2" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="buff4" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="buffthrow3" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="buffthrow4" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="buffthrow5" method="_on_Player_hit"]
+[connection signal="area_entered" from="Player/Area2D" to="nugget" method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="burger" to="Player" method="_on_burger_area_entered"]
 [connection signal="pressed" from="pause1/pause menu/go back" to="pause1/pause menu" method="_on_go_back_pressed"]
+[connection signal="area_entered" from="buff" to="Player" method="_on_buff_area_entered"]
+[connection signal="area_entered" from="buff2" to="Player" method="_on_buff2_area_entered"]
+[connection signal="area_entered" from="buff3" to="Player" method="_on_buff3_area_entered"]
+[connection signal="area_entered" from="buff4" to="Player" method="_on_buff4_area_entered"]
+[connection signal="area_entered" from="buffthrow" to="Player" method="_on_buffthrow_area_entered"]
+[connection signal="screen_entered" from="buffthrow/VisibilityNotifier2D" to="buffthrow" method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="buffthrow/VisibilityNotifier2D" to="buffthrow" method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="area_entered" from="buffthrow2" to="Player" method="_on_buffthrow2_area_entered"]
+[connection signal="screen_entered" from="buffthrow2/VisibilityNotifier2D" to="buffthrow2" method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="buffthrow2/VisibilityNotifier2D" to="buffthrow2" method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="area_entered" from="buffthrow3" to="Player" method="_on_buffthrow3_area_entered"]
+[connection signal="screen_entered" from="buffthrow3/VisibilityNotifier2D" to="buffthrow3" method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="buffthrow3/VisibilityNotifier2D" to="buffthrow3" method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="area_entered" from="buffthrow4" to="Player" method="_on_buffthrow4_area_entered"]
+[connection signal="screen_entered" from="buffthrow4/VisibilityNotifier2D" to="buffthrow4" method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="buffthrow4/VisibilityNotifier2D" to="buffthrow4" method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="area_entered" from="buffthrow5" to="Player" method="_on_buffthrow5_area_entered"]
+[connection signal="screen_entered" from="buffthrow5/VisibilityNotifier2D" to="buffthrow5" method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="buffthrow5/VisibilityNotifier2D" to="buffthrow5" method="_on_VisibilityNotifier2D_screen_exited"]

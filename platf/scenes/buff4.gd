@@ -3,7 +3,7 @@ extends Area2D
 # var a = 2
 # var b = "text"
 # Called when the node enters the scene tree for the first time.
-var x = 70
+var x = 300
 var health = 5
 
 func _ready():
@@ -18,13 +18,13 @@ func _process(delta):
 		position.x += 2
 	if x == 1:
 		$AnimatedSprite.flip_h = true
-		x = -120
+		x = -300
 	if x == -1:
 		$AnimatedSprite.flip_h = false
-		x += 120
+		x += 300
 
 func _on_Player_hit(id):
-	if id == 1:
+	if id == 6:
 		health -= 1
 		if health == 0:
 			queue_free()

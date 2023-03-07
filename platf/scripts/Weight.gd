@@ -21,8 +21,9 @@ func destroy():
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
+
+
 func _on_Weight_area_entered(area):
-	print(area)
 	if area.is_in_group('player'):
 		emit_signal('tatehit')
 	else:
@@ -30,3 +31,7 @@ func _on_Weight_area_entered(area):
 			pass
 		else:
 			destroy()
+
+
+func _on_Weight_body_entered(body):
+	destroy()
