@@ -23,6 +23,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Weight2_area_entered(area):
 	if area.is_in_group('player'):
+		$AudioStreamPlayer.play()
 		emit_signal('tatehit')
 	else:
 		if area.is_in_group('tate'):
