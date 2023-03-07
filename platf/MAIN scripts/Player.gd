@@ -539,3 +539,12 @@ func _on_buffthrow5_area_entered(area):
 			health -= 34
 	else:
 		emit_signal('hit',9)
+
+
+func _on_pearyay_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit', 1)
