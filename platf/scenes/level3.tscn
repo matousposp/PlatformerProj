@@ -1069,7 +1069,6 @@ shape = SubResource( 57 )
 script = ExtResource( 14 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="portal1000"]
-visible = false
 position = Vector2( 1370, -68 )
 scale = Vector2( 2.625, 2.35938 )
 frames = SubResource( 81 )
@@ -1236,8 +1235,8 @@ shape = SubResource( 103 )
 [connection signal="hit" from="Player" to="brocoli" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="brocoli2" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="brocoli3" method="_on_Player_hit"]
-[connection signal="hit" from="Player" to="melonwater" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="brocoli4" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="melonwater" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="pare" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="pare2" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="pare3" method="_on_Player_hit"]
