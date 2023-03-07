@@ -29,4 +29,4 @@ func _on_return1_pressed():
 
 
 func _on_sumo_pressed():
-	get_tree().change_scene("res://sumProj/sumo.tscn")
+	get_tree().change_scene("res://sumProj/chooseMap.tscn")
