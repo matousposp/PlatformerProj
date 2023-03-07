@@ -5,6 +5,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
+var seen = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,3 +25,11 @@ func _on_quit_pressed():
 
 func _on_pirrana2_area_entered(area):
 	pass # Replace with function body.
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	seen = false
+
+
+func _on_VisibilityNotifier2D_screen_entered():
+	seen = true

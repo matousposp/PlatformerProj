@@ -354,7 +354,7 @@ func _on_stationOP_area_entered(area):
 			cooldown = 60
 			health -= 34
 	else:
-		emit_signal('hit',2)
+		emit_signal('hit',4)
 
 func _on_cannonball_ballin():
 	if cooldown <= 0:
@@ -366,12 +366,13 @@ func _on_obstacle5_area_entered(area):
 
 
 func _on_pirrana_area_entered(area):
+	print(area)
 	if area.is_in_group('player'):
 		if cooldown <= 0:
 			cooldown = 60
 			health -= 34
 	else:
-		emit_signal('hit',2)
+		emit_signal('hit',1)
 
 func _on_pirrana2_area_entered(area):
 	if area.is_in_group('player'):
@@ -381,15 +382,13 @@ func _on_pirrana2_area_entered(area):
 	else:
 		emit_signal('hit',2)
 
-
 func _on_pirrana3_area_entered(area):
 	if area.is_in_group('player'):
 		if cooldown <= 0:
 			cooldown = 60
 			health -= 34
 	else:
-		emit_signal('hit',2)
-
+		emit_signal('hit',3)
 
 func _on_Beam_beam():
 	if cooldown <= 0:

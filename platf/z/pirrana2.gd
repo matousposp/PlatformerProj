@@ -14,5 +14,5 @@ func _ready():
 
 
 func _on_Player_hit(id):
-	if id == 1:
+	if id == 2:
 		queue_free()

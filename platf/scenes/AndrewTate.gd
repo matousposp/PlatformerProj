@@ -40,13 +40,11 @@ func _on_Timer_timeout():
 	#audio_player.play()
 	pass
 
-
 func _reset_jump():
 	JUMPFORCE = 460
 	
-
 func _physics_process(delta):
-	$placeholder.flip_h = (direct > 1)
+	$AnimatedSprite.flip_h = (direct > 1)
 	motion.y += GRAVITY
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
@@ -57,6 +55,7 @@ func _physics_process(delta):
 	else:
 		direct = -1
 	if cycle > 0:
+		$AnimatedSprite.play('idle')
 		if abs(abs(get_parent().get_node('Player').position.x) - abs(position.x)) < 300:
 			if is_on_wall():
 				xvel *= -1
@@ -73,6 +72,7 @@ func _physics_process(delta):
 		if x == 0:
 			y = rng.randi_range(1,3)
 		if y == 1:
+			$AnimatedSprite.play('attack')
 			JUMPFORCE = 460
 			var weight_direction = self.global_position.direction_to(get_parent().get_node('Player').position)
 			weight(weight_direction)
@@ -81,6 +81,7 @@ func _physics_process(delta):
 			if x == 0:
 				x = 360
 			else:
+				$AnimatedSprite.play('attack')
 				x -= 1
 				if get_parent().get_node('Player').position.x < position.x:
 					xvel -= 2
@@ -96,6 +97,7 @@ func _physics_process(delta):
 				xvel -= 1
 			else:
 				xvel += 1
+			$AnimatedSprite.play('attack')
 			var beam_direction = self.global_position.direction_to(get_parent().get_node('Player').position)
 			beam(beam_direction)
 		if x == 0:

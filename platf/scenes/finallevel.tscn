@@ -24,7 +24,7 @@
 [ext_resource path="res://scenes/movingplate.gd" type="Script" id=22]
 [ext_resource path="res://img/borger.png" type="Texture" id=23]
 [ext_resource path="res://img/nugget2.png" type="Texture" id=24]
-[ext_resource path="res://scenes/nugget.gd" type="Script" id=25]
+[ext_resource path="res://scenes/nugget2.gd" type="Script" id=25]
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 6 )
@@ -666,16 +666,16 @@ shape = SubResource( 87 )
 position = Vector2( 41, -40 )
 scale = Vector2( 2.7, 4.7 )
 
-[node name="nugget" type="Area2D" parent="." groups=["portal"]]
+[node name="nugget2" type="Area2D" parent="." groups=["portal"]]
 position = Vector2( 7422, -747 )
 script = ExtResource( 25 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="nugget"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="nugget2"]
 position = Vector2( 28, -4 )
 scale = Vector2( 3.40625, 3.34375 )
 frames = SubResource( 95 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="nugget"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nugget2"]
 position = Vector2( 28, 1 )
 shape = SubResource( 96 )
 
@@ -688,7 +688,7 @@ shape = SubResource( 96 )
 [connection signal="hit" from="Player" to="buffthrow3" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="buffthrow4" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="buffthrow5" method="_on_Player_hit"]
-[connection signal="area_entered" from="Player/Area2D" to="nugget" method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="Player/Area2D" to="nugget2" method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="burger" to="Player" method="_on_burger_area_entered"]
 [connection signal="pressed" from="pause1/pause menu/go back" to="pause1/pause menu" method="_on_go_back_pressed"]
 [connection signal="area_entered" from="buff" to="Player" method="_on_buff_area_entered"]

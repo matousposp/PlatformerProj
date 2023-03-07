@@ -11,8 +11,6 @@ func _ready():
 	$AnimatedSprite.play("default")
 	$AnimationPlayer.play("run")
 
-
-
 func _on_Player_hit(id):
-	if id == 1:
+	if id == 3:
 		queue_free()
