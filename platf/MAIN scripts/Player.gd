@@ -278,7 +278,6 @@ func _on_border2_area_entered(area):
 func _on_bigbird1_area_entered(area):
 	get_tree().reload_current_scene()
 
-
 func _on_portal1000_area_entered(area):
 	get_tree().change_scene("res://scenes/level4.tscn")
 
@@ -459,3 +458,84 @@ func _on_birg_area_entered(area):
 			health -= 34
 	else:
 		emit_signal('hit',6)
+
+#level 9
+
+func _on_buff_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit',1)
+
+func _on_buff2_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit',2)
+
+
+func _on_buffthrow_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit',3)
+
+
+func _on_buff3_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit',4)
+
+
+func _on_buffthrow2_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit',5)
+
+
+func _on_buff4_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit',6)
+
+
+func _on_buffthrow3_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit',7)
+
+
+func _on_buffthrow4_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit',8)
+
+
+func _on_buffthrow5_area_entered(area):
+	if area.is_in_group('player'):
+		if cooldown <= 0:
+			cooldown = 60
+			health -= 34
+	else:
+		emit_signal('hit',9)
