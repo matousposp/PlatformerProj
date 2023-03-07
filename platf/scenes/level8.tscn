@@ -590,11 +590,11 @@ position = Vector2( 1623, 120 )
 script = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pearyay"]
-position = Vector2( 1294, -461 )
+position = Vector2( 1541, -467 )
 shape = SubResource( 130 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="pearyay"]
-position = Vector2( 1295, -470 )
+position = Vector2( 1546, -471 )
 scale = Vector2( 1.9375, 1.9375 )
 frames = SubResource( 137 )
 
