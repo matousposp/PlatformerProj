@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=2]
+[gd_scene load_steps=112 format=2]
 
 [ext_resource path="res://tilemaps/cloudtiles.tres" type="TileSet" id=1]
 [ext_resource path="res://MAIN scripts/Player.gd" type="Script" id=2]
@@ -10,13 +10,11 @@
 [ext_resource path="res://img/thron.png" type="Texture" id=8]
 [ext_resource path="res://img/Biggestbirbspritesheet.png" type="Texture" id=9]
 [ext_resource path="res://scenes/BiggestBird.gd" type="Script" id=10]
-[ext_resource path="res://img/Piranha.png" type="Texture" id=11]
 [ext_resource path="res://img/3.png" type="Texture" id=12]
 [ext_resource path="res://scenes/3.gd" type="Script" id=13]
 [ext_resource path="res://scenes/Dash.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/Health.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/pause menu.gd" type="Script" id=16]
-[ext_resource path="res://scenes/PihranhaPlant.gd" type="Script" id=17]
 [ext_resource path="res://scenes/portal26.gd" type="Script" id=18]
 [ext_resource path="res://img/nugget2.png" type="Texture" id=19]
 
@@ -59,154 +57,6 @@ animations = [ {
 [sub_resource type="CapsuleShape2D" id=159]
 radius = 23.0
 height = 42.0
-
-[sub_resource type="AtlasTexture" id=134]
-atlas = ExtResource( 11 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=135]
-atlas = ExtResource( 11 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=136]
-atlas = ExtResource( 11 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=137]
-atlas = ExtResource( 11 )
-region = Rect2( 0, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=138]
-atlas = ExtResource( 11 )
-region = Rect2( 32, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=139]
-atlas = ExtResource( 11 )
-region = Rect2( 64, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=140]
-atlas = ExtResource( 11 )
-region = Rect2( 0, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=141]
-atlas = ExtResource( 11 )
-region = Rect2( 32, 64, 32, 32 )
-
-[sub_resource type="SpriteFrames" id=142]
-animations = [ {
-"frames": [ SubResource( 134 ), SubResource( 135 ), SubResource( 136 ), SubResource( 137 ), SubResource( 138 ), SubResource( 139 ), SubResource( 140 ), SubResource( 141 ) ],
-"loop": true,
-"name": "default",
-"speed": 12.0
-} ]
-
-[sub_resource type="CapsuleShape2D" id=145]
-radius = 27.0
-height = 30.0
-
-[sub_resource type="Animation" id=146]
-resource_name = "PlantChase"
-length = 40.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 3.4, 3.6, 3.7, 4.1, 4.3, 4.5, 4.7, 4.8, 4.9, 5, 5.5, 5.8, 6.1, 6.5, 6.6, 7.1, 7.6, 7.7, 8.2, 8.5, 9.1, 10.2, 10.5, 11, 13, 15, 17, 19, 21, 23, 24.5, 26, 27.5, 29, 30.5, 32, 33.5, 35, 36, 40 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 2876, 632 ), Vector2( 3714, 632 ), Vector2( 3763, 562 ), Vector2( 3788, 569 ), Vector2( 3887, 599 ), Vector2( 3934, 581 ), Vector2( 3984, 599 ), Vector2( 4029, 522 ), Vector2( 4055, 536 ), Vector2( 4088, 534 ), Vector2( 4108, 600 ), Vector2( 4186, 492 ), Vector2( 4240, 504 ), Vector2( 4276, 378 ), Vector2( 4329, 408 ), Vector2( 4331, 410 ), Vector2( 4245, 341 ), Vector2( 4158, 378 ), Vector2( 4154, 377 ), Vector2( 4269, 254 ), Vector2( 4349, 282 ), Vector2( 4449, 237 ), Vector2( 4672, 560 ), Vector2( 4747, 630 ), Vector2( 4897, 633 ), Vector2( 5104, 603 ), Vector2( 5201, 507 ), Vector2( 5318, 441 ), Vector2( 5204, 377 ), Vector2( 5322, 313 ), Vector2( 5203, 248 ), Vector2( 5322, 185 ), Vector2( 5204, 122 ), Vector2( 5319, 26 ), Vector2( 5203, -8 ), Vector2( 5321, -101 ), Vector2( 5208, -136 ), Vector2( 5319, -232 ), Vector2( 5200, -264 ), Vector2( 5070, -295 ), Vector2( 4346, 119 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 6.6, 7.7, 17, 19, 21, 23, 24.5, 26, 27.5, 29, 30.5, 32, 33.5, 36 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false, true, false, true, false, true, false, true, false, true, false, true, true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("CollisionShape2D:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 1 ), Vector2( 0, 1 ) ]
-}
-
-[sub_resource type="Animation" id=147]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 2892, 613 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("CollisionShape2D:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 1 ) ]
-}
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 3 )
@@ -828,22 +678,6 @@ frames = SubResource( 158 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portal26"]
 shape = SubResource( 159 )
 
-[node name="PihranhaPlant" type="Area2D" parent="."]
-position = Vector2( 2892, 613 )
-script = ExtResource( 17 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="PihranhaPlant"]
-scale = Vector2( 2.5625, 2.5625 )
-frames = SubResource( 142 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PihranhaPlant"]
-position = Vector2( 0, 1 )
-shape = SubResource( 145 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PihranhaPlant"]
-anims/PlantChase = SubResource( 146 )
-anims/RESET = SubResource( 147 )
-
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 114, -3 )
 script = ExtResource( 2 )
@@ -1031,9 +865,7 @@ texture = ExtResource( 8 )
 position = Vector2( 4774, 658 )
 shape = SubResource( 160 )
 
-[connection signal="area_entered" from="ChaseStartArea" to="PihranhaPlant" method="_on_ChaseStartArea_area_entered"]
 [connection signal="area_entered" from="portal26" to="Player" method="_on_portal26_area_entered"]
-[connection signal="area_entered" from="PihranhaPlant" to="Player" method="_on_PihranhaPlant_area_entered"]
 [connection signal="hit" from="Player" to="leprechaun1" method="_on_Player_hit"]
 [connection signal="area_entered" from="leprechaun1" to="Player" method="_on_leprechaun1_area_entered"]
 [connection signal="area_entered" from="obstacle1" to="Player" method="_on_obstacle1_area_entered"]

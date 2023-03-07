@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=2]
+[gd_scene load_steps=102 format=2]
 
 [ext_resource path="res://tilemaps/finallevel.tres" type="TileSet" id=1]
 [ext_resource path="res://img/fon-oboi-pikseli-kvadrat-fioletovyi.jpg" type="Texture" id=2]
@@ -399,6 +399,9 @@ animations = [ {
 [sub_resource type="CapsuleShape2D" id=96]
 radius = 45.0
 
+[sub_resource type="RectangleShape2D" id=97]
+extents = Vector2( 4752.25, 34.5 )
+
 [node name="finallevel" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -679,12 +682,18 @@ frames = SubResource( 95 )
 position = Vector2( 28, 1 )
 shape = SubResource( 96 )
 
+[node name="borderyay" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borderyay"]
+position = Vector2( 4025.75, 1247 )
+shape = SubResource( 97 )
+
 [connection signal="hit" from="Player" to="buff" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="buff2" method="_on_Player_hit"]
-[connection signal="hit" from="Player" to="buffthrow" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="buff3" method="_on_Player_hit"]
-[connection signal="hit" from="Player" to="buffthrow2" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="buff4" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="buffthrow" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="buffthrow2" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="buffthrow3" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="buffthrow4" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="buffthrow5" method="_on_Player_hit"]
@@ -710,3 +719,4 @@ shape = SubResource( 96 )
 [connection signal="area_entered" from="buffthrow5" to="Player" method="_on_buffthrow5_area_entered"]
 [connection signal="screen_entered" from="buffthrow5/VisibilityNotifier2D" to="buffthrow5" method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="screen_exited" from="buffthrow5/VisibilityNotifier2D" to="buffthrow5" method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="area_entered" from="borderyay" to="Player" method="_on_borderyay_area_entered"]
