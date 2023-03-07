@@ -25,6 +25,7 @@ func _on_Weight2_area_entered(area):
 	if area.is_in_group('player'):
 		$AudioStreamPlayer.play()
 		emit_signal('tatehit')
+		$AudioStreamPlayer.stop()
 	else:
 		if area.is_in_group('tate'):
 			pass
