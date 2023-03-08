@@ -558,7 +558,7 @@ animations = [ {
 [node name="level4" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 51.0
+margin_left = -510.0
 margin_top = -251.0
 margin_right = 2384.0
 margin_bottom = 934.0
@@ -568,7 +568,7 @@ expand = true
 [node name="TextureRect2" type="TextureRect" parent="."]
 margin_left = 2318.0
 margin_top = -538.0
-margin_right = 4651.0
+margin_right = 5460.0
 margin_bottom = 912.0
 texture = ExtResource( 8 )
 expand = true
