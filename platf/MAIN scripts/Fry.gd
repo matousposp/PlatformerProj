@@ -1,6 +1,6 @@
 extends Area2D
 
-var direction
+var direction = Vector2(1,0)
 
 export(int) var SPEED: int = 400
 export(PackedScene) var FRY: PackedScene = preload('res://scenes/fryexplosion.tscn')
