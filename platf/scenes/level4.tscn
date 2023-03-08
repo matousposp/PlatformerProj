@@ -527,32 +527,32 @@ bg_color = Color( 0, 0, 0, 0 )
 [sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 25.5, 19.5 )
 
-[sub_resource type="AtlasTexture" id=94]
+[sub_resource type="AtlasTexture" id=100]
 atlas = ExtResource( 20 )
 region = Rect2( 0, 0, 324, 224 )
 
-[sub_resource type="AtlasTexture" id=95]
+[sub_resource type="AtlasTexture" id=101]
 atlas = ExtResource( 20 )
 region = Rect2( 324, 0, 324, 224 )
 
-[sub_resource type="AtlasTexture" id=96]
+[sub_resource type="AtlasTexture" id=102]
 atlas = ExtResource( 20 )
 region = Rect2( 0, 224, 324, 224 )
 
-[sub_resource type="AtlasTexture" id=97]
+[sub_resource type="AtlasTexture" id=103]
 atlas = ExtResource( 20 )
 region = Rect2( 324, 224, 324, 224 )
 
-[sub_resource type="AtlasTexture" id=98]
+[sub_resource type="AtlasTexture" id=104]
 atlas = ExtResource( 20 )
 region = Rect2( 0, 448, 324, 224 )
 
 [sub_resource type="SpriteFrames" id=99]
 animations = [ {
-"frames": [ SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ) ],
+"frames": [ SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 104 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 10.0
 } ]
 
 [node name="level4" type="Node2D"]
@@ -703,7 +703,7 @@ position = Vector2( 2933.5, -312.5 )
 shape = SubResource( 93 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="sealyay"]
-position = Vector2( 2944, -313 )
+position = Vector2( 2944, -309 )
 scale = Vector2( 0.223214, 0.223214 )
 frames = SubResource( 99 )
 
