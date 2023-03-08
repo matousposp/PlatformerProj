@@ -113,12 +113,18 @@ func _on_Area2D_area_entered(area):
 			xvel = -100*direct
 		else:
 			if xvel > get_parent().get_node('Player2').xvel:
+				get_parent().get_node('Player2').xvel *= -2
 				xvel *= -0.5
+				motion.y = -200
 			else:
+				get_parent().get_node('Player2').xvel *= -0.5
 				xvel *= -2
-		motion.y = -500
-
-
+				motion.y = -500
+	if area.name == "fireball":
+		if xvel == 0:
+			xvel = -10*direct
+		motion.y -= 500
+	
 func _on_border_area_entered(area):
 	if area.is_in_group('player') or area.is_in_group('player2'):
 		get_parent().get_node('win').get_node('win').visible = true
