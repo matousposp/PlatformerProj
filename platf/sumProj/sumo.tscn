@@ -197,6 +197,7 @@ position = Vector2( 1, 0 )
 shape = SubResource( 22 )
 
 [node name="falling_cookie" parent="." instance=ExtResource( 5 )]
+position = Vector2( 79, 150 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 2, 126 )
@@ -270,7 +271,6 @@ visible = false
 position = Vector2( 392, -12000 )
 
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_entered"]
-[connection signal="area_entered" from="Player2/Area2D" to="Player" method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="Player2/Area2D" to="Player2" method="_on_Area2D_area_entered"]
 [connection signal="pressed" from="win/win/go back" to="win/win" method="_on_go_back_pressed"]
 [connection signal="area_entered" from="border" to="Player" method="_on_border_area_entered"]

@@ -123,6 +123,8 @@ func _on_Area2D_area_entered(area):
 	if area.name == "fireball":
 		if xvel == 0:
 			xvel = -10*direct
+		else:
+			xvel *= -2
 		motion.y -= 500
 	
 func _on_border_area_entered(area):
